@@ -63,6 +63,70 @@ $)
 
   ${
     $d s y J $.  $d s X $.
+    cmppcmplem1.1 $e |- X = U. J $.
+    $( Lemma for ~ cmppcmp .  A finite subcover of an open cover of a
+       topological space is locally finite and open.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    cmppcmplem1 $p |- ( ( J e. Top /\ y C_ J /\ X = U. y ) ->
+      ( ( s e. ( ~P y i^i Fin ) /\ X = U. s ) ->
+        s e. ( ( LocFin ` J ) i^i ~P J ) ) ) $=
+      ? $.
+  $}
+
+  ${
+    $( A subset of a cover that covers the same space refines it.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    cmppcmplem2a $p |- ( ( s e. ( ~P y i^i Fin ) /\ s C_ y
+      /\ U. s = U. y ) -> s Ref y ) $=
+      vs cv vy cv vy cv cpw cfn cin vs cv cuni vy cv cuni vs cv cuni eqid vy cv
+      cuni eqid ssref $.
+  $}
+
+  ${
+    $( Membership in a power set intersection implies subset.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    cmppcmplem2b $p |- ( s e. ( ~P y i^i Fin ) -> s C_ y ) $=
+      vs cv vy cv cpw cfn cin wcel vs cv vy cv cpw wcel vs cv vy cv wss vs cv
+      vy cv cpw cfn elinel1 vs cv vy cv elpwi syl $.
+  $}
+
+  ${
+    $( Union equality from shared equal.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    cmppcmplem2c $p |- ( ( X = U. y /\ X = U. s ) -> U. s = U. y ) $=
+      cX vy cv cuni wceq cX vs cv cuni wceq wa cX vs cv cuni vy cv cuni cX vy
+      cv cuni wceq cX vs cv cuni wceq simpr cX vy cv cuni wceq cX vs cv cuni
+      wceq simpl eqtr3d $.
+  $}
+
+  ${
+    $d s y J $.  $d s X $.
+    cmppcmplem2.1 $e |- X = U. J $.
+    $( Lemma for ~ cmppcmp .  A finite subcover of an open cover refines
+       the cover.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    cmppcmplem2 $p |- ( ( J e. Top /\ y C_ J /\ X = U. y ) ->
+      ( ( s e. ( ~P y i^i Fin ) /\ X = U. s ) ->
+        s Ref y ) ) $=
+      cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq w3a vs cv vy cv cpw cfn cin
+      wcel cX vs cv cuni wceq wa vs cv vy cv cref wbr cJ ctop wcel vy cv cJ wss
+      cX vy cv cuni wceq w3a vs cv vy cv cpw cfn cin wcel cX vs cv cuni wceq wa
+      wa vs cv vy cv cpw cfn cin wcel vs cv vy cv wss vs cv cuni vy cv cuni
+      wceq vs cv vy cv cref wbr cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq
+      w3a vs cv vy cv cpw cfn cin wcel cX vs cv cuni wceq simprl cJ ctop wcel
+      vy cv cJ wss cX vy cv cuni wceq w3a vs cv vy cv cpw cfn cin wcel cX vs cv
+      cuni wceq wa wa vs cv vy cv cpw cfn cin wcel vs cv vy cv wss cJ ctop wcel
+      vy cv cJ wss cX vy cv cuni wceq w3a vs cv vy cv cpw cfn cin wcel cX vs cv
+      cuni wceq simprl vy vs cmppcmplem2b syl cJ ctop wcel vy cv cJ wss cX vy
+      cv cuni wceq w3a cX vy cv cuni wceq cX vs cv cuni wceq vs cv cuni vy cv
+      cuni wceq vs cv vy cv cpw cfn cin wcel cX vs cv cuni wceq wa cJ ctop wcel
+      vy cv cJ wss cX vy cv cuni wceq simp3 vs cv vy cv cpw cfn cin wcel cX vs
+      cv cuni wceq simpr vy cX vs cmppcmplem2c syl2an vy vs cmppcmplem2a
+      syl3anc ex $.
+  $}
+
+  ${
+    $d s y J $.  $d s X $.
     cmppcmplem.1 $e |- X = U. J $.
     $( Lemma for ~ cmppcmp .  Given a topology and an open cover, any finite
        subcover that covers the space is a locally finite open refinement.
@@ -72,13 +136,8 @@ $)
         ( s e. ( ( LocFin ` J ) i^i ~P J ) /\ s Ref y ) ) ) $=
       cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq w3a vs cv vy cv cpw cfn cin
       wcel cX vs cv cuni wceq wa vs cv cJ clocfin cfv cJ cpw cin wcel vs cv vy
-      cv cref wbr ? cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq w3a vs cv vy
-      cv cpw cfn cin wcel cX vs cv cuni wceq wa vs cv vy cv cref wbr cJ ctop
-      wcel vy cv cJ wss cX vy cv cuni wceq w3a vs cv vy cv cpw cfn cin wcel cX
-      vs cv cuni wceq wa wa vs cv vy cv cpw cfn cin wcel vs cv vy cv wss ? vs
-      cv vy cv cref wbr cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq w3a vs cv
-      vy cv cpw cfn cin wcel cX vs cv cuni wceq simprl ? ? vs cv vy cv ? vs cv
-      cuni vy cv cuni vs cv cuni eqid vy cv cuni eqid ssref syl3anc ex jcad $.
+      cv cref wbr vy cJ cX vs cmppcmplem.1 cmppcmplem1 vy cJ cX vs cmppcmplem.1
+      cmppcmplem2 jcad $.
   $}
 
   ${
