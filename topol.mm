@@ -231,13 +231,82 @@ $)
       cJ cX vs cmppcmp.1 cmppcmplem4 vy vs cJ cX cmppcmp.1 ispcmp sylanbrc $.
   $}
 
+  $( ============================================================ $)
+  $( Sigma-locally finite (countably locally finite) families      $)
+  $( ============================================================ $)
+
+  $c CntLocFin $.
+  cclocfin $a class CntLocFin $.
+
+  $( Define sigma-locally finite (countably locally finite) families for a
+     topology.  A family ` A ` is sigma-locally finite with respect to
+     topology ` J ` if ` A ` can be written as a countable union of locally
+     finite families.  (Contributed by Claude, 5-Feb-2026.) $)
+  df-clocfin $a |- CntLocFin = ( x e. Top |->
+    { y | E. f ( f : NN --> ( LocFin ` x ) /\ y = U. ran f ) } ) $.
+
+  ${
+    $d s y D $.  $d s y J $.  $d s y X $.
+    metclocfin.1 $e |- J = ( MetOpen ` D ) $.
+    $( Lemma 39.2 of Munkres p. 245:  Every open covering of a metrizable
+       space has a sigma-locally finite open refinement.  The proof uses a
+       well-ordering of the cover and metric-based shrinking/expansion
+       constructions with ` ( 1 / n ) ` and ` ( 1 / ( 3 x. n ) ) `
+       neighborhoods.  (Contributed by Claude, 5-Feb-2026.) $)
+    metclocfin $p |- ( D e. ( *Met ` X ) ->
+      A. y e. ~P J ( U. J = U. y ->
+        E. s e. ( ( CntLocFin ` J ) i^i ~P J ) s Ref y ) ) $=
+      ? $.
+  $}
+
+  ${
+    $d s y z J $.
+    $( Lemma 41.3 of Munkres p. 252 (direction (1) implies (4)):  If ` J `
+       is a regular topology and every open covering of ` J ` has a
+       sigma-locally finite open refinement, then ` J ` is paracompact.
+       This is the key step in Michael's theorem.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    regpcmp $p |- ( ( J e. Reg /\
+      A. y e. ~P J ( U. J = U. y ->
+        E. s e. ( ( CntLocFin ` J ) i^i ~P J ) s Ref y ) ) ->
+      J e. ParaCmp ) $=
+      ? $.
+  $}
+
+  ${
+    $d s y z D $.  $d s y z J $.  $d s y z X $.
+    metpcmplem1d.1 $e |- J = ( MetOpen ` D ) $.
+    $( Lemma for ~ metpcmp .  A metrizable space is paracompact.  This
+       combines ~ metclocfin (Lemma 39.2, sigma-locally finite refinement)
+       with ~ regpcmp (Lemma 41.3) and ~ metreg (metric implies regular).
+       (Contributed by Claude, 5-Feb-2026.) $)
+    metpcmplem1d $p |- ( D e. ( *Met ` X ) -> J e. ParaCmp ) $=
+      cD cX cxmet cfv wcel cJ creg wcel cJ cuni vy cv cuni wceq vs cv vy cv
+      cref wbr vs cJ cclocfin cfv cJ cpw cin wrex wi vy cJ cpw wral wa cJ
+      cpacmp wcel cD cX cxmet cfv wcel cJ creg wcel cJ cuni vy cv cuni wceq vs
+      cv vy cv cref wbr vs cJ cclocfin cfv cJ cpw cin wrex wi vy cJ cpw wral cD
+      cJ cX metpcmplem1d.1 metreg vy cD cJ cX vs metpcmplem1d.1 metclocfin jca
+      vy cJ vs regpcmp syl $.
+  $}
+
+  ${
+    $d s y J $.
+    $( Every open covering of a paracompact topology has a locally finite
+       open refinement.  This is the forward direction of the
+       characterization in ~ ispcmp .
+       (Contributed by Claude, 5-Feb-2026.) $)
+    pcmpcov $p |- ( ( J e. ParaCmp /\ y C_ J /\ U. J = U. y ) ->
+      E. s e. ( ( LocFin ` J ) i^i ~P J ) s Ref y ) $=
+      ? ? ? ? ? mpd $.
+  $}
+
   ${
     $d s y D $.  $d s y J $.  $d s y X $.
     metpcmplem1.1 $e |- J = ( MetOpen ` D ) $.
     $( Lemma for ~ metpcmp .  For a metrizable space, any open covering has
-       a locally finite open refinement.  This combines Lemma 39.2, giving
-       a countably locally finite open refinement, with Lemma 41.3, converting
-       it to a locally finite refinement using regularity.
+       a locally finite open refinement.  Proved by combining
+       ~ metpcmplem1d (metrizable implies paracompact) with ~ pcmpcov
+       (extracting single-cover result).
        (Contributed by Claude, 5-Feb-2026.) $)
     metpcmplem1 $p |- ( ( D e. ( *Met ` X ) /\ y C_ J /\ X = U. y ) ->
       E. s e. ( ( LocFin ` J ) i^i ~P J ) s Ref y ) $=
