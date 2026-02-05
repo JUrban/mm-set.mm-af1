@@ -62,6 +62,26 @@ $)
   $}
 
   ${
+    $d s y J $.  $d s X $.
+    cmppcmplem.1 $e |- X = U. J $.
+    $( Lemma for ~ cmppcmp .  Given a topology and an open cover, any finite
+       subcover that covers the space is a locally finite open refinement.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    cmppcmplem $p |- ( ( J e. Top /\ y C_ J /\ X = U. y ) ->
+      ( ( s e. ( ~P y i^i Fin ) /\ X = U. s ) ->
+        ( s e. ( ( LocFin ` J ) i^i ~P J ) /\ s Ref y ) ) ) $=
+      cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq w3a vs cv vy cv cpw cfn cin
+      wcel cX vs cv cuni wceq wa vs cv cJ clocfin cfv cJ cpw cin wcel vs cv vy
+      cv cref wbr ? cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq w3a vs cv vy
+      cv cpw cfn cin wcel cX vs cv cuni wceq wa vs cv vy cv cref wbr cJ ctop
+      wcel vy cv cJ wss cX vy cv cuni wceq w3a vs cv vy cv cpw cfn cin wcel cX
+      vs cv cuni wceq wa wa vs cv vy cv cpw cfn cin wcel vs cv vy cv wss ? vs
+      cv vy cv cref wbr cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq w3a vs cv
+      vy cv cpw cfn cin wcel cX vs cv cuni wceq simprl ? ? vs cv vy cv ? vs cv
+      cuni vy cv cuni vs cv cuni eqid vy cv cuni eqid ssref syl3anc ex jcad $.
+  $}
+
+  ${
     $d s y z J $.  $d s y z X $.
     cmppcmp.1 $e |- X = U. J $.
     $( Every compact topology is paracompact.
