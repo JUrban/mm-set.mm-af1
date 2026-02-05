@@ -186,12 +186,49 @@ $)
   $}
 
   ${
+    $d s y J $.  $d s X $.
+    cmppcmplem3.1 $e |- X = U. J $.
+    $( Lemma for ~ cmppcmp .  Given a compact topology and an open cover,
+       there exists a locally finite open refinement.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    cmppcmplem3 $p |- ( ( J e. Comp /\ y C_ J /\ X = U. y ) ->
+      E. s e. ( ( LocFin ` J ) i^i ~P J ) s Ref y ) $=
+      cJ ccmp wcel vy cv cJ wss cX vy cv cuni wceq w3a cX vs cv cuni wceq vs vy
+      cv cpw cfn cin wrex vs cv vy cv cref wbr vs cJ clocfin cfv cJ cpw cin
+      wrex vy cv cJ cX vs cmppcmplem3.1 cmpcov cJ ccmp wcel vy cv cJ wss cX vy
+      cv cuni wceq w3a cX vs cv cuni wceq vs cv vy cv cref wbr vs vy cv cpw cfn
+      cin cJ clocfin cfv cJ cpw cin cJ ccmp wcel cJ ctop wcel vy cv cJ wss cX
+      vy cv cuni wceq vs cv vy cv cpw cfn cin wcel cX vs cv cuni wceq wa vs cv
+      cJ clocfin cfv cJ cpw cin wcel vs cv vy cv cref wbr wa wi cJ cmptop vy cJ
+      cX vs cmppcmplem3.1 cmppcmplem syl3an1 reximdv2 mpd $.
+  $}
+
+  ${
+    $d s y J $.  $d s X $.  $d y X $.
+    cmppcmplem4.1 $e |- X = U. J $.
+    $( Lemma for ~ cmppcmp .  A compact space satisfies the paracompactness
+       quantifier over open covers.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    cmppcmplem4 $p |- ( J e. Comp ->
+      A. y e. ~P J ( X = U. y ->
+        E. s e. ( ( LocFin ` J ) i^i ~P J ) s Ref y ) ) $=
+      cJ ccmp wcel cX vy cv cuni wceq vs cv vy cv cref wbr vs cJ clocfin cfv cJ
+      cpw cin wrex wi vy cJ cpw vy cv cJ cpw wcel vy cv cJ wss cJ ccmp wcel cX
+      vy cv cuni wceq vs cv vy cv cref wbr vs cJ clocfin cfv cJ cpw cin wrex wi
+      vy cv cJ elpwi cJ ccmp wcel vy cv cJ wss cX vy cv cuni wceq vs cv vy cv
+      cref wbr vs cJ clocfin cfv cJ cpw cin wrex vy cJ cX vs cmppcmplem4.1
+      cmppcmplem3 3exp syl5 ralrimiv $.
+  $}
+
+  ${
     $d s y z J $.  $d s y z X $.
     cmppcmp.1 $e |- X = U. J $.
     $( Every compact topology is paracompact.
        (Contributed by Claude, 5-Feb-2026.) $)
     cmppcmp $p |- ( J e. Comp -> J e. ParaCmp ) $=
-      ? $.
+      cJ ccmp wcel cJ ctop wcel cX vy cv cuni wceq vs cv vy cv cref wbr vs cJ
+      clocfin cfv cJ cpw cin wrex wi vy cJ cpw wral cJ cpacmp wcel cJ cmptop vy
+      cJ cX vs cmppcmp.1 cmppcmplem4 vy vs cJ cX cmppcmp.1 ispcmp sylanbrc $.
   $}
 
   ${
