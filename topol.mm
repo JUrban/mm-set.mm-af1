@@ -308,7 +308,17 @@ $)
         E. s e. ( ( CntLocFin ` J ) i^i ~P J ) s Ref y ) ) ->
       A. y e. ~P J ( U. J = U. y ->
         E. t e. ( LocFin ` J ) t Ref y ) ) $=
-      ? $.
+      cJ ctop wcel cJ cuni vy cv cuni wceq vs cv vy cv cref wbr vs cJ cclocfin
+      cfv cJ cpw cin wrex wi vy cJ cpw wral cJ cuni vy cv cuni wceq vt cv vy cv
+      cref wbr vt cJ clocfin cfv wrex wi vy cJ cpw wral cJ ctop wcel cJ cuni vy
+      cv cuni wceq vs cv vy cv cref wbr vs cJ cclocfin cfv cJ cpw cin wrex wi
+      cJ cuni vy cv cuni wceq vt cv vy cv cref wbr vt cJ clocfin cfv wrex wi vy
+      cJ cpw cJ ctop wcel vs cv vy cv cref wbr vs cJ cclocfin cfv cJ cpw cin
+      wrex vt cv vy cv cref wbr vt cJ clocfin cfv wrex cJ cuni vy cv cuni wceq
+      cJ ctop wcel vs cv vy cv cref wbr vt cv vy cv cref wbr vt cJ clocfin cfv
+      wrex vs cJ cclocfin cfv cJ cpw cin cJ ctop wcel vs cv cJ cclocfin cfv cJ
+      cpw cin wcel vs cv vy cv cref wbr vt cv vy cv cref wbr vt cJ clocfin cfv
+      wrex vy vt cJ vs clocfinlf 3exp rexlimdv imim2d ralimdv imp $.
   $}
 
   ${
