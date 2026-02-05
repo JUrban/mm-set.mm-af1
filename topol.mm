@@ -232,6 +232,58 @@ $)
   $}
 
   ${
+    $d s y D $.  $d s y J $.  $d s y X $.
+    metpcmplem1.1 $e |- J = ( MetOpen ` D ) $.
+    $( Lemma for ~ metpcmp .  For a metrizable space, any open covering has
+       a locally finite open refinement.  This combines Lemma 39.2, giving
+       a countably locally finite open refinement, with Lemma 41.3, converting
+       it to a locally finite refinement using regularity.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    metpcmplem1 $p |- ( ( D e. ( *Met ` X ) /\ y C_ J /\ X = U. y ) ->
+      E. s e. ( ( LocFin ` J ) i^i ~P J ) s Ref y ) $=
+      ? $.
+  $}
+
+  ${
+    $d s y D $.  $d s y J $.  $d s y X $.
+    metpcmplem2.1 $e |- J = ( MetOpen ` D ) $.
+    $( Lemma for ~ metpcmp .  A metrizable space satisfies the paracompactness
+       quantifier: every open covering has a locally finite open refinement.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    metpcmplem2 $p |- ( D e. ( *Met ` X ) ->
+      A. y e. ~P J ( X = U. y ->
+        E. s e. ( ( LocFin ` J ) i^i ~P J ) s Ref y ) ) $=
+      cD cX cxmet cfv wcel cX vy cv cuni wceq vs cv vy cv cref wbr vs cJ
+      clocfin cfv cJ cpw cin wrex wi vy cJ cpw vy cv cJ cpw wcel vy cv cJ wss
+      cD cX cxmet cfv wcel cX vy cv cuni wceq vs cv vy cv cref wbr vs cJ
+      clocfin cfv cJ cpw cin wrex wi vy cv cJ elpwi cD cX cxmet cfv wcel vy cv
+      cJ wss cX vy cv cuni wceq vs cv vy cv cref wbr vs cJ clocfin cfv cJ cpw
+      cin wrex vy cD cJ cX vs metpcmplem2.1 metpcmplem1 3exp syl5 ralrimiv $.
+  $}
+
+  ${
+    $d s y D $.  $d s y J $.  $d s y X $.
+    metpcmplem3.1 $e |- J = ( MetOpen ` D ) $.
+    $( Lemma for ~ metpcmp .  Convert the universe variable from ` X ` to
+       ` U. J ` in the paracompactness quantifier.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    metpcmplem3 $p |- ( D e. ( *Met ` X ) ->
+      A. y e. ~P J ( U. J = U. y ->
+        E. s e. ( ( LocFin ` J ) i^i ~P J ) s Ref y ) ) $=
+      cD cX cxmet cfv wcel cX vy cv cuni wceq vs cv vy cv cref wbr vs cJ
+      clocfin cfv cJ cpw cin wrex wi vy cJ cpw wral cJ cuni vy cv cuni wceq vs
+      cv vy cv cref wbr vs cJ clocfin cfv cJ cpw cin wrex wi vy cJ cpw wral vy
+      cD cJ cX vs metpcmplem3.1 metpcmplem2 cD cX cxmet cfv wcel cX vy cv cuni
+      wceq vs cv vy cv cref wbr vs cJ clocfin cfv cJ cpw cin wrex wi cJ cuni vy
+      cv cuni wceq vs cv vy cv cref wbr vs cJ clocfin cfv cJ cpw cin wrex wi vy
+      cJ cpw cD cX cxmet cfv wcel cX vy cv cuni wceq cJ cuni vy cv cuni wceq vs
+      cv vy cv cref wbr vs cJ clocfin cfv cJ cpw cin wrex cD cX cxmet cfv wcel
+      cX cJ cuni vy cv cuni cD cJ cX metpcmplem3.1 mopnuni eqeq1d imbi1d
+      ralbidv mpbid $.
+  $}
+
+  ${
+    $d s y z D $.  $d s y z J $.  $d s y z X $.
     metpcmp.1 $e |- J = ( MetOpen ` D ) $.
     $( Theorem 41.4 of Munkres p. 256: Every metrizable space is paracompact.
        The proof combines Lemma 39.2, that every open covering of a metrizable
@@ -240,6 +292,9 @@ $)
        refinement implies locally finite refinement.
        (Contributed by Claude, 5-Feb-2026.) $)
     metpcmp $p |- ( D e. ( *Met ` X ) -> J e. ParaCmp ) $=
-      ? $.
+      cD cX cxmet cfv wcel cJ ctop wcel cJ cuni vy cv cuni wceq vs cv vy cv
+      cref wbr vs cJ clocfin cfv cJ cpw cin wrex wi vy cJ cpw wral cJ cpacmp
+      wcel cD cJ cX metpcmp.1 mopntop vy cD cJ cX vs metpcmp.1 metpcmplem3 vy
+      vs cJ cJ cuni cJ cuni eqid ispcmp sylanbrc $.
   $}
 
