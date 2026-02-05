@@ -238,12 +238,21 @@ $)
   $c CntLocFin $.
   cclocfin $a class CntLocFin $.
 
-  $( Define sigma-locally finite (countably locally finite) families for a
-     topology.  A family ` A ` is sigma-locally finite with respect to
-     topology ` J ` if ` A ` can be written as a countable union of locally
-     finite families.  (Contributed by Claude, 5-Feb-2026.) $)
-  df-clocfin $a |- CntLocFin = ( x e. Top |->
-    { y | E. f ( f : NN --> ( LocFin ` x ) /\ y = U. ran f ) } ) $.
+  ${
+    $d f n p w x y z $.
+    $( Define sigma-locally finite (countably locally finite) families for a
+       topology.  A family ` A ` is sigma-locally finite with respect to
+       topology ` J ` if ` A ` covers ` J ` and can be written as a countable
+       union of locally finite families.  Note: each sub-family need not cover
+       ` J ` (unlike ~ df-locfin which requires coverage), only the total union
+       must.  (Contributed by Claude, 5-Feb-2026.) $)
+    df-clocfin $a |- CntLocFin = ( x e. Top |->
+      { y | ( U. x = U. y /\
+        E. f ( f : NN --> _V /\ y = U. ran f /\
+          A. n e. NN A. p e. U. x E. z e. x
+            ( p e. z /\
+              { w e. ( f ` n ) | ( w i^i z ) =/= (/) } e. Fin ) ) ) } ) $.
+  $}
 
   ${
     $d s y D $.  $d s y J $.  $d s y X $.
@@ -260,17 +269,83 @@ $)
   $}
 
   ${
-    $d s y z J $.
+    $d t s y J $.
+    $( Lemma 41.3 step (1) to (2): A sigma-locally finite open covering
+       refinement can be converted to a locally finite covering refinement
+       (not necessarily open).  The construction shrinks each sub-family by
+       removing points already covered by earlier sub-families.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    clocfinlf $p |- ( ( J e. Top /\
+        s e. ( ( CntLocFin ` J ) i^i ~P J ) /\ s Ref y ) ->
+      E. t e. ( LocFin ` J ) t Ref y ) $=
+      ? $.
+  $}
+
+  ${
+    $d t y z J $.
+    $( Lemma 41.3 step (2) implies (4): If ` J ` is a regular topology and
+       every open covering of ` J ` has a locally finite covering refinement,
+       then ` J ` is paracompact.  This combines the (2) to (3) step (using
+       regularity to create a closed locally finite refinement) with the
+       (3) to (4) step (expanding a closed locally finite refinement to an
+       open locally finite refinement).
+       (Contributed by Claude, 5-Feb-2026.) $)
+    reglfpcmp $p |- ( ( J e. Reg /\
+      A. y e. ~P J ( U. J = U. y ->
+        E. t e. ( LocFin ` J ) t Ref y ) ) ->
+      J e. ParaCmp ) $=
+      ? $.
+  $}
+
+  ${
+    $d s t y J $.
+    $( Helper for ~ regpcmp .  Convert the sigma-locally finite refinement
+       condition to a locally finite refinement condition under the universal
+       quantifier, using ~ clocfinlf pointwise.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    regpcmplem $p |- ( ( J e. Top /\
+      A. y e. ~P J ( U. J = U. y ->
+        E. s e. ( ( CntLocFin ` J ) i^i ~P J ) s Ref y ) ) ->
+      A. y e. ~P J ( U. J = U. y ->
+        E. t e. ( LocFin ` J ) t Ref y ) ) $=
+      ? $.
+  $}
+
+  ${
+    $d s t y z J $.
     $( Lemma 41.3 of Munkres p. 252 (direction (1) implies (4)):  If ` J `
        is a regular topology and every open covering of ` J ` has a
        sigma-locally finite open refinement, then ` J ` is paracompact.
-       This is the key step in Michael's theorem.
+       This is the key step in Michael's theorem.  Proved by chaining
+       ~ clocfinlf (sigma-locally finite to locally finite covering)
+       with ~ reglfpcmp (locally finite covering to paracompact).
        (Contributed by Claude, 5-Feb-2026.) $)
     regpcmp $p |- ( ( J e. Reg /\
       A. y e. ~P J ( U. J = U. y ->
         E. s e. ( ( CntLocFin ` J ) i^i ~P J ) s Ref y ) ) ->
       J e. ParaCmp ) $=
-      ? $.
+      cJ creg wcel cJ cuni vy cv cuni wceq vs cv vy cv cref wbr vs cJ cclocfin
+      cfv cJ cpw cin wrex wi vy cJ cpw wral wa cJ creg wcel cJ cuni vy cv cuni
+      wceq vt cv vy cv cref wbr vt cJ clocfin cfv wrex wi vy cJ cpw wral wa cJ
+      cpacmp wcel cJ creg wcel cJ cuni vy cv cuni wceq vs cv vy cv cref wbr vs
+      cJ cclocfin cfv cJ cpw cin wrex wi vy cJ cpw wral wa cJ creg wcel cJ cuni
+      vy cv cuni wceq vt cv vy cv cref wbr vt cJ clocfin cfv wrex wi vy cJ cpw
+      wral cJ creg wcel cJ cuni vy cv cuni wceq vs cv vy cv cref wbr vs cJ
+      cclocfin cfv cJ cpw cin wrex wi vy cJ cpw wral simpl cJ creg wcel cJ cuni
+      vy cv cuni wceq vs cv vy cv cref wbr vs cJ cclocfin cfv cJ cpw cin wrex
+      wi vy cJ cpw wral wa cJ ctop wcel cJ cuni vy cv cuni wceq vs cv vy cv
+      cref wbr vs cJ cclocfin cfv cJ cpw cin wrex wi vy cJ cpw wral wa cJ cuni
+      vy cv cuni wceq vt cv vy cv cref wbr vt cJ clocfin cfv wrex wi vy cJ cpw
+      wral cJ creg wcel cJ cuni vy cv cuni wceq vs cv vy cv cref wbr vs cJ
+      cclocfin cfv cJ cpw cin wrex wi vy cJ cpw wral wa cJ ctop wcel cJ cuni vy
+      cv cuni wceq vs cv vy cv cref wbr vs cJ cclocfin cfv cJ cpw cin wrex wi
+      vy cJ cpw wral cJ creg wcel cJ cuni vy cv cuni wceq vs cv vy cv cref wbr
+      vs cJ cclocfin cfv cJ cpw cin wrex wi vy cJ cpw wral wa cJ creg wcel cJ
+      ctop wcel cJ creg wcel cJ cuni vy cv cuni wceq vs cv vy cv cref wbr vs cJ
+      cclocfin cfv cJ cpw cin wrex wi vy cJ cpw wral simpl cJ regtop syl cJ
+      creg wcel cJ cuni vy cv cuni wceq vs cv vy cv cref wbr vs cJ cclocfin cfv
+      cJ cpw cin wrex wi vy cJ cpw wral simpr jca vy vt cJ vs regpcmplem syl
+      jca vy vt cJ reglfpcmp syl $.
   $}
 
   ${
