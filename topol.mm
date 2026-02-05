@@ -255,6 +255,23 @@ $)
   $}
 
   ${
+    $d f n p w x y z A $.  $d f n p w x y z J $.
+    $( The domain of ~ df-clocfin is a subset of ` Top ` .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    clocfindm $p |- dom CntLocFin C_ Top $=
+      vx ctop vx cv cuni vy cv cuni wceq cn cvv vf cv wf vy cv vf cv crn cuni
+      wceq vp vz wel vw cv vz cv cin c0 wne vw vn cv vf cv cfv crab cfn wcel wa
+      vz vx cv wrex vp vx cv cuni wral vn cn wral w3a vf wex wa vy cab cclocfin
+      vx vy vz vw vf vn vp df-clocfin dmmptss $.
+
+    $( A sigma-locally finite cover covers a topological space.
+       (Contributed by Claude, 6-Feb-2026.) $)
+    clocfintop $p |- ( A e. ( CntLocFin ` J ) -> J e. Top ) $=
+      cA cJ cclocfin cfv wcel cJ cclocfin cdm wcel cJ ctop wcel cA cJ cclocfin
+      elfvdm cclocfin cdm ctop cJ clocfindm sseli syl $.
+  $}
+
+  ${
     $d s y D $.  $d s y J $.  $d s y X $.
     metclocfin.1 $e |- J = ( MetOpen ` D ) $.
     $( Lemma 39.2 of Munkres p. 245:  Every open covering of a metrizable
@@ -282,19 +299,72 @@ $)
   $}
 
   ${
+    $d s C J $.
+    $( The image of a locally finite collection under the closure operator is
+       locally finite.  This is because if an open neighborhood ` U ` does not
+       intersect a set ` c ` , then ` U ` does not intersect the closure of
+       ` c ` either (since the complement of ` U ` is a closed superset of
+       ` c ` ).  Part of Lemma 39.1 in Munkres p. 245.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    lfimcls $p |- ( C e. ( LocFin ` J ) ->
+      ( ( cls ` J ) " C ) e. ( LocFin ` J ) ) $=
+      ? $.
+  $}
+
+  ${
+    $d t y z J $.
+    $( Lemma 41.3 step (2) implies (3): If ` J ` is a regular topology and
+       every open covering has a locally finite covering refinement, then every
+       open covering has a locally finite closed covering refinement.
+       The proof uses regularity to find, for each point and each covering
+       element, an open set whose closure is contained in the covering element,
+       then applies the hypothesis and takes closures.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    reglfpcmplem1 $p |- ( ( J e. Reg /\
+      A. y e. ~P J ( U. J = U. y ->
+        E. t e. ( LocFin ` J ) t Ref y ) ) ->
+      A. y e. ~P J ( U. J = U. y ->
+        E. t e. ( ( LocFin ` J ) i^i ~P ( Clsd ` J ) ) t Ref y ) ) $=
+      ? $.
+  $}
+
+  ${
+    $d t y z J $.
+    $( Lemma 41.3 step (3) implies (4): If ` J ` is a topology and every
+       open covering has a locally finite closed covering refinement, then
+       ` J ` is paracompact.  The proof expands each closed set in a locally
+       finite closed covering to an open set, using an auxiliary locally
+       finite closed covering to control the expansion.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    reglfpcmplem2 $p |- ( ( J e. Top /\
+      A. y e. ~P J ( U. J = U. y ->
+        E. t e. ( ( LocFin ` J ) i^i ~P ( Clsd ` J ) ) t Ref y ) ) ->
+      J e. ParaCmp ) $=
+      ? $.
+  $}
+
+  ${
     $d t y z J $.
     $( Lemma 41.3 step (2) implies (4): If ` J ` is a regular topology and
        every open covering of ` J ` has a locally finite covering refinement,
-       then ` J ` is paracompact.  This combines the (2) to (3) step (using
-       regularity to create a closed locally finite refinement) with the
-       (3) to (4) step (expanding a closed locally finite refinement to an
-       open locally finite refinement).
+       then ` J ` is paracompact.  This combines the (2) to (3) step
+       ~ reglfpcmplem1 with the (3) to (4) step ~ reglfpcmplem2 .
        (Contributed by Claude, 5-Feb-2026.) $)
     reglfpcmp $p |- ( ( J e. Reg /\
       A. y e. ~P J ( U. J = U. y ->
         E. t e. ( LocFin ` J ) t Ref y ) ) ->
       J e. ParaCmp ) $=
-      ? $.
+      cJ creg wcel cJ cuni vy cv cuni wceq vt cv vy cv cref wbr vt cJ clocfin
+      cfv wrex wi vy cJ cpw wral wa cJ ctop wcel cJ cuni vy cv cuni wceq vt cv
+      vy cv cref wbr vt cJ clocfin cfv cJ ccld cfv cpw cin wrex wi vy cJ cpw
+      wral wa cJ cpacmp wcel cJ creg wcel cJ cuni vy cv cuni wceq vt cv vy cv
+      cref wbr vt cJ clocfin cfv wrex wi vy cJ cpw wral wa cJ ctop wcel cJ cuni
+      vy cv cuni wceq vt cv vy cv cref wbr vt cJ clocfin cfv cJ ccld cfv cpw
+      cin wrex wi vy cJ cpw wral cJ creg wcel cJ cuni vy cv cuni wceq vt cv vy
+      cv cref wbr vt cJ clocfin cfv wrex wi vy cJ cpw wral wa cJ creg wcel cJ
+      ctop wcel cJ creg wcel cJ cuni vy cv cuni wceq vt cv vy cv cref wbr vt cJ
+      clocfin cfv wrex wi vy cJ cpw wral simpl cJ regtop syl vy vt cJ
+      reglfpcmplem1 jca vy vt cJ reglfpcmplem2 syl $.
   $}
 
   ${
