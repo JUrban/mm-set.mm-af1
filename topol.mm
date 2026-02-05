@@ -290,27 +290,47 @@ $)
   $}
 
   ${
-    $d s y J $.
+    $d z y J $.
     $( Every open covering of a paracompact topology has a locally finite
        open refinement.  This is the forward direction of the
        characterization in ~ ispcmp .
        (Contributed by Claude, 5-Feb-2026.) $)
     pcmpcov $p |- ( ( J e. ParaCmp /\ y C_ J /\ U. J = U. y ) ->
-      E. s e. ( ( LocFin ` J ) i^i ~P J ) s Ref y ) $=
-      ? ? ? ? ? mpd $.
+      E. z e. ( ( LocFin ` J ) i^i ~P J ) z Ref y ) $=
+      cJ cpacmp wcel vy cv cJ wss cJ cuni vy cv cuni wceq vz cv vy cv cref wbr
+      vz cJ clocfin cfv cJ cpw cin wrex vy cv cJ wss vy cv cJ cpw wcel cJ
+      cpacmp wcel cJ cuni vy cv cuni wceq vz cv vy cv cref wbr vz cJ clocfin
+      cfv cJ cpw cin wrex wi vy cv cJ cpw wcel vy cv cJ wss vy cJ velpw biimpri
+      cJ cpacmp wcel cJ cuni vy cv cuni wceq vz cv vy cv cref wbr vz cJ clocfin
+      cfv cJ cpw cin wrex wi vy cJ cpw wral vy cv cJ cpw wcel cJ cuni vy cv
+      cuni wceq vz cv vy cv cref wbr vz cJ clocfin cfv cJ cpw cin wrex wi wi cJ
+      cpacmp wcel cJ ctop wcel cJ cuni vy cv cuni wceq vz cv vy cv cref wbr vz
+      cJ clocfin cfv cJ cpw cin wrex wi vy cJ cpw wral vy vz cJ cJ cuni cJ cuni
+      eqid ispcmp simprbi cJ cuni vy cv cuni wceq vz cv vy cv cref wbr vz cJ
+      clocfin cfv cJ cpw cin wrex wi vy cJ cpw rsp syl syl5 3imp $.
   $}
 
   ${
-    $d s y D $.  $d s y J $.  $d s y X $.
+    $d s y z D $.  $d s y z J $.  $d s y z X $.
     metpcmplem1.1 $e |- J = ( MetOpen ` D ) $.
     $( Lemma for ~ metpcmp .  For a metrizable space, any open covering has
        a locally finite open refinement.  Proved by combining
        ~ metpcmplem1d (metrizable implies paracompact) with ~ pcmpcov
-       (extracting single-cover result).
+       (extracting single-cover result) and a bound variable conversion.
        (Contributed by Claude, 5-Feb-2026.) $)
     metpcmplem1 $p |- ( ( D e. ( *Met ` X ) /\ y C_ J /\ X = U. y ) ->
       E. s e. ( ( LocFin ` J ) i^i ~P J ) s Ref y ) $=
-      ? $.
+      cD cX cxmet cfv wcel vy cv cJ wss cX vy cv cuni wceq w3a cJ cpacmp wcel
+      vy cv cJ wss cJ cuni vy cv cuni wceq vs cv vy cv cref wbr vs cJ clocfin
+      cfv cJ cpw cin wrex cD cX cxmet cfv wcel vy cv cJ wss cX vy cv cuni wceq
+      w3a cD cX cxmet cfv wcel cJ cpacmp wcel cD cX cxmet cfv wcel vy cv cJ wss
+      cX vy cv cuni wceq simp1 cD cJ cX metpcmplem1.1 metpcmplem1d syl cD cX
+      cxmet cfv wcel vy cv cJ wss cX vy cv cuni wceq simp2 cD cX cxmet cfv wcel
+      vy cv cJ wss cX vy cv cuni wceq w3a cX cJ cuni vy cv cuni cD cX cxmet cfv
+      wcel vy cv cJ wss cX vy cv cuni wceq w3a cD cX cxmet cfv wcel cX cJ cuni
+      wceq cD cX cxmet cfv wcel vy cv cJ wss cX vy cv cuni wceq simp1 cD cJ cX
+      metpcmplem1.1 mopnuni syl cD cX cxmet cfv wcel vy cv cJ wss cX vy cv cuni
+      wceq simp3 eqtr3d vy vs cJ pcmpcov syl3anc $.
   $}
 
   ${
