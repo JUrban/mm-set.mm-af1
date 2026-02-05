@@ -62,6 +62,27 @@ $)
   $}
 
   ${
+    $d s J $.  $d s X $.
+    cmppcmplem1a.1 $e |- X = U. J $.
+    $( A finite set covering the same space as a topology is locally finite.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    cmppcmplem1a $p |- ( ( J e. Top /\ s e. Fin /\ X = U. s )
+      -> s e. ( LocFin ` J ) ) $=
+      vs cv cJ cX vs cv cuni cmppcmplem1a.1 vs cv cuni eqid finlocfin $.
+  $}
+
+  ${
+    $( A subset of a subset of a topology is in its power set.
+       (Contributed by Claude, 5-Feb-2026.) $)
+    cmppcmplem1b $p |- ( ( J e. Top /\ s C_ y /\ y C_ J )
+      -> s e. ~P J ) $=
+      cJ ctop wcel vs cv vy cv wss vy cv cJ wss w3a vs cv cJ ctop cJ ctop wcel
+      vs cv vy cv wss vy cv cJ wss simp1 cJ ctop wcel vs cv vy cv wss vy cv cJ
+      wss w3a vs cv vy cv cJ cJ ctop wcel vs cv vy cv wss vy cv cJ wss simp2 cJ
+      ctop wcel vs cv vy cv wss vy cv cJ wss simp3 sstrd sselpwd $.
+  $}
+
+  ${
     $d s y J $.  $d s X $.
     cmppcmplem1.1 $e |- X = U. J $.
     $( Lemma for ~ cmppcmp .  A finite subcover of an open cover of a
@@ -70,7 +91,31 @@ $)
     cmppcmplem1 $p |- ( ( J e. Top /\ y C_ J /\ X = U. y ) ->
       ( ( s e. ( ~P y i^i Fin ) /\ X = U. s ) ->
         s e. ( ( LocFin ` J ) i^i ~P J ) ) ) $=
-      ? $.
+      cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq w3a vs cv vy cv cpw cfn cin
+      wcel cX vs cv cuni wceq wa vs cv cJ clocfin cfv cJ cpw cin wcel cJ ctop
+      wcel vy cv cJ wss cX vy cv cuni wceq w3a vs cv vy cv cpw cfn cin wcel cX
+      vs cv cuni wceq wa wa cJ clocfin cfv cJ cpw vs cv cJ ctop wcel vy cv cJ
+      wss cX vy cv cuni wceq w3a vs cv vy cv cpw cfn cin wcel cX vs cv cuni
+      wceq wa wa cJ ctop wcel vs cv cfn wcel cX vs cv cuni wceq vs cv cJ
+      clocfin cfv wcel cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq vs cv vy cv
+      cpw cfn cin wcel cX vs cv cuni wceq wa simpl1 cJ ctop wcel vy cv cJ wss
+      cX vy cv cuni wceq w3a vs cv vy cv cpw cfn cin wcel cX vs cv cuni wceq wa
+      wa vs cv vy cv cpw cfn cin wcel vs cv cfn wcel cJ ctop wcel vy cv cJ wss
+      cX vy cv cuni wceq w3a vs cv vy cv cpw cfn cin wcel cX vs cv cuni wceq
+      simprl vs cv vy cv cpw cfn elinel2 syl cJ ctop wcel vy cv cJ wss cX vy cv
+      cuni wceq w3a vs cv vy cv cpw cfn cin wcel cX vs cv cuni wceq simprr cJ
+      cX vs cmppcmplem1.1 cmppcmplem1a syl3anc cJ ctop wcel vy cv cJ wss cX vy
+      cv cuni wceq w3a vs cv vy cv cpw cfn cin wcel cX vs cv cuni wceq wa wa cJ
+      ctop wcel vs cv vy cv wss vy cv cJ wss vs cv cJ cpw wcel cJ ctop wcel vy
+      cv cJ wss cX vy cv cuni wceq vs cv vy cv cpw cfn cin wcel cX vs cv cuni
+      wceq wa simpl1 cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq w3a vs cv vy
+      cv cpw cfn cin wcel cX vs cv cuni wceq wa wa vs cv vy cv cpw cfn cin wcel
+      vs cv vy cv wss cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq w3a vs cv vy
+      cv cpw cfn cin wcel cX vs cv cuni wceq simprl vs cv vy cv cpw cfn cin
+      wcel vs cv vy cv cpw wcel vs cv vy cv wss vs cv vy cv cpw cfn elinel1 vs
+      cv vy cv elpwi syl syl cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq vs cv
+      vy cv cpw cfn cin wcel cX vs cv cuni wceq wa simpl2 vy cJ vs cmppcmplem1b
+      syl3anc elind ex $.
   $}
 
   ${
