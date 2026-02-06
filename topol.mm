@@ -325,14 +325,33 @@ $)
     $( The closure function is a function on the powerset of the base.
        (Contributed by Claude, 6-Feb-2026.) $)
     clsfn $p |- ( J e. Top -> ( cls ` J ) Fn ~P U. J ) $=
-      ? ? ? ? ? syl $.
+      cJ ctop wcel cJ cuni cpw cJ ccld cfv cJ ccl cfv wf cJ ccl cfv cJ cuni cpw
+      wfn cJ cJ cuni cJ cJ cJ eqid unieqi clsf cJ cuni cpw cJ ccld cfv cJ ccl
+      cfv ffn syl $.
   $}
 
   ${
     $( A locally finite collection is a subset of the powerset of the base.
        (Contributed by Claude, 6-Feb-2026.) $)
     locfinsspw $p |- ( C e. ( LocFin ` J ) -> C C_ ~P U. J ) $=
-      ? $.
+      cC cJ clocfin cfv wcel cC cuni cJ cuni wss cC cJ cuni cpw wss cC cJ
+      clocfin cfv wcel cJ cuni cC cuni wceq cC cuni cJ cuni wss cC cJ cJ cuni
+      cC cuni cJ cJ cJ cJ cJ cJ cJ eqid eqimss2i cJ cJ cJ eqid eqimss2i eqssi
+      unieqi cC cC cC cC cC cC cC eqid eqimss2i cC cC cC eqid eqimss2i eqssi
+      unieqi locfinbas cC cuni cJ cuni eqimss2 syl cC cJ cuni cpw wss cC cuni
+      cJ cuni wss cC cJ cuni sspwuni biimpri syl $.
+  $}
+
+  ${
+    $d c C $.  $d c J $.
+    $( The function value of the closure operator applied to a member of a
+       locally finite collection is in the image of the collection.
+       (Contributed by Claude, 6-Feb-2026.) $)
+    lfimclsfvima $p |- ( ( C e. ( LocFin ` J ) /\ c e. C ) ->
+      ( ( cls ` J ) ` c ) e. ( ( cls ` J ) " C ) ) $=
+      ( clocfin cfv wcel cv wa ccl cuni cpw wfn wss cima locfintop clsfn adantr
+      ctop syl locfinsspw simpr fnfvima syl3anc ) ABDEFZCGZAFZHBIEZBJKZLZAUHMZU
+      FUEUGEUGANFUDUIUFUDBRFUIABOBPSQUDUJUFABTQUDUFUAUHAUGUEUBUC $.
   $}
 
   ${
@@ -342,27 +361,10 @@ $)
        (Contributed by Claude, 6-Feb-2026.) $)
     lfimclsuniss $p |- ( C e. ( LocFin ` J ) ->
       ( c e. C -> c C_ U. ( ( cls ` J ) " C ) ) ) $=
-      cC cJ clocfin cfv wcel vc cv cC wcel vc cv cJ ccl cfv cC cima cuni wss cC
-      cJ clocfin cfv wcel vc cv cC wcel wa vc cv vc cv cJ ccl cfv cfv cJ ccl
-      cfv cC cima cuni cC cJ clocfin cfv wcel vc cv cC wcel wa cJ ctop wcel vc
-      cv cJ cuni wss vc cv vc cv cJ ccl cfv cfv wss cC cJ clocfin cfv wcel cJ
-      ctop wcel vc cv cC wcel cC cJ locfintop adantr cC cJ clocfin cfv wcel vc
-      cv cC wcel wa vc cv cC cuni cJ cuni vc cv cC wcel vc cv cC cuni wss cC cJ
-      clocfin cfv wcel vc cv cC elssuni adantl cC cJ clocfin cfv wcel cC cuni
-      cJ cuni wceq vc cv cC wcel cC cJ clocfin cfv wcel cJ cuni cC cuni cC cJ
-      cJ cuni cC cuni cJ cuni eqid cC cC cC cC cC cC cC cC cC ssid cC ssid
-      eqssi eqimss2i cC cC cC cC cC ssid cC ssid eqssi eqimss2i eqssi unieqi
-      locfinbas eqcomd adantr sseqtrd vc cv cJ cJ cuni cJ cuni eqid sscls
-      syl2anc cC cJ clocfin cfv wcel vc cv cC wcel wa vc cv cJ ccl cfv cfv cJ
-      ccl cfv cC cima wcel vc cv cJ ccl cfv cfv cJ ccl cfv cC cima cuni wss cC
-      cJ clocfin cfv wcel vc cv cC wcel wa cJ ccl cfv cJ cuni cpw wfn cC cJ
-      cuni cpw wss vc cv cC wcel vc cv cJ ccl cfv cfv cJ ccl cfv cC cima wcel
-      cC cJ clocfin cfv wcel cJ ccl cfv cJ cuni cpw wfn vc cv cC wcel cC cJ
-      clocfin cfv wcel cJ ctop wcel cJ ccl cfv cJ cuni cpw wfn cC cJ locfintop
-      cJ clsfn syl adantr cC cJ clocfin cfv wcel cC cJ cuni cpw wss vc cv cC
-      wcel cC cJ locfinsspw adantr cC cJ clocfin cfv wcel vc cv cC wcel simpr
-      cJ cuni cpw cC cJ ccl cfv vc cv fnfvima syl3anc vc cv cJ ccl cfv cfv cJ
-      ccl cfv cC cima elssuni syl sstrd ex $.
+      ( clocfin cfv wcel ccl cima cuni wss ctop locfintop adantr cpw locfinsspw
+      cv wa sselda elpwi syl eqid sscls syl2anc lfimclsfvima elssuni sstrd ex )
+      ABDEFZCPZAFZUIBGEZAHZIZJUHUJQZUIUIUKEZUMUNBKFZUIBIZJZUIUOJUHUPUJABLMUNUIU
+      QNZFURUHAUSUIABORUIUQSTUIBUQUQUAUBUCUNUOULFUOUMJABCUDUOULUETUFUG $.
   $}
 
   ${
@@ -373,15 +375,23 @@ $)
       U. J = U. ( ( cls ` J ) " C ) ) $=
       cC cJ clocfin cfv wcel cJ cuni cJ ccl cfv cC cima cuni cC cJ clocfin cfv
       wcel cJ cuni cC cuni cJ ccl cfv cC cima cuni cC cJ cJ cuni cC cuni cJ cJ
-      cJ eqid unieqi cC cC cC eqid unieqi locfinbas ? eqsstrd cC cJ clocfin cfv
-      wcel cJ ccl cfv cC cima cJ cuni cpw wss cJ ccl cfv cC cima cuni cJ cuni
-      wss cC cJ clocfin cfv wcel cJ ccl cfv cC cima cJ ccld cfv cJ cuni cpw cC
-      cJ clocfin cfv wcel cJ cuni cpw cJ ccld cfv cJ ccl cfv wf cJ ccl cfv cC
-      cima cJ ccld cfv wss cC cJ clocfin cfv wcel cJ ctop wcel cJ cuni cpw cJ
-      ccld cfv cJ ccl cfv wf cC cJ locfintop cJ cJ cuni cJ cJ cJ eqid unieqi
-      clsf syl cJ cuni cpw cJ ccld cfv cJ ccl cfv cC fimass syl cJ ccld cfv cJ
-      cuni cpw wss cC cJ clocfin cfv wcel cJ cJ cuni cJ cJ cJ eqid unieqi
-      cldss2 a1i sstrd cJ ccl cfv cC cima cJ cuni sspwuni sylib eqssd $.
+      cJ cJ cJ cJ cJ cJ cJ cJ cJ cJ cJ cJ cJ cJ cJ ssid cJ ssid eqssi eqimss2i
+      cJ cJ cJ cJ cJ ssid cJ ssid eqssi eqimss2i eqssi eqimss2i cJ cJ cJ cJ cJ
+      cJ cJ cJ cJ ssid cJ ssid eqssi eqimss2i cJ cJ cJ cJ cJ ssid cJ ssid eqssi
+      eqimss2i eqssi eqimss2i eqssi eqimss2i cJ cJ cJ cJ cJ cJ cJ cJ cJ cJ cJ
+      cJ cJ ssid cJ ssid eqssi eqimss2i cJ cJ cJ cJ cJ ssid cJ ssid eqssi
+      eqimss2i eqssi eqimss2i cJ cJ cJ cJ cJ cJ cJ cJ cJ ssid cJ ssid eqssi
+      eqimss2i cJ cJ cJ cJ cJ ssid cJ ssid eqssi eqimss2i eqssi eqimss2i eqssi
+      eqimss2i eqssi unieqi cC cC cC cC cC cC cC cC cC cC cC cC cC cC cC cC cC
+      ssid cC ssid eqssi eqimss2i cC cC cC cC cC ssid cC ssid eqssi eqimss2i
+      eqssi eqimss2i cC cC cC cC cC cC cC cC cC ssid cC ssid eqssi eqimss2i cC
+      cC cC cC cC ssid cC ssid eqssi eqimss2i eqssi eqimss2i eqssi eqimss2i cC
+      cC cC cC cC cC cC cC cC cC cC cC cC ssid cC ssid eqssi eqimss2i cC cC cC
+      cC cC ssid cC ssid eqssi eqimss2i eqssi eqimss2i cC cC cC cC cC cC cC cC
+      cC ssid cC ssid eqssi eqimss2i cC cC cC cC cC ssid cC ssid eqssi eqimss2i
+      eqssi eqimss2i eqssi eqimss2i eqssi unieqi locfinbas cC cJ clocfin cfv
+      wcel cC cuni cJ ccl cfv cC cima cuni wss ? ? ? ? ? ? ralrimiv ? cC cJ
+      clocfin cfv wcel ? ? ? unissb a1i mpbird eqsstrd ? eqssd $.
 
     $( The closure image of a locally finite collection satisfies the
        local finiteness condition: each point has a neighborhood that
