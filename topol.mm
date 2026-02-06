@@ -606,17 +606,21 @@ $)
         { s e. ( ( cls ` J ) " C ) | ( s i^i n ) =/= (/) } e. Fin ) ) $=
       cC cJ clocfin cfv wcel vx vn wel vs cv vn cv cin c0 wne vs cJ ccl cfv cC
       cima crab cfn wcel wa vn cJ wrex vx cJ cuni cC cJ clocfin cfv wcel vx cv
-      cJ cuni wcel wa ? vx vn wel vs cv vn cv cin c0 wne vs cJ ccl cfv cC cima
-      crab cfn wcel wa vn cJ wrex cC vx cv vn cJ cJ cuni ? cJ cuni eqid
-      locfinnei cC cJ clocfin cfv wcel vx cv cJ cuni wcel wa ? vx vn wel vs cv
-      vn cv cin c0 wne vs cJ ccl cfv cC cima crab cfn wcel wa vn cJ cC cJ
-      clocfin cfv wcel vx cv cJ cuni wcel wa vn cv cJ wcel wa ? vs cv vn cv cin
-      c0 wne vs cJ ccl cfv cC cima crab cfn wcel vx vn wel cC cJ clocfin cfv
-      wcel vx cv cJ cuni wcel wa vn cv cJ wcel wa cC cJ clocfin cfv wcel vn cv
-      cJ wcel ? cC cJ clocfin cfv wcel vx cv cJ cuni wcel wa cC cJ clocfin cfv
-      wcel vn cv cJ wcel cC cJ clocfin cfv wcel vx cv cJ cuni wcel simpl adantr
-      cC cJ clocfin cfv wcel vx cv cJ cuni wcel wa vn cv cJ wcel simpr cC cJ vn
-      cv vs ? lfimclslflem3 syl2anc anim2d reximdva mpd ralrimiva $.
+      cJ cuni wcel wa vx vn wel vc cv vn cv cin c0 wne vc cC crab cfn wcel wa
+      vn cJ wrex vx vn wel vs cv vn cv cin c0 wne vs cJ ccl cfv cC cima crab
+      cfn wcel wa vn cJ wrex cC vx cv vn cJ cJ cuni vc cJ cuni eqid locfinnei
+      cC cJ clocfin cfv wcel vx cv cJ cuni wcel wa vx vn wel vc cv vn cv cin
+      c0 wne vc cC crab cfn wcel wa vx vn wel vs cv vn cv cin c0 wne vs cJ ccl
+      cfv cC cima crab cfn wcel wa vn cJ cC cJ clocfin cfv wcel vx cv cJ cuni
+      wcel wa vn cv cJ wcel wa vc cv vn cv cin c0 wne vc cC crab cfn wcel vs
+      cv vn cv cin c0 wne vs cJ ccl cfv cC cima crab cfn wcel vx vn wel cC cJ
+      clocfin cfv wcel vx cv cJ cuni wcel wa vn cv cJ wcel wa cC cJ clocfin
+      cfv wcel vn cv cJ wcel vc cv vn cv cin c0 wne vc cC crab cfn wcel vs cv
+      vn cv cin c0 wne vs cJ ccl cfv cC cima crab cfn wcel wi cC cJ clocfin
+      cfv wcel vx cv cJ cuni wcel wa cC cJ clocfin cfv wcel vn cv cJ wcel cC
+      cJ clocfin cfv wcel vx cv cJ cuni wcel simpl adantr cC cJ clocfin cfv
+      wcel vx cv cJ cuni wcel wa vn cv cJ wcel simpr cC cJ vn cv vs vc
+      lfimclslflem3 syl2anc anim2d reximdva mpd ralrimiva $.
 
     $( The image of a locally finite collection under the closure operator is
        locally finite.  This is because if an open neighborhood ` U ` does not
