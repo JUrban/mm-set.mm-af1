@@ -322,6 +322,28 @@ $)
   $}
 
   ${
+    lfimclslflem1.1 $e |- X = U. J $.
+    $( Contrapositive of ~ lfimclslem : if the closure intersects an open
+       neighborhood, then the original set also intersects it.
+       (Contributed by Claude, 6-Feb-2026.) $)
+    lfimclslflem1 $p |- ( ( ( J e. Top /\ S C_ X ) /\ N e. J ) ->
+      ( ( ( cls ` J ) ` S ) i^i N ) =/= (/) -> ( S i^i N ) =/= (/) ) $=
+      ? $.
+  $}
+
+  ${
+    $d c s C $.  $d c s J $.  $d c s N $.
+    $( Finiteness transfer: if the set of elements of ` C ` that intersect
+       ` N ` is finite, then so is the set of elements of ` ( ( cls `` J )
+       " C ) ` that intersect ` N ` .  Helper for ~ lfimclslf .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    lfimclslflem2 $p |- ( ( C e. ( LocFin ` J ) /\ N e. J /\
+      { c e. C | ( c i^i N ) =/= (/) } e. Fin ) ->
+      { s e. ( ( cls ` J ) " C ) | ( s i^i N ) =/= (/) } e. Fin ) $=
+      ? $.
+  $}
+
+  ${
     $( The closure function is a function on the powerset of the base.
        (Contributed by Claude, 6-Feb-2026.) $)
     clsfn $p |- ( J e. Top -> ( cls ` J ) Fn ~P U. J ) $=
@@ -336,10 +358,11 @@ $)
     locfinsspw $p |- ( C e. ( LocFin ` J ) -> C C_ ~P U. J ) $=
       cC cJ clocfin cfv wcel cC cuni cJ cuni wss cC cJ cuni cpw wss cC cJ
       clocfin cfv wcel cJ cuni cC cuni wceq cC cuni cJ cuni wss cC cJ cJ cuni
-      cC cuni cJ cJ cJ cJ cJ cJ cJ eqid eqimss2i cJ cJ cJ eqid eqimss2i eqssi
-      unieqi cC cC cC cC cC cC cC eqid eqimss2i cC cC cC eqid eqimss2i eqssi
-      unieqi locfinbas cC cuni cJ cuni eqimss2 syl cC cJ cuni cpw wss cC cuni
-      cJ cuni wss cC cJ cuni sspwuni biimpri syl $.
+      cC cuni cJ cJ cJ cJ cJ cJ cJ cJ cJ ssid cJ ssid eqssi eqimss2i cJ cJ cJ
+      cJ cJ ssid cJ ssid eqssi eqimss2i eqssi unieqi cC cC cC cC cC cC cC eqid
+      eqimss2i cC cC cC eqid eqimss2i eqssi unieqi locfinbas cC cuni cJ cuni
+      eqimss2 syl cC cJ cuni cpw wss cC cuni cJ cuni wss cC cJ cuni sspwuni
+      biimpri syl $.
   $}
 
   ${
@@ -373,44 +396,26 @@ $)
   $}
 
   ${
-    $d c C $.  $d c J $.
-    $( Direction 1 of ~ lfimclsuni : the base set is included in the union
-       of the closure image.  (Contributed by Claude, 6-Feb-2026.) $)
-    lfimclsuniss1 $p |- ( C e. ( LocFin ` J ) ->
-      U. J C_ U. ( ( cls ` J ) " C ) ) $=
-      cC cJ clocfin cfv wcel cJ cuni cC cuni cJ ccl cfv cC cima cuni cC cJ
-      clocfin cfv wcel cJ cuni cC cuni wceq cJ cuni cC cuni wss cC cJ cJ cuni
-      cC cuni cJ cuni eqid cC cuni eqid locfinbas cJ cuni cC cuni eqimss syl
-      cC cJ clocfin cfv wcel vc cv cJ ccl cfv cC cima cuni wss vc cC wral cC
-      cuni cJ ccl cfv cC cima cuni wss cC cJ clocfin cfv wcel vc cv cJ ccl cfv
-      cC cima cuni wss vc cC cC cJ vc lfimclsuniss ralrimiv vc cC cJ ccl cfv
-      cC cima cuni unissb sylibr sstrd $.
-  $}
-
-  ${
-    $( Direction 2 of ~ lfimclsuni : the union of the closure image is
-       included in the base set.  (Contributed by Claude, 6-Feb-2026.) $)
-    lfimclsuniss2 $p |- ( C e. ( LocFin ` J ) ->
-      U. ( ( cls ` J ) " C ) C_ U. J ) $=
-      cC cJ clocfin cfv wcel cJ ccl cfv cC cima cJ cuni cpw wss cJ ccl cfv cC
-      cima cuni cJ cuni wss cC cJ clocfin cfv wcel cJ ccl cfv cC cima cJ ccld
-      cfv cJ cuni cpw cC cJ clocfin cfv wcel cJ cuni cpw cJ ccld cfv cJ ccl
-      cfv wf cJ ccl cfv cC cima cJ ccld cfv wss cC cJ clocfin cfv wcel cJ ctop
-      wcel cJ cuni cpw cJ ccld cfv cJ ccl cfv wf cC cJ locfintop cJ cJ cuni cJ
-      cJ cJ eqid unieqi clsf syl cJ cuni cpw cJ ccld cfv cJ ccl cfv cC fimass
-      syl cJ ccld cfv cJ cuni cpw wss cC cJ clocfin cfv wcel cJ cJ cuni cJ cJ
-      cJ eqid unieqi cldss2 a1i sstrd cJ ccl cfv cC cima cJ cuni sspwuni
-      sylib $.
-  $}
-
-  ${
     $d n s x C $.  $d n s x J $.
     $( The union of the closure image of a locally finite collection equals
        the base set.  (Contributed by Claude, 6-Feb-2026.) $)
     lfimclsuni $p |- ( C e. ( LocFin ` J ) ->
       U. J = U. ( ( cls ` J ) " C ) ) $=
-      cC cJ clocfin cfv wcel cJ cuni cJ ccl cfv cC cima cuni cC cJ
-      lfimclsuniss1 cC cJ lfimclsuniss2 eqssd $.
+      cC cJ clocfin cfv wcel cJ cuni cJ ccl cfv cC cima cuni cC cJ clocfin cfv
+      wcel cJ cuni cC cuni cJ ccl cfv cC cima cuni cC cJ cJ cuni cC cuni cJ cJ
+      cJ eqid unieqi cC cC cC eqid unieqi locfinbas cC cJ clocfin cfv wcel vs
+      cv cJ ccl cfv cC cima cuni wss vs cC wral cC cuni cJ ccl cfv cC cima cuni
+      wss cC cJ clocfin cfv wcel vs cv cJ ccl cfv cC cima cuni wss vs cC cC cJ
+      vs lfimclsuniss ralrimiv vs cC cJ ccl cfv cC cima cuni unissb sylibr
+      eqsstrd cC cJ clocfin cfv wcel cJ ccl cfv cC cima cJ cuni cpw wss cJ ccl
+      cfv cC cima cuni cJ cuni wss cC cJ clocfin cfv wcel cJ ccl cfv cC cima cJ
+      ccld cfv cJ cuni cpw cC cJ clocfin cfv wcel cJ cuni cpw cJ ccld cfv cJ
+      ccl cfv wf cJ ccl cfv cC cima cJ ccld cfv wss cC cJ clocfin cfv wcel cJ
+      ctop wcel cJ cuni cpw cJ ccld cfv cJ ccl cfv wf cC cJ locfintop cJ cJ
+      cuni cJ cJ cJ eqid unieqi clsf syl cJ cuni cpw cJ ccld cfv cJ ccl cfv cC
+      fimass syl cJ ccld cfv cJ cuni cpw wss cC cJ clocfin cfv wcel cJ cJ cuni
+      cJ cJ cJ eqid unieqi cldss2 a1i sstrd cJ ccl cfv cC cima cJ cuni sspwuni
+      sylib eqssd $.
 
     $( The closure image of a locally finite collection satisfies the
        local finiteness condition: each point has a neighborhood that
