@@ -708,11 +708,21 @@ $)
        (Contributed by Claude, 6-Feb-2026.) $)
     regsepcover2 $p |- ( ( ( J e. Reg /\ y C_ J ) /\ ( w e. y /\ z e. w ) )
       -> z e. U. { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } ) $=
-      cJ creg wcel vy cv cJ wss wa vw vy wel vz vw wel wa wa ? vz cv vv cv cJ
-      ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cuni wcel ? ? ? ? ? ? ?
-      regsepcover2a ? ? ? vz cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv
-      cJ crab cuni wcel ? ? vy vz ? vv vu cJ ? regsepcover2b syl2anc rexlimddv
-      $.
+      cJ creg wcel vy cv cJ wss wa vw vy wel vz vw wel wa wa vz va wel va cv cJ
+      ccl cfv cfv vw cv wss wa vz cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv
+      wrex vv cJ crab cuni wcel va cJ vy vz vw cJ va regsepcover2a cJ creg wcel
+      vy cv cJ wss wa vw vy wel vz vw wel wa wa va cv cJ wcel vz va wel va cv
+      cJ ccl cfv cfv vw cv wss wa wa wa vw vy wel va cv cJ wcel wa vz va wel va
+      cv cJ ccl cfv cfv vw cv wss wa vz cv vv cv cJ ccl cfv cfv vu cv wss vu vy
+      cv wrex vv cJ crab cuni wcel cJ creg wcel vy cv cJ wss wa vw vy wel vz vw
+      wel wa wa va cv cJ wcel vz va wel va cv cJ ccl cfv cfv vw cv wss wa wa wa
+      vw vy wel va cv cJ wcel cJ creg wcel vy cv cJ wss wa vw vy wel vz vw wel
+      wa wa vw vy wel va cv cJ wcel vz va wel va cv cJ ccl cfv cfv vw cv wss wa
+      wa cJ creg wcel vy cv cJ wss wa vw vy wel vz vw wel simprl adantr cJ creg
+      wcel vy cv cJ wss wa vw vy wel vz vw wel wa wa va cv cJ wcel vz va wel va
+      cv cJ ccl cfv cfv vw cv wss wa simprl jca cJ creg wcel vy cv cJ wss wa vw
+      vy wel vz vw wel wa wa va cv cJ wcel vz va wel va cv cJ ccl cfv cfv vw cv
+      wss wa simprr vy vz vw vv vu cJ va regsepcover2b syl2anc rexlimddv $.
   $}
 
   ${
