@@ -606,17 +606,17 @@ $)
         { s e. ( ( cls ` J ) " C ) | ( s i^i n ) =/= (/) } e. Fin ) ) $=
       cC cJ clocfin cfv wcel vx vn wel vs cv vn cv cin c0 wne vs cJ ccl cfv cC
       cima crab cfn wcel wa vn cJ wrex vx cJ cuni cC cJ clocfin cfv wcel vx cv
-      cJ cuni wcel wa vx vn wel vc cv vn cv cin c0 wne vc cC crab cfn wcel wa
-      vn cJ wrex vx vn wel vs cv vn cv cin c0 wne vs cJ ccl cfv cC cima crab
-      cfn wcel wa vn cJ wrex cC vx cv vn cJ cJ cuni vc cJ cuni eqid locfinnei
-      cC cJ clocfin cfv wcel vx vn wel vc cv vn cv cin c0 wne vc cC crab cfn
-      wcel wa vn cJ wrex vx vn wel vs cv vn cv cin c0 wne vs cJ ccl cfv cC cima
-      crab cfn wcel wa vn cJ wrex wi vx cv cJ cuni wcel cC cJ clocfin cfv wcel
-      vx vn wel vc cv vn cv cin c0 wne vc cC crab cfn wcel wa vx vn wel vs cv
+      cJ cuni wcel wa ? vx vn wel vs cv vn cv cin c0 wne vs cJ ccl cfv cC cima
+      crab cfn wcel wa vn cJ wrex cC vx cv vn cJ cJ cuni ? cJ cuni eqid
+      locfinnei cC cJ clocfin cfv wcel vx cv cJ cuni wcel wa ? vx vn wel vs cv
       vn cv cin c0 wne vs cJ ccl cfv cC cima crab cfn wcel wa vn cJ cC cJ
-      clocfin cfv wcel vn cv cJ wcel wa vc cv vn cv cin c0 wne vc cC crab cfn
-      wcel vs cv vn cv cin c0 wne vs cJ ccl cfv cC cima crab cfn wcel vx vn wel
-      cC cJ vn cv vs vc lfimclslflem3 anim2d reximdva adantr mpd ralrimiva $.
+      clocfin cfv wcel vx cv cJ cuni wcel wa vn cv cJ wcel wa ? vs cv vn cv cin
+      c0 wne vs cJ ccl cfv cC cima crab cfn wcel vx vn wel cC cJ clocfin cfv
+      wcel vx cv cJ cuni wcel wa vn cv cJ wcel wa cC cJ clocfin cfv wcel vn cv
+      cJ wcel ? cC cJ clocfin cfv wcel vx cv cJ cuni wcel wa cC cJ clocfin cfv
+      wcel vn cv cJ wcel cC cJ clocfin cfv wcel vx cv cJ cuni wcel simpl adantr
+      cC cJ clocfin cfv wcel vx cv cJ cuni wcel wa vn cv cJ wcel simpr cC cJ vn
+      cv vs ? lfimclslflem3 syl2anc anim2d reximdva mpd ralrimiva $.
 
     $( The image of a locally finite collection under the closure operator is
        locally finite.  This is because if an open neighborhood ` U ` does not
@@ -632,6 +632,28 @@ $)
       locfintop cC cJ lfimclsuni vx cC vn cJ vs lfimclslf vx cJ ccl cfv cC cima
       vn cJ cJ cuni cJ ccl cfv cC cima cuni vs cJ cuni eqid cJ ccl cfv cC cima
       cuni eqid islocfin syl3anbrc $.
+  $}
+
+  ${
+    $d u v y z J $.
+    $( Regularity covering: in a regular space, if ` y ` is an open covering
+       of ` J ` , then the collection of open sets whose closure is in some
+       element of ` y ` also covers ` J ` .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    regsepcover $p |- ( ( J e. Reg /\ y C_ J /\ U. J = U. y ) ->
+      U. J = U. { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } ) $=
+      ? ? ? ? ? ? ? ? ? ? ? ssrab2 ? ? uniss ax-mp a1i eqssd $.
+  $}
+
+  ${
+    $d t u v y z J $.
+    $( The closure image of a locally finite covering that refines
+       ` { v e. J | E. u e. y ( ( cls `` J ) `` v ) C_ u } ` also
+       refines ` y ` .  (Contributed by Claude, 6-Feb-2026.) $)
+    clsreflem $p |- ( ( J e. Top /\ t e. ( LocFin ` J ) /\
+      t Ref { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } ) ->
+      ( ( cls ` J ) " t ) Ref y ) $=
+      ? $.
   $}
 
   ${
