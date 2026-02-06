@@ -876,6 +876,131 @@ $)
   $}
 
   ${
+    $d C J $.
+    $( The closure-image of any collection is contained in the closed sets.
+       (Contributed by Claude, 6-Feb-2026.) $)
+    clsimcld $p |- ( J e. Top ->
+      ( ( cls ` J ) " C ) C_ ( Clsd ` J ) ) $=
+      cJ ctop wcel cJ cuni cpw cJ ccld cfv cJ ccl cfv wf cJ ccl cfv cC cima cJ
+      ccld cfv wss cJ cJ cuni cJ cuni eqid clsf cJ cuni cpw cJ ccld cfv cJ ccl
+      cfv cC fimass syl $.
+  $}
+
+  ${
+    $d t J $.
+    $( The closure image of a locally finite collection is locally finite and
+       consists of closed sets.
+       (Contributed by Claude, 6-Feb-2026.) $)
+    clslfc $p |- ( t e. ( LocFin ` J ) ->
+      ( ( cls ` J ) " t ) e.
+        ( ( LocFin ` J ) i^i ~P ( Clsd ` J ) ) ) $=
+      vt cv cJ clocfin cfv wcel cJ clocfin cfv cJ ccld cfv cpw cJ ccl cfv vt cv
+      cima vt cv cJ lfimcls vt cv cJ clocfin cfv wcel cJ ccl cfv vt cv cima cJ
+      ccld cfv cvv cJ ccld cfv cvv wcel vt cv cJ clocfin cfv wcel cJ ccld fvex
+      a1i vt cv cJ clocfin cfv wcel cJ ctop wcel cJ ccl cfv vt cv cima cJ ccld
+      cfv wss vt cv cJ locfintop vt cv cJ clsimcld syl sselpwd elind $.
+  $}
+
+  ${
+    $d t u v w y z J $.
+    $( If ` t ` refines the regularity-refined covering of ` y ` in ` J ` and
+       ` z ` is an element of the closure image of ` t ` , then ` z ` is
+       contained in some element of ` y ` .  Helper for ~ clsrefimg .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    clsrefimg1 $p |- ( ( J e. Top /\
+      t Ref { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } /\
+      z e. ( ( cls ` J ) " t ) ) ->
+      E. u e. y z C_ u ) $=
+      cJ ctop wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ
+      crab cref wbr vz cv cJ ccl cfv vt cv cima wcel w3a vw cv cJ ccl cfv cfv
+      vz cv wceq vw vt cv wrex vz cv vu cv wss vu vy cv wrex cJ ctop wcel vz cv
+      cJ ccl cfv vt cv cima wcel vw cv cJ ccl cfv cfv vz cv wceq vw vt cv wrex
+      vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cref wbr cJ
+      ctop wcel cJ ccl cfv wfun vz cv cJ ccl cfv vt cv cima wcel vw cv cJ ccl
+      cfv cfv vz cv wceq vw vt cv wrex cJ ctop wcel cJ ccl cfv cJ cuni cpw wfn
+      cJ ccl cfv wfun cJ clsfn cJ cuni cpw cJ ccl cfv fnfun syl vw vz cv vt cv
+      cJ ccl cfv fvelima sylan 3adant2 cJ ctop wcel vt cv vv cv cJ ccl cfv cfv
+      vu cv wss vu vy cv wrex vv cJ crab cref wbr vw cv cJ ccl cfv cfv vz cv
+      wceq vw vt cv wrex vz cv vu cv wss vu vy cv wrex wi vz cv cJ ccl cfv vt
+      cv cima wcel cJ ctop wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv
+      wrex vv cJ crab cref wbr wa vw cv cJ ccl cfv cfv vz cv wceq vz cv vu cv
+      wss vu vy cv wrex vw vt cv cJ ctop wcel vt cv vv cv cJ ccl cfv cfv vu cv
+      wss vu vy cv wrex vv cJ crab cref wbr vw vt wel vw cv cJ ccl cfv cfv vz
+      cv wceq vz cv vu cv wss vu vy cv wrex wi cJ ctop wcel vt cv vv cv cJ ccl
+      cfv cfv vu cv wss vu vy cv wrex vv cJ crab cref wbr vw vt wel w3a vw cv
+      cJ ccl cfv cfv vu cv wss vu vy cv wrex vw cv cJ ccl cfv cfv vz cv wceq vz
+      cv vu cv wss vu vy cv wrex vy vw vv vu vt cJ clsreflem vw cv cJ ccl cfv
+      cfv vz cv wceq vw cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vz cv vu cv
+      wss vu vy cv wrex vw cv cJ ccl cfv cfv vz cv wceq vw cv cJ ccl cfv cfv vu
+      cv wss vz cv vu cv wss vu vy cv vw cv cJ ccl cfv cfv vz cv vu cv sseq1
+      rexbidv biimpd syl5com 3expia rexlimdv 3adant3 mpd $.
+  $}
+
+  ${
+    $d t u v w y z J $.
+    $( If ` t ` is a locally finite refinement of the regularity-refined
+       covering and ` U. J = U. y ` , then the closure image of ` t `
+       refines ` y ` .  Helper for ~ reglfpcmplem1 .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    clsrefimg $p |- ( ( t e. ( LocFin ` J ) /\
+      t Ref { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } /\
+      U. J = U. y ) ->
+      ( ( cls ` J ) " t ) Ref y ) $=
+      vt cv cJ clocfin cfv wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv
+      wrex vv cJ crab cref wbr cJ cuni vy cv cuni wceq w3a cJ ccl cfv vt cv
+      cima vy cv cref wbr vy cv cuni cJ ccl cfv vt cv cima cuni wceq vz cv vu
+      cv wss vu vy cv wrex vz cJ ccl cfv vt cv cima wral vt cv cJ clocfin cfv
+      wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cref
+      wbr cJ cuni vy cv cuni wceq w3a vy cv cuni cJ cuni cJ ccl cfv vt cv cima
+      cuni vt cv cJ clocfin cfv wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy
+      cv wrex vv cJ crab cref wbr cJ cuni vy cv cuni wceq w3a cJ cuni vy cv
+      cuni vt cv cJ clocfin cfv wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy
+      cv wrex vv cJ crab cref wbr cJ cuni vy cv cuni wceq simp3 eqcomd vt cv cJ
+      clocfin cfv wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ
+      crab cref wbr cJ cuni vy cv cuni wceq w3a vt cv cJ clocfin cfv wcel cJ
+      cuni cJ ccl cfv vt cv cima cuni wceq vt cv cJ clocfin cfv wcel vt cv vv
+      cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cref wbr cJ cuni vy
+      cv cuni wceq simp1 vt cv cJ lfimclsuni syl eqtrd vt cv cJ clocfin cfv
+      wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cref
+      wbr cJ cuni vy cv cuni wceq w3a vz cv vu cv wss vu vy cv wrex vz cJ ccl
+      cfv vt cv cima vt cv cJ clocfin cfv wcel vt cv vv cv cJ ccl cfv cfv vu cv
+      wss vu vy cv wrex vv cJ crab cref wbr cJ cuni vy cv cuni wceq w3a vz cv
+      cJ ccl cfv vt cv cima wcel wa cJ ctop wcel vt cv vv cv cJ ccl cfv cfv vu
+      cv wss vu vy cv wrex vv cJ crab cref wbr vz cv cJ ccl cfv vt cv cima wcel
+      w3a vz cv vu cv wss vu vy cv wrex vt cv cJ clocfin cfv wcel vt cv vv cv
+      cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cref wbr cJ cuni vy cv
+      cuni wceq w3a vz cv cJ ccl cfv vt cv cima wcel wa cJ ctop wcel vt cv vv
+      cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cref wbr vz cv cJ
+      ccl cfv vt cv cima wcel vt cv cJ clocfin cfv wcel vt cv vv cv cJ ccl cfv
+      cfv vu cv wss vu vy cv wrex vv cJ crab cref wbr cJ cuni vy cv cuni wceq
+      w3a vz cv cJ ccl cfv vt cv cima wcel wa vt cv cJ clocfin cfv wcel cJ ctop
+      wcel vt cv cJ clocfin cfv wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy
+      cv wrex vv cJ crab cref wbr cJ cuni vy cv cuni wceq w3a vt cv cJ clocfin
+      cfv wcel vz cv cJ ccl cfv vt cv cima wcel vt cv cJ clocfin cfv wcel vt cv
+      vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cref wbr cJ cuni
+      vy cv cuni wceq simp1 adantr vt cv cJ locfintop syl vt cv cJ clocfin cfv
+      wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cref
+      wbr cJ cuni vy cv cuni wceq w3a vt cv vv cv cJ ccl cfv cfv vu cv wss vu
+      vy cv wrex vv cJ crab cref wbr vz cv cJ ccl cfv vt cv cima wcel vt cv cJ
+      clocfin cfv wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ
+      crab cref wbr cJ cuni vy cv cuni wceq simp2 adantr vt cv cJ clocfin cfv
+      wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cref
+      wbr cJ cuni vy cv cuni wceq w3a vz cv cJ ccl cfv vt cv cima wcel simpr
+      3jca vy vz vv vu vt cJ clsrefimg1 syl ralrimiva vt cv cJ clocfin cfv wcel
+      vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cref wbr cJ
+      cuni vy cv cuni wceq w3a cJ ccl cfv vt cv cima cJ clocfin cfv wcel cJ ccl
+      cfv vt cv cima vy cv cref wbr vy cv cuni cJ ccl cfv vt cv cima cuni wceq
+      vz cv vu cv wss vu vy cv wrex vz cJ ccl cfv vt cv cima wral wa wb vt cv
+      cJ clocfin cfv wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv
+      cJ crab cref wbr cJ cuni vy cv cuni wceq w3a vt cv cJ clocfin cfv wcel cJ
+      ccl cfv vt cv cima cJ clocfin cfv wcel vt cv cJ clocfin cfv wcel vt cv vv
+      cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cref wbr cJ cuni vy
+      cv cuni wceq simp1 vt cv cJ lfimcls syl vz vu cJ ccl cfv vt cv cima vy cv
+      cJ clocfin cfv cJ ccl cfv vt cv cima cuni vy cv cuni cJ ccl cfv vt cv
+      cima cuni eqid vy cv cuni eqid isref syl mpbir2and $.
+  $}
+
+  ${
     $d t y z J $.
     $( Lemma 41.3 step (2) implies (3): If ` J ` is a regular topology and
        every open covering has a locally finite covering refinement, then every
