@@ -299,6 +299,35 @@ $)
   $}
 
   ${
+    lfimclslem.1 $e |- X = U. J $.
+    $( Closure of a set disjoint from an open set is also disjoint from that
+       open set.  (Contributed by Claude, 6-Feb-2026.) $)
+    lfimclslem $p |- ( ( ( J e. Top /\ S C_ X ) /\ ( N e. J /\
+      ( S i^i N ) = (/) ) ) ->
+      ( ( ( cls ` J ) ` S ) i^i N ) = (/) ) $=
+      cJ ctop wcel cS cX wss wa cN cJ wcel cS cN cin c0 wceq wa wa cS cJ ccl
+      cfv cfv cX cN cdif wss cS cJ ccl cfv cfv cN cin c0 wceq cJ ctop wcel cS
+      cX wss wa cN cJ wcel cS cN cin c0 wceq wa wa cX cN cdif cJ ccld cfv wcel
+      cS cX cN cdif wss cS cJ ccl cfv cfv cX cN cdif wss cJ ctop wcel cS cX wss
+      wa cN cJ wcel cS cN cin c0 wceq wa wa cJ ctop wcel cN cJ wcel cX cN cdif
+      cJ ccld cfv wcel cJ ctop wcel cS cX wss wa cN cJ wcel cS cN cin c0 wceq
+      wa cJ ctop wcel cJ ctop wcel cS cX wss cN cJ wcel cS cN cin c0 wceq wa cN
+      cJ wcel cS cN cin c0 wceq wa simp1l 3anidm23 cJ ctop wcel cS cX wss wa cN
+      cJ wcel cS cN cin c0 wceq wa cN cJ wcel cJ ctop wcel cS cX wss wa cN cJ
+      wcel cS cN cin c0 wceq wa cN cJ wcel cS cN cin c0 wceq simp3l 3anidm23 cN
+      cJ cX lfimclslem.1 opncld syl2anc cJ ctop wcel cS cX wss wa cN cJ wcel cS
+      cN cin c0 wceq wa wa cS cX wss cS cN cin c0 wceq cS cX cN cdif wss cJ
+      ctop wcel cS cX wss wa cN cJ wcel cS cN cin c0 wceq wa cS cX wss cJ ctop
+      wcel cS cX wss cN cJ wcel cS cN cin c0 wceq wa cN cJ wcel cS cN cin c0
+      wceq wa simp1r 3anidm23 cJ ctop wcel cS cX wss wa cN cJ wcel cS cN cin c0
+      wceq wa cS cN cin c0 wceq cJ ctop wcel cS cX wss wa cN cJ wcel cS cN cin
+      c0 wceq wa cN cJ wcel cS cN cin c0 wceq simp3r 3anidm23 cS cX wss cS cN
+      cin c0 wceq cS cX cN cdif wss cS cN cX reldisj biimpa syl2anc cX cN cdif
+      cS cJ cX lfimclslem.1 clsss2 syl2anc cS cJ ccl cfv cfv cX cN ssdifin0 syl
+      $.
+  $}
+
+  ${
     $d s C J $.
     $( The image of a locally finite collection under the closure operator is
        locally finite.  This is because if an open neighborhood ` U ` does not
