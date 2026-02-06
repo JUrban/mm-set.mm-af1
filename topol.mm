@@ -727,12 +727,33 @@ $)
 
   ${
     $d u v w y z J $.
+    $( In a regular space, if ` w ` is in the open covering ` y ` (a subset
+       of ` J ` ), then ` w ` is a subset of the union of the
+       regularity-refined covering.  Helper for ~ regsepcover1 .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    regsepcover1a $p |- ( ( ( J e. Reg /\ y C_ J ) /\ w e. y ) ->
+      w C_ U. { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } ) $=
+      cJ creg wcel vy cv cJ wss wa vw vy wel wa vz vw cv vv cv cJ ccl cfv cfv
+      vu cv wss vu vy cv wrex vv cJ crab cuni cJ creg wcel vy cv cJ wss wa vw
+      vy wel wa vz vw wel vz cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv
+      cJ crab cuni wcel cJ creg wcel vy cv cJ wss wa vw vy wel vz vw wel vz cv
+      vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cuni wcel vy vz
+      vw vv vu cJ regsepcover2 anassrs ex ssrdv $.
+  $}
+
+  ${
+    $d u v w y z J $.
     $( In a regular space, every element of the union of an open covering
        ` y ` is in the union of the regularity-refined covering.  Helper for
        ~ regsepcover .  (Contributed by Claude, 6-Feb-2026.) $)
     regsepcover1 $p |- ( ( J e. Reg /\ y C_ J ) ->
       U. y C_ U. { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } ) $=
-      ? $.
+      cJ creg wcel vy cv cJ wss wa vw cv vv cv cJ ccl cfv cfv vu cv wss vu vy
+      cv wrex vv cJ crab cuni wss vw vy cv wral vy cv cuni vv cv cJ ccl cfv cfv
+      vu cv wss vu vy cv wrex vv cJ crab cuni wss cJ creg wcel vy cv cJ wss wa
+      vw cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cuni wss vw
+      vy cv vy vw vv vu cJ regsepcover1a ralrimiva vw vy cv vv cv cJ ccl cfv
+      cfv vu cv wss vu vy cv wrex vv cJ crab cuni unissb sylibr $.
   $}
 
   ${
@@ -743,7 +764,17 @@ $)
        (Contributed by Claude, 6-Feb-2026.) $)
     regsepcover $p |- ( ( J e. Reg /\ y C_ J /\ U. J = U. y ) ->
       U. J = U. { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } ) $=
-      ? $.
+      cJ creg wcel vy cv cJ wss cJ cuni vy cv cuni wceq w3a cJ cuni vv cv cJ
+      ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cuni cJ creg wcel vy cv cJ
+      wss cJ cuni vy cv cuni wceq w3a cJ cuni vy cv cuni vv cv cJ ccl cfv cfv
+      vu cv wss vu vy cv wrex vv cJ crab cuni cJ creg wcel vy cv cJ wss cJ cuni
+      vy cv cuni wceq simp3 cJ creg wcel vy cv cJ wss vy cv cuni vv cv cJ ccl
+      cfv cfv vu cv wss vu vy cv wrex vv cJ crab cuni wss cJ cuni vy cv cuni
+      wceq vy vv vu cJ regsepcover1 3adant3 eqsstrd vv cv cJ ccl cfv cfv vu cv
+      wss vu vy cv wrex vv cJ crab cuni cJ cuni wss cJ creg wcel vy cv cJ wss
+      cJ cuni vy cv cuni wceq w3a vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex
+      vv cJ crab cJ vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ ssrab2
+      unissi a1i eqssd $.
   $}
 
   ${
