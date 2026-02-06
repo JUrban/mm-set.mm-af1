@@ -327,20 +327,10 @@ $)
        neighborhood, then the original set also intersects it.
        (Contributed by Claude, 6-Feb-2026.) $)
     lfimclslflem1 $p |- ( ( ( J e. Top /\ S C_ X ) /\ N e. J ) ->
-      ( ( ( cls ` J ) ` S ) i^i N ) =/= (/) -> ( S i^i N ) =/= (/) ) $=
-      ? $.
-  $}
-
-  ${
-    $d c s C $.  $d c s J $.  $d c s N $.
-    $( Finiteness transfer: if the set of elements of ` C ` that intersect
-       ` N ` is finite, then so is the set of elements of ` ( ( cls `` J )
-       " C ) ` that intersect ` N ` .  Helper for ~ lfimclslf .
-       (Contributed by Claude, 6-Feb-2026.) $)
-    lfimclslflem2 $p |- ( ( C e. ( LocFin ` J ) /\ N e. J /\
-      { c e. C | ( c i^i N ) =/= (/) } e. Fin ) ->
-      { s e. ( ( cls ` J ) " C ) | ( s i^i N ) =/= (/) } e. Fin ) $=
-      ? $.
+      ( ( ( ( cls ` J ) ` S ) i^i N ) =/= (/) ->
+        ( S i^i N ) =/= (/) ) ) $=
+      ( ctop wcel wss wa cin c0 ccl cfv wceq lfimclslem anassrs ex necon3d ) BF
+      GADHIZCBGZIZACJZKABLMMCJZKUAUBKNZUCKNZSTUDUEABCDEOPQR $.
   $}
 
   ${
@@ -363,6 +353,83 @@ $)
       eqimss2i cC cC cC eqid eqimss2i eqssi unieqi locfinbas cC cuni cJ cuni
       eqimss2 syl cC cJ cuni cpw wss cC cuni cJ cuni wss cC cJ cuni sspwuni
       biimpri syl $.
+  $}
+
+  ${
+    $d c d s C $.  $d c d s J $.  $d c d s N $.
+    $( Given ` d e. C ` and ` ( ( cls `` J ) `` d ) = s ` with ` ( s i^i N )
+       =/= (/) ` , show ` s ` is in the closure image of the subcollection
+       intersecting ` N ` .  Core of ~ lfimclslflem2c .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    lfimclslflem2d $p |- ( ( ( ( C e. ( LocFin ` J ) /\ N e. J ) /\
+      s e. ( ( cls ` J ) " C ) /\ ( s i^i N ) =/= (/) ) /\ d e. C ) ->
+      ( ( ( cls ` J ) ` d ) = s ->
+        s e. ( ( cls ` J ) " { c e. C | ( c i^i N ) =/= (/) } ) ) ) $=
+      ? $.
+  $}
+
+  ${
+    $d c d s C $.  $d c d s J $.  $d c d s N $.
+    $( Core argument for ~ lfimclslflem2a : if ` s ` is in the closure image
+       of ` C ` and intersects ` N ` , then ` s ` is in the closure image of
+       the subcollection intersecting ` N ` .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    lfimclslflem2c $p |- ( ( ( C e. ( LocFin ` J ) /\ N e. J ) /\
+      s e. ( ( cls ` J ) " C ) /\ ( s i^i N ) =/= (/) ) ->
+      s e. ( ( cls ` J ) " { c e. C | ( c i^i N ) =/= (/) } ) ) $=
+      cC cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv
+      cN cin c0 wne w3a vs cv cJ ccl cfv cC cima wcel vs cv cJ ccl cfv vc cv cN
+      cin c0 wne vc cC crab cima wcel cC cJ clocfin cfv wcel cN cJ wcel wa vs
+      cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne simp2 cC cJ clocfin cfv
+      wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a
+      vs cv cJ ccl cfv cC cima wcel vd cv cJ ccl cfv cfv vs cv wceq vd cC wrex
+      vs cv cJ ccl cfv vc cv cN cin c0 wne vc cC crab cima wcel cC cJ clocfin
+      cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne
+      w3a vs cv cJ ccl cfv cC cima wcel vd cv cJ ccl cfv cfv vs cv wceq vd cC
+      wrex cC cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel
+      vs cv cN cin c0 wne w3a vd cJ cuni cpw cC vs cv cJ ccl cfv cC cJ clocfin
+      cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne
+      w3a cJ ctop wcel cJ ccl cfv cJ cuni cpw wfn cC cJ clocfin cfv wcel cN cJ
+      wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a cC cJ
+      clocfin cfv wcel cJ ctop wcel cC cJ clocfin cfv wcel cN cJ wcel vs cv cJ
+      ccl cfv cC cima wcel vs cv cN cin c0 wne simp1l cC cJ locfintop syl cJ
+      clsfn syl cC cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima
+      wcel vs cv cN cin c0 wne w3a cC cJ clocfin cfv wcel cC cJ cuni cpw wss cC
+      cJ clocfin cfv wcel cN cJ wcel vs cv cJ ccl cfv cC cima wcel vs cv cN cin
+      c0 wne simp1l cC cJ locfinsspw syl fvelimabd biimpd cC cJ clocfin cfv
+      wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a
+      vd cv cJ ccl cfv cfv vs cv wceq vs cv cJ ccl cfv vc cv cN cin c0 wne vc
+      cC crab cima wcel vd cC cC cJ cN vs vc vd lfimclslflem2d rexlimdva syld
+      mpd $.
+  $}
+
+  ${
+    $d c s C $.  $d c s J $.  $d c s N $.
+    $( Subset inclusion: elements of the closure image intersecting ` N ` are
+       in the image of the subcollection intersecting ` N ` .  Helper for
+       ~ lfimclslflem2 .  (Contributed by Claude, 6-Feb-2026.) $)
+    lfimclslflem2a $p |- ( ( C e. ( LocFin ` J ) /\ N e. J ) ->
+      { s e. ( ( cls ` J ) " C ) | ( s i^i N ) =/= (/) } C_
+        ( ( cls ` J ) " { c e. C | ( c i^i N ) =/= (/) } ) ) $=
+      cC cJ clocfin cfv wcel cN cJ wcel wa vs cv cN cin c0 wne vs cJ ccl cfv cC
+      cima cJ ccl cfv vc cv cN cin c0 wne vc cC crab cima cC cJ cN vs vc
+      lfimclslflem2c rabssdv $.
+  $}
+
+  ${
+    $d c s C $.  $d c s J $.  $d c s N $.
+    $( Finiteness transfer: if the set of elements of ` C ` that intersect
+       ` N ` is finite, then so is the set of elements of ` ( ( cls `` J )
+       " C ) ` that intersect ` N ` .  Helper for ~ lfimclslf .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    lfimclslflem2 $p |- ( ( C e. ( LocFin ` J ) /\ N e. J /\
+      { c e. C | ( c i^i N ) =/= (/) } e. Fin ) ->
+      { s e. ( ( cls ` J ) " C ) | ( s i^i N ) =/= (/) } e. Fin ) $=
+      ( clocfin cfv wcel cv cin c0 wne crab cfn w3a ccl cima wss syl syl2anc
+      wfun cuni cpw ctop simp1 locfintop clsfn fnfun simp3 imafi lfimclslflem2a
+      wfn simp2 ssfi ) ABFGHZCBHZEICJKLEAMZNHZOZBPGZUQQZNHZDICJKLDUTAQMZVARZVCN
+      HUSUTUAZURVBUSUTBUBUCZULZVEUSBUDHZVGUSUOVHUOUPURUEZABUFSBUGSVFUTUHSUOUPUR
+      UIUTUQUJTUSUOUPVDVIUOUPURUMABCDEUKTVAVCUNT $.
   $}
 
   ${
