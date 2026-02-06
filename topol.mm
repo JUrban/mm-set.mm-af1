@@ -727,6 +727,16 @@ $)
 
   ${
     $d u v w y z J $.
+    $( In a regular space, every element of the union of an open covering
+       ` y ` is in the union of the regularity-refined covering.  Helper for
+       ~ regsepcover .  (Contributed by Claude, 6-Feb-2026.) $)
+    regsepcover1 $p |- ( ( J e. Reg /\ y C_ J ) ->
+      U. y C_ U. { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } ) $=
+      ? $.
+  $}
+
+  ${
+    $d u v w y z J $.
     $( Regularity covering: in a regular space, if ` y ` is an open covering
        of ` J ` , then the collection of open sets whose closure is in some
        element of ` y ` also covers ` J ` .
