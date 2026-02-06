@@ -562,7 +562,7 @@ $)
   $}
 
   ${
-    $d n s x C $.  $d n s x J $.
+    $d c n s x C $.  $d c n s x J $.
     $( The union of the closure image of a locally finite collection equals
        the base set.  (Contributed by Claude, 6-Feb-2026.) $)
     lfimclsuni $p |- ( C e. ( LocFin ` J ) ->
@@ -583,6 +583,20 @@ $)
       cJ cJ cJ eqid unieqi cldss2 a1i sstrd cJ ccl cfv cC cima cJ cuni sspwuni
       sylib eqssd $.
 
+    ${
+      $d c s C $.  $d c s J $.  $d c s N $.
+      $( If ` C ` is locally finite and ` N e. J ` , then finiteness of the
+         subcollection of ` C ` intersecting ` N ` implies finiteness of
+         the closure image subcollection intersecting ` N ` .
+         (Contributed by Claude, 6-Feb-2026.) $)
+      lfimclslflem3 $p |- ( ( C e. ( LocFin ` J ) /\ N e. J ) ->
+        ( { c e. C | ( c i^i N ) =/= (/) } e. Fin ->
+          { s e. ( ( cls ` J ) " C ) | ( s i^i N ) =/= (/) } e. Fin ) ) $=
+        cC cJ clocfin cfv wcel cN cJ wcel vc cv cN cin c0 wne vc cC crab cfn
+        wcel vs cv cN cin c0 wne vs cJ ccl cfv cC cima crab cfn wcel cC cJ cN
+        vs vc lfimclslflem2 3expia $.
+    $}
+
     $( The closure image of a locally finite collection satisfies the
        local finiteness condition: each point has a neighborhood that
        intersects only finitely many elements of the image.
@@ -590,7 +604,19 @@ $)
     lfimclslf $p |- ( C e. ( LocFin ` J ) -> A. x e. U. J
       E. n e. J ( x e. n /\
         { s e. ( ( cls ` J ) " C ) | ( s i^i n ) =/= (/) } e. Fin ) ) $=
-      ? $.
+      cC cJ clocfin cfv wcel vx vn wel vs cv vn cv cin c0 wne vs cJ ccl cfv cC
+      cima crab cfn wcel wa vn cJ wrex vx cJ cuni cC cJ clocfin cfv wcel vx cv
+      cJ cuni wcel wa vx vn wel vc cv vn cv cin c0 wne vc cC crab cfn wcel wa
+      vn cJ wrex vx vn wel vs cv vn cv cin c0 wne vs cJ ccl cfv cC cima crab
+      cfn wcel wa vn cJ wrex cC vx cv vn cJ cJ cuni vc cJ cuni eqid locfinnei
+      cC cJ clocfin cfv wcel vx vn wel vc cv vn cv cin c0 wne vc cC crab cfn
+      wcel wa vn cJ wrex vx vn wel vs cv vn cv cin c0 wne vs cJ ccl cfv cC cima
+      crab cfn wcel wa vn cJ wrex wi vx cv cJ cuni wcel cC cJ clocfin cfv wcel
+      vx vn wel vc cv vn cv cin c0 wne vc cC crab cfn wcel wa vx vn wel vs cv
+      vn cv cin c0 wne vs cJ ccl cfv cC cima crab cfn wcel wa vn cJ cC cJ
+      clocfin cfv wcel vn cv cJ wcel wa vc cv vn cv cin c0 wne vc cC crab cfn
+      wcel vs cv vn cv cin c0 wne vs cJ ccl cfv cC cima crab cfn wcel vx vn wel
+      cC cJ vn cv vs vc lfimclslflem3 anim2d reximdva adantr mpd ralrimiva $.
 
     $( The image of a locally finite collection under the closure operator is
        locally finite.  This is because if an open neighborhood ` U ` does not
