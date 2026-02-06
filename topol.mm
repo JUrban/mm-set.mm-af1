@@ -778,15 +778,101 @@ $)
   $}
 
   ${
-    $d t u v y z J $.
-    $( The closure image of a locally finite covering that refines
-       ` { v e. J | E. u e. y ( ( cls `` J ) `` v ) C_ u } ` also
-       refines ` y ` .  (Contributed by Claude, 6-Feb-2026.) $)
-    clsreflem $p |- ( ( ( J e. Top /\ U. J = U. y ) /\
-      t e. ( LocFin ` J ) /\
-      t Ref { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } ) ->
-      ( ( cls ` J ) " t ) Ref y ) $=
-      ? $.
+    $d u w y z J $.
+    $( In a topology, if ` w ` is an open set and ` z C_ w ` , then
+       the existential condition on the closure of ` w ` transfers to
+       the closure of ` z ` .  Helper for ~ clsreflem .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    clsreflema $p |- ( ( J e. Top /\ w e. J /\ z C_ w ) ->
+      ( E. u e. y ( ( cls ` J ) ` w ) C_ u ->
+        E. u e. y ( ( cls ` J ) ` z ) C_ u ) ) $=
+      cJ ctop wcel vw cv cJ wcel vz cv vw cv wss w3a vw cv cJ ccl cfv cfv vu cv
+      wss vz cv cJ ccl cfv cfv vu cv wss vu vy cv cJ ctop wcel vw cv cJ wcel vz
+      cv vw cv wss w3a vz cv cJ ccl cfv cfv vw cv cJ ccl cfv cfv wss vw cv cJ
+      ccl cfv cfv vu cv wss vz cv cJ ccl cfv cfv vu cv wss wi vw cv cJ wcel cJ
+      ctop wcel vw cv cJ cuni wss vz cv vw cv wss vz cv cJ ccl cfv cfv vw cv cJ
+      ccl cfv cfv wss vw cv cJ elssuni vw cv vz cv cJ cJ cuni cJ cuni eqid
+      clsss syl3an2 vz cv cJ ccl cfv cfv vw cv cJ ccl cfv cfv vu cv sstr2 syl
+      reximdv $.
+  $}
+
+  ${
+    $d u v w y J $.
+    $( Extract the existential condition from membership in the
+       regularity-refined covering.  If ` w ` is in
+       ` { v e. J | E. u e. y ( ( cls `` J ) `` v ) C_ u } ` , then
+       the closure of ` w ` is contained in some element of ` y ` .
+       Helper for ~ clsreflemb .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    clsreflemc $p |- (
+      w e. { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } ->
+      E. u e. y ( ( cls ` J ) ` w ) C_ u ) $=
+      vw cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab wcel vw cv
+      cJ wcel vw cv cJ ccl cfv cfv vu cv wss vu vy cv wrex wa vw cv cJ ccl cfv
+      cfv vu cv wss vu vy cv wrex vw cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv
+      wrex vv cJ crab wcel vw cv cJ wcel vw cv cJ ccl cfv cfv vu cv wss vu vy
+      cv wrex wa vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vw cv cJ ccl cfv
+      cfv vu cv wss vu vy cv wrex vv vw cv cJ vv cv cJ ccl cfv cfv vu cv wss vu
+      vy cv wrex vw cv cJ ccl cfv cfv vu cv wss vu vy cv wrex wb vv vw vv cv cJ
+      ccl cfv cfv vu cv wss vu vy cv wrex vw cv cJ ccl cfv cfv vu cv wss vu vy
+      cv wrex wb vv vw vv vw weq vv cv cJ ccl cfv cfv vu cv wss vw cv cJ ccl
+      cfv cfv vu cv wss vu vy cv vy cv vu vv cv vw cv vu vw cv nfcv nfeq2 vu vy
+      cv nfcv vu vy cv nfcv vv vw weq vy cv vy cv vy cv vy cv csn wcel vv vw
+      weq vy vsnid a1i elsnd vv vw weq vv cv cJ ccl cfv cfv vw cv cJ ccl cfv
+      cfv vu cv vu cv vv vw weq vv cv vw cv cJ ccl cfv cJ ccl cfv vv vw weq cJ
+      ccl cfv eqidd vv vw weq id fveq12d vv vw weq vu cv vu cv vv vw weq vu cv
+      ssidd vv vw weq vu cv ssidd eqssd sseq12d rexeqbid cdeqi cdeqri elrab
+      biimpi vw cv cJ wcel vw cv cJ ccl cfv cfv vu cv wss vu vy cv wrex simpr
+      syl $.
+  $}
+
+  ${
+    $d u v w y z J $.
+    $( If ` w ` is in the regularity-refined covering
+       ` { v e. J | E. u e. y ( ( cls `` J ) `` v ) C_ u } ` and
+       ` z C_ w ` , then the closure of ` z ` is contained in some element
+       of ` y ` .  Helper for ~ clsreflem .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    clsreflemb $p |- ( ( J e. Top /\
+      w e. { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } /\
+      z C_ w ) ->
+      E. u e. y ( ( cls ` J ) ` z ) C_ u ) $=
+      cJ ctop wcel vw cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ
+      crab wcel vz cv vw cv wss w3a vw cv cJ ccl cfv cfv vu cv wss vu vy cv
+      wrex vz cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vw cv vv cv cJ ccl cfv
+      cfv vu cv wss vu vy cv wrex vv cJ crab wcel cJ ctop wcel vw cv cJ ccl cfv
+      cfv vu cv wss vu vy cv wrex vz cv vw cv wss vy vw vv vu cJ clsreflemc
+      3ad2ant2 vw cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab
+      wcel cJ ctop wcel vw cv cJ wcel vz cv vw cv wss vw cv cJ ccl cfv cfv vu
+      cv wss vu vy cv wrex vz cv cJ ccl cfv cfv vu cv wss vu vy cv wrex wi vv
+      cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv vw cv cJ elrabi vy vz vw vu
+      cJ clsreflema syl3an2 mpd $.
+  $}
+
+  ${
+    $d t u v w y z J $.
+    $( If ` t ` refines the regularity-refined covering
+       ` { v e. J | E. u e. y ( ( cls `` J ) `` v ) C_ u } ` and
+       ` z e. t ` , then the closure of ` z ` is contained in some element
+       of ` y ` .  Helper for ~ reglfpcmplem1 .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    clsreflem $p |- ( ( J e. Top /\
+      t Ref { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } /\
+      z e. t ) ->
+      E. u e. y ( ( cls ` J ) ` z ) C_ u ) $=
+      cJ ctop wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ
+      crab cref wbr vz vt wel w3a vz cv vw cv wss vw vv cv cJ ccl cfv cfv vu cv
+      wss vu vy cv wrex vv cJ crab wrex vz cv cJ ccl cfv cfv vu cv wss vu vy cv
+      wrex vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cref
+      wbr vz vt wel vz cv vw cv wss vw vv cv cJ ccl cfv cfv vu cv wss vu vy cv
+      wrex vv cJ crab wrex cJ ctop wcel vw vt cv vv cv cJ ccl cfv cfv vu cv wss
+      vu vy cv wrex vv cJ crab vz cv refssex 3adant1 cJ ctop wcel vt cv vv cv
+      cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cref wbr vz cv vw cv
+      wss vw vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab wrex vz cv
+      cJ ccl cfv cfv vu cv wss vu vy cv wrex wi vz vt wel cJ ctop wcel vz cv vw
+      cv wss vz cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vw vv cv cJ ccl cfv
+      cfv vu cv wss vu vy cv wrex vv cJ crab vy vz vw vv vu cJ clsreflemb
+      rexlimdv3a 3ad2ant1 mpd $.
   $}
 
   ${
