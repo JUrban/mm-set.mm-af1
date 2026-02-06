@@ -356,6 +356,63 @@ $)
   $}
 
   ${
+    $d d s C $.  $d d s J $.  $d d s N $.
+    $( Under the hypotheses of ~ lfimclslflem2d , show ` d ` has nonempty
+       intersection with ` N ` .  Uses ~ lfimclslflem1 together with the
+       equality ` ( ( cls `` J ) `` d ) = s ` and ` ( s i^i N ) =/= (/) ` .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    lfimclslflem2e $p |- ( ( ( ( ( C e. ( LocFin ` J ) /\ N e. J ) /\
+      s e. ( ( cls ` J ) " C ) /\ ( s i^i N ) =/= (/) ) /\ d e. C ) /\
+      ( ( cls ` J ) ` d ) = s ) -> ( d i^i N ) =/= (/) ) $=
+      cC cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv
+      cN cin c0 wne w3a vd cv cC wcel wa vd cv cJ ccl cfv cfv vs cv wceq wa vd
+      cv cJ ccl cfv cfv cN cin c0 wne vd cv cN cin c0 wne cC cJ clocfin cfv
+      wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a
+      vd cv cC wcel wa vd cv cJ ccl cfv cfv vs cv wceq wa vd cv cJ ccl cfv cfv
+      cN cin vs cv cN cin c0 cC cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl
+      cfv cC cima wcel vs cv cN cin c0 wne w3a vd cv cC wcel wa vd cv cJ ccl
+      cfv cfv vs cv wceq wa vd cv cJ ccl cfv cfv vs cv cN cC cJ clocfin cfv
+      wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a
+      vd cv cC wcel wa vd cv cJ ccl cfv cfv vs cv wceq simpr ineq1d cC cJ
+      clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin
+      c0 wne w3a vs cv cN cin c0 wne vd cv cC wcel vd cv cJ ccl cfv cfv vs cv
+      wceq cC cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel
+      vs cv cN cin c0 wne simp3 ad2antrr eqnetrd cC cJ clocfin cfv wcel cN cJ
+      wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a vd cv cC
+      wcel wa vd cv cJ ccl cfv cfv vs cv wceq wa cJ ctop wcel vd cv cJ cuni wss
+      wa cN cJ wcel wa vd cv cJ ccl cfv cfv cN cin c0 wne vd cv cN cin c0 wne
+      wi cC cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs
+      cv cN cin c0 wne w3a vd cv cC wcel wa vd cv cJ ccl cfv cfv vs cv wceq wa
+      cJ ctop wcel vd cv cJ cuni wss wa cN cJ wcel cC cJ clocfin cfv wcel cN cJ
+      wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a vd cv cC
+      wcel wa vd cv cJ ccl cfv cfv vs cv wceq wa cJ ctop wcel vd cv cJ cuni wss
+      cC cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv
+      cN cin c0 wne w3a cJ ctop wcel vd cv cC wcel vd cv cJ ccl cfv cfv vs cv
+      wceq cC cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel
+      vs cv cN cin c0 wne w3a cC cJ clocfin cfv wcel cJ ctop wcel cC cJ clocfin
+      cfv wcel cN cJ wcel vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne
+      simp1l cC cJ locfintop syl ad2antrr cC cJ clocfin cfv wcel cN cJ wcel wa
+      vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a vd cv cC wcel wa vd
+      cv cJ ccl cfv cfv vs cv wceq wa vd cv cJ cuni cpw wcel vd cv cJ cuni wss
+      cC cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv
+      cN cin c0 wne w3a vd cv cC wcel wa vd cv cJ ccl cfv cfv vs cv wceq wa cC
+      cJ cuni cpw wss vd cv cC wcel vd cv cJ cuni cpw wcel cC cJ clocfin cfv
+      wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a
+      cC cJ cuni cpw wss vd cv cC wcel vd cv cJ ccl cfv cfv vs cv wceq cC cJ
+      clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin
+      c0 wne w3a cC cJ clocfin cfv wcel cC cJ cuni cpw wss cC cJ clocfin cfv
+      wcel cN cJ wcel vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne simp1l
+      cC cJ locfinsspw syl ad2antrr cC cJ clocfin cfv wcel cN cJ wcel wa vs cv
+      cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a vd cv cC wcel vd cv cJ
+      ccl cfv cfv vs cv wceq simplr cC cJ cuni cpw vd cv ssel2 syl2anc vd cv cJ
+      cuni elpwi syl jca cC cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv
+      cC cima wcel vs cv cN cin c0 wne w3a cN cJ wcel vd cv cC wcel vd cv cJ
+      ccl cfv cfv vs cv wceq cC cJ clocfin cfv wcel cN cJ wcel vs cv cJ ccl cfv
+      cC cima wcel vs cv cN cin c0 wne simp1r ad2antrr jca vd cv cJ cN cJ cuni
+      cJ cuni eqid lfimclslflem1 syl mpd $.
+  $}
+
+  ${
     $d c d s C $.  $d c d s J $.  $d c d s N $.
     $( Given ` d e. C ` and ` ( ( cls `` J ) `` d ) = s ` with ` ( s i^i N )
        =/= (/) ` , show ` s ` is in the closure image of the subcollection
@@ -365,7 +422,49 @@ $)
       s e. ( ( cls ` J ) " C ) /\ ( s i^i N ) =/= (/) ) /\ d e. C ) ->
       ( ( ( cls ` J ) ` d ) = s ->
         s e. ( ( cls ` J ) " { c e. C | ( c i^i N ) =/= (/) } ) ) ) $=
-      ? $.
+      cC cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv
+      cN cin c0 wne w3a vd cv cC wcel wa vd cv cJ ccl cfv cfv vs cv wceq vs cv
+      cJ ccl cfv vc cv cN cin c0 wne vc cC crab cima wcel cC cJ clocfin cfv
+      wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a
+      vd cv cC wcel wa vd cv cJ ccl cfv cfv vs cv wceq wa vd cv cJ ccl cfv cfv
+      vs cv cJ ccl cfv vc cv cN cin c0 wne vc cC crab cima cC cJ clocfin cfv
+      wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a
+      vd cv cC wcel wa vd cv cJ ccl cfv cfv vs cv wceq simpr cC cJ clocfin cfv
+      wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a
+      vd cv cC wcel wa vd cv cJ ccl cfv cfv vs cv wceq wa cJ ccl cfv cJ cuni
+      cpw wfn vc cv cN cin c0 wne vc cC crab cJ cuni cpw wss vd cv vc cv cN cin
+      c0 wne vc cC crab wcel vd cv cJ ccl cfv cfv cJ ccl cfv vc cv cN cin c0
+      wne vc cC crab cima wcel cC cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ
+      ccl cfv cC cima wcel vs cv cN cin c0 wne w3a vd cv cC wcel wa vd cv cJ
+      ccl cfv cfv vs cv wceq wa cJ ctop wcel cJ ccl cfv cJ cuni cpw wfn cC cJ
+      clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN cin
+      c0 wne w3a vd cv cC wcel wa vd cv cJ ccl cfv cfv vs cv wceq wa cC cJ
+      clocfin cfv wcel cJ ctop wcel cC cJ clocfin cfv wcel cN cJ wcel wa vs cv
+      cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a cC cJ clocfin cfv wcel vd
+      cv cC wcel vd cv cJ ccl cfv cfv vs cv wceq cC cJ clocfin cfv wcel cN cJ
+      wcel vs cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne simp1l ad2antrr cC
+      cJ locfintop syl cJ clsfn syl cC cJ clocfin cfv wcel cN cJ wcel wa vs cv
+      cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a vd cv cC wcel wa vd cv cJ
+      ccl cfv cfv vs cv wceq wa vc cv cN cin c0 wne vc cC crab cC cJ cuni cpw
+      vc cv cN cin c0 wne vc cC ssrab2 cC cJ clocfin cfv wcel cN cJ wcel wa vs
+      cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a vd cv cC wcel wa vd cv
+      cJ ccl cfv cfv vs cv wceq wa cC cJ clocfin cfv wcel cC cJ cuni cpw wss cC
+      cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN
+      cin c0 wne w3a cC cJ clocfin cfv wcel vd cv cC wcel vd cv cJ ccl cfv cfv
+      vs cv wceq cC cJ clocfin cfv wcel cN cJ wcel vs cv cJ ccl cfv cC cima
+      wcel vs cv cN cin c0 wne simp1l ad2antrr cC cJ locfinsspw syl sstrid cC
+      cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN
+      cin c0 wne w3a vd cv cC wcel wa vd cv cJ ccl cfv cfv vs cv wceq wa vd cv
+      vc cv cN cin c0 wne vc cC crab wcel vd cv cC wcel vd cv cN cin c0 wne cC
+      cJ clocfin cfv wcel cN cJ wcel wa vs cv cJ ccl cfv cC cima wcel vs cv cN
+      cin c0 wne w3a vd cv cC wcel vd cv cJ ccl cfv cfv vs cv wceq simplr cC cJ
+      cN vs vd lfimclslflem2e vd cv vc cv cN cin c0 wne vc cC crab wcel vd cv
+      cC wcel vd cv cN cin c0 wne wa wb cC cJ clocfin cfv wcel cN cJ wcel wa vs
+      cv cJ ccl cfv cC cima wcel vs cv cN cin c0 wne w3a vd cv cC wcel wa vd cv
+      cJ ccl cfv cfv vs cv wceq wa vc cv cN cin c0 wne vd cv cN cin c0 wne vc
+      vd cv cC vc vd weq vc cv cN cin vd cv cN cin c0 vc cv vd cv cN ineq1
+      neeq1d elrab a1i mpbir2and cJ cuni cpw vc cv cN cin c0 wne vc cC crab cJ
+      ccl cfv vd cv fnfvima syl3anc eqeltrrd ex $.
   $}
 
   ${
