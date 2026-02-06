@@ -639,14 +639,91 @@ $)
   $}
 
   ${
-    $d u v y z J $.
+    $d a w y z J $.
+    $( Helper for ~ regsepcover : apply regularity separation to get
+       an open set whose closure is contained in a covering element.
+       (Contributed by Claude, 6-Feb-2026.) $)
+    regsepcover2a $p |- ( ( ( J e. Reg /\ y C_ J ) /\ ( w e. y /\ z e. w ) )
+      -> E. a e. J ( z e. a /\ ( ( cls ` J ) ` a ) C_ w ) ) $=
+      cJ creg wcel vy cv cJ wss wa vw vy wel vz vw wel wa wa cJ creg wcel vw cv
+      cJ wcel vz vw wel vz va wel va cv cJ ccl cfv cfv vw cv wss wa va cJ wrex
+      cJ creg wcel vy cv cJ wss vw vy wel vz vw wel wa simpll cJ creg wcel vy
+      cv cJ wss wa vw vy wel vz vw wel wa wa vy cv cJ vw cv cJ creg wcel vy cv
+      cJ wss wa vw vy wel vz vw wel wa wa vy cv cJ wss wi wtru cJ creg wcel vy
+      cv cJ wss wa vw vy wel vz vw wel wa vy cv cJ wss wtru cJ creg wcel vy cv
+      cJ wss vw vy wel vz vw wel wa simp2r 3expib mptru cJ creg wcel vy cv cJ
+      wss wa vw vy wel vz vw wel wa wa vw vy wel wi wtru cJ creg wcel vy cv cJ
+      wss wa vw vy wel vz vw wel wa vw vy wel wtru cJ creg wcel vy cv cJ wss wa
+      vw vy wel vz vw wel simp3l 3expib mptru sseldd cJ creg wcel vy cv cJ wss
+      wa vw vy wel vz vw wel simprr va vz cv vw cv cJ regsep syl3anc $.
+  $}
+
+  ${
+    $d a u v w y z J $.
+    $( Helper for ~ regsepcover : given ` w e. y ` , ` a e. J ` ,
+       ` z e. a ` , and ` ( ( cls `` J ) `` a ) C_ w ` , conclude
+       ` z e. U. { v e. J | E. u e. y ( ( cls `` J ) `` v ) C_ u } ` .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    regsepcover2b $p |- ( ( ( w e. y /\ a e. J ) /\
+      ( z e. a /\ ( ( cls ` J ) ` a ) C_ w ) ) ->
+      z e. U. { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } ) $=
+      vw vy wel va cv cJ wcel wa vz va wel va cv cJ ccl cfv cfv vw cv wss wa wa
+      vz va wel va cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab
+      wcel vz cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cuni
+      wcel vw vy wel va cv cJ wcel wa vz va wel va cv cJ ccl cfv cfv vw cv wss
+      simprl vw vy wel va cv cJ wcel wa vz va wel va cv cJ ccl cfv cfv vw cv
+      wss wa wa va cv cJ wcel va cv cJ ccl cfv cfv vu cv wss vu vy cv wrex va
+      cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab wcel vw vy wel
+      va cv cJ wcel vz va wel va cv cJ ccl cfv cfv vw cv wss wa simplr vw vy
+      wel va cv cJ wcel wa vz va wel va cv cJ ccl cfv cfv vw cv wss wa wa vw vy
+      wel va cv cJ ccl cfv cfv vw cv wss va cv cJ ccl cfv cfv vu cv wss vu vy
+      cv wrex vw vy wel va cv cJ wcel vz va wel va cv cJ ccl cfv cfv vw cv wss
+      wa simpll vw vy wel va cv cJ wcel wa vz va wel va cv cJ ccl cfv cfv vw cv
+      wss wa wa va cv cJ ccl cfv cfv vw cv vw vy wel va cv cJ ccl cfv cfv vw cv
+      wss va cv cJ ccl cfv cfv vw cv cpw wcel va cv cJ wcel vz va wel vw vy wel
+      va cv cJ ccl cfv cfv vw cv cpw wcel va cv cJ ccl cfv cfv vw cv wss va cv
+      cJ ccl cfv cfv vw cv vy cv elpw2g biimpar ad2ant2rl elpwid va cv cJ ccl
+      cfv cfv vu cv wss va cv cJ ccl cfv cfv vw cv wss vu vw cv vy cv vu vw weq
+      va cv cJ ccl cfv cfv va cv cJ ccl cfv cfv vu cv vw cv vu vw weq va cv va
+      cv cJ ccl cfv cJ ccl cfv vu vw weq cJ cJ ccl ccl vu vw weq ccl eqidd vu
+      vw weq cJ eqidd fveq12d vu vw weq va cv va cv vu vw weq va cv ssidd vu vw
+      weq va cv ssidd eqssd fveq12d vu vw weq vu cv vw cv vu cv vw cv csn wcel
+      vu vw weq vu vw cv velsn biimpri elsnd sseq12d rspcev syl2anc vv cv cJ
+      ccl cfv cfv vu cv wss vu vy cv wrex va cv cJ ccl cfv cfv vu cv wss vu vy
+      cv wrex vv va cv cJ vv va weq vv cv cJ ccl cfv cfv vu cv wss va cv cJ ccl
+      cfv cfv vu cv wss vu vy cv vv va weq vv cv cJ ccl cfv cfv va cv cJ ccl
+      cfv cfv vu cv vu cv vv va weq vv cv va cv cJ ccl cfv cJ ccl cfv vv va weq
+      cJ cJ ccl ccl vv va weq ccl eqidd vv va weq cJ eqidd fveq12d vv va weq vv
+      cv va cv vv cv va cv eqimss va cv vv cv eqimss2 eqssd fveq12d vv va weq
+      vu cv vu cv vu cv vu cv csn wcel vv va weq vu vsnid a1i elsnd sseq12d
+      rexbidv elrab sylanbrc vz cv va cv vv cv cJ ccl cfv cfv vu cv wss vu vy
+      cv wrex vv cJ crab elunii syl2anc $.
+  $}
+
+  ${
+    $d a u v w y z J $.
+    $( Helper for ~ regsepcover : in a regular space, if ` w ` is in an open
+       covering ` y ` (which is a subset of ` J ` ) and ` z e. w ` , then
+       ` z ` is in the union of the regularity-refined covering.
+       (Contributed by Claude, 6-Feb-2026.) $)
+    regsepcover2 $p |- ( ( ( J e. Reg /\ y C_ J ) /\ ( w e. y /\ z e. w ) )
+      -> z e. U. { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } ) $=
+      cJ creg wcel vy cv cJ wss wa vw vy wel vz vw wel wa wa ? vz cv vv cv cJ
+      ccl cfv cfv vu cv wss vu vy cv wrex vv cJ crab cuni wcel ? ? ? ? ? ? ?
+      regsepcover2a ? ? ? vz cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv
+      cJ crab cuni wcel ? ? vy vz ? vv vu cJ ? regsepcover2b syl2anc rexlimddv
+      $.
+  $}
+
+  ${
+    $d u v w y z J $.
     $( Regularity covering: in a regular space, if ` y ` is an open covering
        of ` J ` , then the collection of open sets whose closure is in some
        element of ` y ` also covers ` J ` .
        (Contributed by Claude, 6-Feb-2026.) $)
     regsepcover $p |- ( ( J e. Reg /\ y C_ J /\ U. J = U. y ) ->
       U. J = U. { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } ) $=
-      ? ? ? ? ? ? ? ? ? ? ? ssrab2 ? ? uniss ax-mp a1i eqssd $.
+      ? $.
   $}
 
   ${
@@ -654,7 +731,8 @@ $)
     $( The closure image of a locally finite covering that refines
        ` { v e. J | E. u e. y ( ( cls `` J ) `` v ) C_ u } ` also
        refines ` y ` .  (Contributed by Claude, 6-Feb-2026.) $)
-    clsreflem $p |- ( ( J e. Top /\ t e. ( LocFin ` J ) /\
+    clsreflem $p |- ( ( ( J e. Top /\ U. J = U. y ) /\
+      t e. ( LocFin ` J ) /\
       t Ref { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } ) ->
       ( ( cls ` J ) " t ) Ref y ) $=
       ? $.
