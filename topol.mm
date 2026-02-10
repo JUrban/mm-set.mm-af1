@@ -1504,6 +1504,55 @@ $)
   $}
 
   ${
+    $d b f w B V y $.
+    $( Axiom of Choice extraction from a refinement: if ` B ` refines ` y `
+       then there exists a choice function ` f : B --> y ` with each element
+       of ` B ` mapped to a superset in ` y ` .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2o $p |- ( ( B e. V /\ B Ref y ) ->
+      E. f ( f : B --> y /\ A. b e. B b C_ ( f ` b ) ) ) $=
+      cB cV wcel cB vy cv cref wbr wa cB cV wcel vb cv vw cv wss vw vy cv
+      wrex vb cB wral cB vy cv vf cv wf vb cv vb cv vf cv cfv wss vb cB wral
+      wa vf wex cB cV wcel cB vy cv cref wbr simpl cB vy cv cref wbr vb cv
+      vw cv wss vw vy cv wrex vb cB wral cB cV wcel cB vy cv cref wbr vb cv
+      vw cv wss vw vy cv wrex vb cB cB vy cv cref wbr vb cv cB wcel vb cv vw
+      cv wss vw vy cv wrex vw cB vy cv vb cv refssex ex ralrimiv adantl cB cV
+      wcel vb cv vw cv wss vw vy cv wrex vb cB wral cB vy cv vf cv wf vb cv
+      vb cv vf cv cfv wss vb cB wral wa vf wex vb cv vw cv wss vb cv vb cv
+      vf cv cfv wss vb vw cB vy cv vf cV vw cv vb cv vf cv cfv vb cv sseq2
+      ac6sg imp syl2anc $.
+  $}
+
+  ${
+    $d b p u B J X $.
+    reglfpcmplem2p.1 $e |- X = U. J $.
+    $( The locally finite cover
+       ` { u e. J | { b e. B | ( b i^i u ) =/= (/) } e. Fin } ` has the
+       same union as ` J ` when ` B ` is locally finite in ` J ` .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2p $p |- ( B e. ( LocFin ` J ) ->
+      X = U. { u e. J | { b e. B | ( b i^i u ) =/= (/) } e. Fin } ) $=
+      ? $.
+  $}
+
+  ${
+    $d b d f t u z B C J X y $.
+    reglfpcmplem2q.1 $e |- X = U. J $.
+    $( Assembly lemma for ~ reglfpcmplem2 : given a locally finite closed
+       refinement ` B ` of ` y ` and a locally finite closed refinement ` C `
+       of the locally finite cover derived from ` B ` , there exists a
+       locally finite refinement of ` y ` that is a subset of ` J ` .
+       Uses Axiom of Choice to extract a choice function from ` B Ref y ` .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2q $p |- ( ( ( J e. Top /\ y C_ J /\ X = U. y )
+      /\ ( B e. ( LocFin ` J ) /\ B C_ ( Clsd ` J ) /\ B Ref y )
+      /\ ( C e. ( LocFin ` J ) /\ C C_ ( Clsd ` J )
+        /\ C Ref { u e. J | { b e. B | ( b i^i u ) =/= (/) } e. Fin } ) )
+      -> E. z e. ( ( LocFin ` J ) i^i ~P J ) z Ref y ) $=
+      ? $.
+  $}
+
+  ${
     $d t y z J $.
     $( Lemma 41.3 step (3) implies (4): If ` J ` is a topology and every
        open covering has a locally finite closed covering refinement, then
