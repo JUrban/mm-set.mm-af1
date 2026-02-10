@@ -1001,6 +1001,54 @@ $)
   $}
 
   ${
+    $d t u v y z J $.
+    $( Witness construction for ~ reglfpcmplem1 : if ` t ` is a locally finite
+       refinement of the regularity-refined covering ` B ` , then the closure
+       image ` ( ( cls `` J ) " t ) ` is in ` ( LocFin `` J ) i^i ~P ( Clsd
+       `` J ) ` and refines ` y ` .  Existentially pack the witness using ` z `
+       to avoid variable capture with ` t ` .
+       (Contributed by Claude, 6-Feb-2026.) $)
+    reglfpcmplem1a $p |- ( ( t e. ( LocFin ` J ) /\
+      t Ref { v e. J | E. u e. y ( ( cls ` J ) ` v ) C_ u } /\
+      U. J = U. y ) ->
+      E. z e. ( ( LocFin ` J ) i^i ~P ( Clsd ` J ) ) z Ref y ) $=
+      vt cv cJ clocfin cfv wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv
+      wrex vv cJ crab cref wbr cJ cuni vy cv cuni wceq w3a cJ ccl cfv vt cv
+      cima cJ clocfin cfv cJ ccld cfv cpw cin wcel cJ ccl cfv vt cv cima vy cv
+      cref wbr vz cv vy cv cref wbr vz cJ clocfin cfv cJ ccld cfv cpw cin wrex
+      vt cv cJ clocfin cfv wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv
+      wrex vv cJ crab cref wbr cJ cuni vy cv cuni wceq w3a vt cv cJ clocfin cfv
+      wcel cJ ccl cfv vt cv cima cJ clocfin cfv cJ ccld cfv cpw cin wcel vt cv
+      cJ clocfin cfv wcel vt cv vv cv cJ ccl cfv cfv vu cv wss vu vy cv wrex vv
+      cJ crab cref wbr cJ cuni vy cv cuni wceq simp1 vt cJ clslfc syl vy vv vu
+      vt cJ clsrefimg vz cv vy cv cref wbr cJ ccl cfv vt cv cima vy cv cref wbr
+      vz cJ ccl cfv vt cv cima cJ clocfin cfv cJ ccld cfv cpw cin vz cv cJ ccl
+      cfv vt cv cima vy cv cref breq1 rspcev syl2anc $.
+  $}
+
+  ${
+    $d t u v y z J $.
+    $( Per-covering step for ~ reglfpcmplem1 : given ` J ` is regular,
+       ` y C_ J ` , ` U. J = U. y ` , and every covering of ` J ` has a
+       locally finite refinement (quantified over ` z ` to avoid capture),
+       then ` y ` has a locally finite closed covering refinement.
+       (Contributed by Claude, 6-Feb-2026.) $)
+    reglfpcmplem1b $p |- ( ( ( J e. Reg /\ y C_ J /\ U. J = U. y ) /\
+      A. z e. ~P J ( U. J = U. z ->
+        E. t e. ( LocFin ` J ) t Ref z ) ) ->
+      E. z e. ( ( LocFin ` J ) i^i ~P ( Clsd ` J ) ) z Ref y ) $=
+      ( vv vu creg wcel cv wss cuni wceq cref wbr cfv wrex wi cpw syl mpd simp3
+      w3a clocfin wral wa ccld cin adantr ccl simpl regsepcover simpr cvv simp1
+      crab ssrab2 a1i sselpwd unieq eqeq2d breq2 rexbidv imbi12d reglfpcmplem1a
+      elex rspcv 3exp rexlimiv ) DGHZAIZDJZDKZVJKLZUBZVLBIZKZLZCIZVOMNZCDUCOZPZ
+      QZBDRZUDZUEZVMVOVJMNBVTDUFORUGPZVNVMWDVIVKVMUAUHWEVREIDUIOOFIJFVJPZEDUOZM
+      NZCVTPZVMWFQZWEVLWHKZLZWJWEVNWMVNWDUJZAEFDUKSWEWDWMWJQZVNWDULWEWHWCHWDWOQ
+      WEWHDUMWEVIDUMHWEVNVIWNVIVKVMUNSDGVESWHDJWEWGEDUPUQURWBWOBWHWCVOWHLZVQWMW
+      AWJWPVPWLVLVOWHUSUTWPVSWICVTVOWHVRMVAVBVCVFSTTWIWKCVTVRVTHWIVMWFABEFCDVDV
+      GVHST $.
+  $}
+
+  ${
     $d t y z J $.
     $( Lemma 41.3 step (2) implies (3): If ` J ` is a regular topology and
        every open covering has a locally finite covering refinement, then every
