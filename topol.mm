@@ -1174,6 +1174,73 @@ $)
   $}
 
   ${
+    $d b c C $.  $d b c J $.  $d b c X $.
+    reglfpcmplem2a.1 $e |- X = U. J $.
+    $( The expansion set ` ( X \ U. { c e. C | c C_ ( X \ b ) } ) ` is
+       open when ` C ` is a locally finite collection of closed sets.
+       Uses ~ lfcldunicld and ~ cldopn .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2a $p |- ( ( C e. ( LocFin ` J ) /\ C C_ ( Clsd ` J ) )
+        -> ( X \ U. { c e. C | c C_ ( X \ b ) } ) e. J ) $=
+      ( clocfin cfv wcel ccld wss wa cv cdif crab cuni simpl simpr ssrab2 a1i
+      lfcldunicld syl3anc cldopn syl ) ABGHIZABJHZKZLZEMCDMNKZEAOZPZUFIZCUKNBIU
+      HUEUGUJAKZULUEUGQUEUGRUMUHUIEASTAUJBCFUAUBUKBCFUCUD $.
+  $}
+
+  ${
+    $d b c C $.  $d c X $.
+    $( A closed set ` b ` is contained in the expansion set
+       ` ( X \ U. { c e. C | c C_ ( X \ b ) } ) ` whenever ` b C_ X ` .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2b $p |- ( b C_ X ->
+        b C_ ( X \ U. { c e. C | c C_ ( X \ b ) } ) ) $=
+      ( cv wss cdif crab cuni wceq dfss4 biimpi eqimss2 syl cpw wcel wral velpw
+      wi a1i biimpri rgen rabss mpbir sspwuni mpbi sscon ax-mp sstrd ) CEZBFZUJ
+      BBUJGZGZBDEZULFZDAHZIZGZUKUMUJJZUJUMFUKUSUJBKLUJUMMNUMURFZUKUQULFZUTUPULO
+      ZFZVAVCUOUNVBPZSZDAQVEDAVEUNAPVDUODULRUATUBUODAVBUCUDUPULUEUFUQULBUGUHTUI
+      $.
+  $}
+
+  ${
+    $d b n p u B $.  $d b n p u J $.  $d n p u X $.
+    reglfpcmplem2c.1 $e |- X = U. J $.
+    $( The "finite-meeting" open cover has the same union as ` J ` .  For
+       each ` p e. X ` , ~ locfinnei gives a neighborhood meeting finitely
+       many elements of ` B ` , which lands in the restricted class.
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2c $p |- ( B e. ( LocFin ` J ) ->
+      U. { u e. J | { b e. B | ( b i^i u ) =/= (/) } e. Fin } = X ) $=
+      ( vp vn clocfin cfv wcel cv cin c0 wne crab cfn cuni a1i wa ssrab2 unissi
+      wss eqcomi sseqtri wceq wel locfinnei simprrl simprl simprrr ineq2 neeq1d
+      eqid rabbidv eleq1d elrab sylanbrc elunii syl2anc rexlimddv ssrdv eqsstrd
+      weq ex eqssd ) BCIJKZELZALZMZNOZEBPZQKZACPZRZDVODUCVGVOCRZDVNCVMACUAUBDVP
+      FUDUESVGDVPVODVPUFVGFSVGGVPVOVGGLZVPKZVQVOKZVGVRTZGHUGZVHHLZMZNOZEBPZQKZT
+      ZVSHCBVQHCVPEVPUNUHVTWBCKZWGTTZWAWBVNKZVSVTWHWAWFUIWIWHWFWJVTWHWGUJVTWHWA
+      WFUKVMWFAWBCAHVDZVLWEQWKVKWDEBWKVJWCNVIWBVHULUMUOUPUQURVQWBVNUSUTVAVEVBVC
+      VF $.
+  $}
+
+  ${
+    $d b c t u B $.  $d c t u C $.  $d b t u J $.
+    $( Each element of a refinement of the finite-meeting cover meets only
+       finitely many elements of ` B ` .  Uses the refinement property to
+       get a containing open set in the finite-meeting cover, then subset
+       finiteness.
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2d $p |- ( ( C Ref
+        { u e. J | { b e. B | ( b i^i u ) =/= (/) } e. Fin } /\
+        c e. C ) ->
+      { b e. B | ( b i^i c ) =/= (/) } e. Fin ) $=
+      ( vt cv cin c0 wne crab cfn wcel cref wbr wa wss refssex syl simprl ineq2
+      weq neeq1d rabbidv eleq1d elrab biimpi simprd simprr simpl sslin ss2rabdv
+      wi ssn0 ex ssfi syl2anc rexlimddv ) CEHZAHZIZJKZEBLZMNZADLZOPFHZCNQZVGGHZ
+      RZUTVGIZJKZEBLZMNZGVFGCVFVGSVHVIVFNZVJQQZUTVIIZJKZEBLZMNZVMVSRZVNVPVOVTVH
+      VOVJUAVOVIDNZVTVOWBVTQVEVTAVIDAGUCZVDVSMWCVCVREBWCVBVQJVAVIUTUBUDUEUFUGUH
+      UITVPVJWAVHVOVJUJVJVLVREBVJUTBNZQZVKVQRZVLVRUNWEVJWFVJWDUKVGVIUTULTWFVLVR
+      VKVQUOUPTUMTVSVMUQURUS $.
+  $}
+
+  ${
     $d t y z J $.
     $( Lemma 41.3 step (3) implies (4): If ` J ` is a topology and every
        open covering has a locally finite closed covering refinement, then
