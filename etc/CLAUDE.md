@@ -1,101 +1,281 @@
-# Rules for Working on set.mm
+# Rules for Working on set.mm (Metamath via client/server)
+
+These rules replace the old “compilation mode” that ran `timeout 60 metamath ...` directly.
+From now on, **all Metamath interaction MUST go through the persistent server + client**:
+- `./metamath_repl_server.py` (runs once, keeps state)
+- `./metamath_repl_client.py` (one-shot command runner)
+
+The style and intent of the original rules remain the same; only the execution mechanism changes.
+
+---
 
 ## STRICT PROHIBITIONS
 
 ### ⛔ **ONLY edit in the file set.mm after line 502024**
 - Everything after line 502024 in that file is by default in the Topology section and can be edited (even very high line numbers).
-- **NEVER edit any other files**
-- **NEVER run the checker (metamath) for more than 60 seconds** : The
-  proof search used by IMPROVE and IMPROVE ALL is very inefficient and
-  it's a huge waste of time. So always run with timeout 60 : `timeout 60 metamath ...` .
+- **NEVER edit any other files** (except updating this `CLAUDE.md` if asked).
+- **NEVER run Metamath operations for more than 60 seconds.**
+  - Proof search (especially `IMPROVE` / `IMPROVE ALL`) can be extremely inefficient.
+  - Therefore **every client call that could be slow MUST include `--timeout 60`**.
+
+### ⛔ Discontinue “compilation mode”
+- **DO NOT run** `metamath "read set.mm" ...` directly as the primary workflow.
+- **DO NOT rely on shell-quoted metamath invocations** except for emergency debugging.
+- **DO use** `./metamath_repl_client.py` exclusively for Metamath commands.
+
+
+### Always use absolute paths for READ/WRITE
+
+* The server’s working directory may differ from the client’s.
+* **Always** use `"$PWD/set.mm"` or a full path.
+
+### Hard 60-second limit
+
+* For checking / proof operations:
+
+  ./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+
+### Recovery after timeouts or dialog confusion
+
+Metamath can enter interactive dialogs; if a command times out or you see errors like it is answering a previous question (e.g. `?Expected / or nothing.`), the session may be stuck inside an unfinished prompt.
+
+**Recovery procedure:**
+
+1. `./metamath_repl_client.py --reset`
+2. `./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60`
+3. Re-issue the intended command in a dialog-free form.
+
 
 ## Never throw away useful work
+
 1. You should almost never revert to previous backups (you can use temporary admits when something is hard).
 2. If there is a really major reason for reverting, you have to salvage all the useful work done in between.
 3. In particular, you have to ensure that all compiling theorems and definitions added since are kept.
 4. If you later discover such screwup, you have to immedially start working on salvaging the lost work.
 5. **SIMPLE CHECK**: after each backup, run wc on the current and previous backup. If the current backup is smaller, you have to explicitly justify (in the CHANGES file) the decrease and explain that you have not thrown out useful work.
 
+
 ## Metamath Language Details
-- Btw, you can read the whole metamath.tex manual if you get into
-  serious trouble. It also describes all the commands usable with the
-  metamath binary we ask you to run.
-- You can/should learn from related proofs that you can display e.g. (for theorem iscmp) as follows:
-`tiemout 60 metamath "read set.mm" "show proof iscmp " exit`
+
+* You can read the whole metamath.tex manual if you get into serious trouble. It also describes all the commands usable with the metamath binary.
+* Learn from related proofs that you can display. Example (now via client/server):
+
+  ```bash
+  ./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+  ./metamath_repl_client.py "SHOW PROOF iscmp" --timeout 60
+  ```
 
 ### Logic System
-- A lot of useful topology is in set.mm - grep it often for existing defs and theorems.
-- You can/should also search for useful lemmas in set.mm.
-- You should **AVOID** duplicating lemmas that are readily available unless it's reasonably useful/justified. "Building up infrastructure" is typically not a good justification.
 
+* A lot of useful topology is in set.mm — grep it often for existing defs and theorems.
+* You can/should search for useful lemmas in set.mm.
+* You should **AVOID** duplicating lemmas that are readily available unless it's reasonably useful/justified. “Building up infrastructure” is typically not a good justification.
 
 ### Syntax Rules
-- **Only use `$( … $)` for comments** - no other comment syntax; no `$` inside comments
+
+* **Only use `$( … $)` for comments** - no other comment syntax; no `$` inside comments.
+
+## Checking / “Compilation” (NOW via client/server)
+
+### Primary check command (replacement for compilation mode)
+
+./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+./metamath_repl_client.py "VERIFY PROOF *" --timeout 60
+
+**Run checking frequently** to catch errors early.
 
 
-## Compilation Checking
-- The checking is done by running `metamath "read set.mm" "ve pr *" exit`
-- This will typically show you the errors in the proof that you are writing.
-- To delete (completely reset) a partial proof of theorem FOO:
-`timeout 60 metamath "read set.mm" "pr FOO" "delete all" "save new" "write source set.mm" "exit" "exit"`
-- To progress in a new/partial proof by applying previous theorem/lemma/def BLA do this:
-`timeout 60 metamath "read set.mm" "pr FOO" "assign last BLA" "save new" "write source set.mm" "exit" "exit"`
-- Note that the above two commands should often suffice but you can also "assign" other things - see "HELP ASSIGN" below - when needed.
+## Proof Assistant Operations (NOW via client/server)
 
-- In general you can do various commands instead of just delete and assign and you can look them up by useing "HELP" instead (follows e.g. by HELP ASSIGN). Read the help frequently, it's good.
+### Start proof of theorem FOO
 
-- To start a new lemma or definition etc you need to write it at the end of the set.mm file like this:
+```bash
+./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+./metamath_repl_client.py "PROVE FOO" --timeout 60
+```
 
- ${
-    mpcom.1 $e |- ( ps -> ph ) $.
-    mpcom.2 $e |- ( ph -> ( ps -> ch ) ) $.
-    $( Modus ponens inference with commutation of antecedents.  Commuted form
-       of ~ mpd .  (Contributed by NM, 17-Mar-1996.) $)
-    mpcom $p |- ( ps -> ch ) $=
-      ? $.
-  $}
+### Delete (completely reset) a partial proof of theorem FOO
 
-Where the first two lines ( $e ... $. statements) are the assumptions, then there is the comment and then the ( $p ... $= ... $. ) conclusion. (It could be just the conclusion). The question mark is an empty (admitted ) proof that you will be later constructing as explained above with ./metamath ... .
+./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+./metamath_repl_client.py "PROVE FOO" --timeout 60
+./metamath_repl_client.py "DELETE ALL" --timeout 60
+./metamath_repl_client.py "SAVE NEW" --timeout 60
+./metamath_repl_client.py "WRITE SOURCE $PWD/set.mm" --timeout 60
+./metamath_repl_client.py "EXIT" --timeout 60
+
+### Progress in a new/partial proof by applying previous lemma/def BLA
+
+./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+./metamath_repl_client.py "PROVE FOO" --timeout 60
+./metamath_repl_client.py "ASSIGN LAST BLA" --timeout 60
+./metamath_repl_client.py "SAVE NEW" --timeout 60
+./metamath_repl_client.py "WRITE SOURCE $PWD/set.mm" --timeout 60
+./metamath_repl_client.py "EXIT" --timeout 60
+
+### Help
+
+Prefer targeted help:
+
+```bash
+./metamath_repl_client.py "HELP ASSIGN" --timeout 60
+```
+
+The server handles the Metamath pager automatically (it will send `S<return>` when prompted).
 
 
-- **Run the checking frequently** to check for compilation errors
+## Critical Metamath REPL Discipline (avoid hangs)
 
-- Often do numbered backups of set.mm like bck0007 (followed by pigz bck0007 to save space). Even when it doesn't compile. Saving you partial attempts is important for not running in circles!
-- With each numbered backup, also write the numbered summary changes file like CHANGES0007 (it should really be a summary, not just a simple diff).
-- You can lookup your previous work in these CHANGES files when unsure how to continue.
-- Never overwrite an older backup file. The numbering has to continue from the latest number. You must find it by running: ls bck* | sed 's/[^0-9]*//g' | sort -n | tail -n 1.
+Metamath has:
+
+1. long output paging prompts (handled by server),
+2. **interactive dialogs** that ask questions and wait for input.
+
+### Rule: avoid interactive dialog commands
+
+**Prefer explicit, dialog-free forms**.
+
+Examples:
+
+* ✅ `SHOW LABELS *`  (do NOT run `SHOW LABELS` alone)
+* ✅ `SEARCH <pattern>` (do NOT run `SEARCH` alone)
+* ✅ `SHOW STATEMENT <label>`
+* ✅ `SHOW PROOF <label>`
+* ✅ `SHOW USAGE <label>`
+
+If you must answer a dialog, send all answers in one call using multi-line input:
+
+./metamath_repl_client.py $'SHOW LABELS\n*\n\n' --timeout 60
+
+But again: **prefer the dialog-free forms**.
 
 
+## Adding new lemma/definition/theorem stubs in set.mm
+
+To start a new lemma or definition etc, write it at the end of `set.mm` like:
+
+```
+${
+  mpcom.1 $e |- ( ps -> ph ) $.
+  mpcom.2 $e |- ( ph -> ( ps -> ch ) ) $.
+  $( Modus ponens inference with commutation of antecedents.  Commuted form
+     of ~ mpd .  (Contributed by NM, 17-Mar-1996.) $)
+  mpcom $p |- ( ps -> ch ) $=
+    ? $.
+$}
+```
+
+Then use the Proof Assistant commands above to gradually replace `?` with a real proof.
+
+
+## Backups / CHANGES discipline
+
+* Often do numbered backups of set.mm like `bck0007` (followed by `pigz bck0007` to save space). Even when it doesn't compile.
+* With each numbered backup, also write the numbered summary changes file like `CHANGES0007` (a real summary, not just a diff).
+* Never overwrite an older backup file. The numbering has to continue from the latest number. Find it by:
+
+  ls bck* | sed 's/[^0-9]*//g' | sort -n | tail -n 1
 
 ## Work Strategy
-- You can do the following things in any order but you should always progress and produce some more code. 
-- Keep carefully fixing any incorrect/bad definitions/theorems you find (note that this may lead to fixing some proofs, etc).
-- Keep eliminating stubs, replacing them with more complete theorems and definitions (gradual/partial approaches are ok when needed).
-- Keep replacing ? inside the proof body  (unfinished proofs) with more complete proofs by invoking the edditor and adding more proof steps. This may also lead to adding more auxiliary lemmas/theorems.
-- While doing the above, remember that:
-- Doing easy things is initially OK, however, don't be afraid to try to do (gradually/partially if needed) some harder theorems too. Don't endlessly jump around looking for easy things - that wastes time.
-- Balance simple infrastructure theorems with more challenging results
-- Your **strong focus** should be on finishing the major well-known theorems ASAP (like Urysohn). Prioritize them (even if they are hard) over doing many examples/exercises.
-- Use gradual/partial approaches for difficult theorems when needed (and don't delete such started partial proofs - use temporary ? in their various branches and keep gradually eliminating those). Also, structure bigger proofs into useful top-level/helper lemmas wherever possible.
-- Also, always grep all current definitions and theorems in set.mm  before creating a new one. Be sure to remove/avoid duplicities.
 
-- Your current formalization goal there is the 41.4 theorem: metrizable implies paracompact. 
-- For the formalization, try to follow the file topology.tex which describes the proofs and constructions. 
-- You can introduce more necessary definitions and lemmas, however they must never duplicate anything done in metric.ml (all other available lemmas) already. Anything you newly introduce must be aligned with set.mm .
-- You development will be finished when the  theorem 41.4 is proved and there are no uses of ? (empty/admitted proof ) in the development.
-- "Building up infrastructure" is typically not a good justification for duplicating lemmas that already exist in the library and are available to you.
+* You can do the following things in any order but you should always progress and produce some more code.
+* Keep carefully fixing any incorrect/bad definitions/theorems you find (note that this may lead to fixing some proofs, etc).
+* Keep eliminating stubs, replacing them with more complete theorems and definitions (gradual/partial approaches are ok when needed).
+* Keep replacing `?` inside the proof body (unfinished proofs) with more complete proofs by invoking Proof Assistant commands. This may also lead to adding more auxiliary lemmas/theorems.
+* Doing easy things initially is OK; however, don’t endlessly jump around — that wastes time.
+* Balance simple infrastructure theorems with more challenging results.
+* Strong focus: finish major well-known theorems ASAP (like Urysohn). Prioritize them over many minor examples.
 
-### PROOF STRATEGY RULES
-- Avoid rebuilding standard machinery.
+### Current formalization goal
+
+* Your current formalization goal is theorem 41.4: **metrizable implies paracompact**.
+* Follow `topology.tex` for proof structure.
+* You may introduce necessary definitions/lemmas, but **must not duplicate** what is already available (including anything in metric.ml / existing library).
+* Development is finished when theorem 41.4 is proved and there are **no uses of `?`** in the development.
 
 ### Proof style discipline
 
-- Try to structure longer proofs into many top-level lemmas with shorter proofs. Long proofs are very easy to get messy.
+* Avoid rebuilding standard machinery.
+* Structure long proofs into many smaller toplevel lemmas with shorter proofs.
 
 
 ## Important Word of Advice
-1. Re-read (and then remember/follow) CLAUDE.md frequently. 
-2.  Structure the long proofs into many smaller toplevel lemmas so
-that things don't get so complex and you don't throw away finished
-work over and over.
-3. Never throw partially finished things away and do frequent backups.
+
+1. Re-read (and then remember/follow) this `CLAUDE.md` frequently.
+2. Structure long proofs into many small top-level lemmas so things don’t get messy.
+3. Never throw partially finished work away; do frequent numbered backups.
+
+### ⛔ Server control is forbidden
+- The Metamath server is managed externally and is assumed to be running.
+- **NEVER try to start the server** 
+- **NEVER try to stop/kill/restart the server** 
+- Interact with Metamath **ONLY** via `./metamath_repl_client.py ...`.
+
+### Server health check (allowed)
+If Metamath seems unresponsive, you may only do:
+./metamath_repl_client.py --ping
+
+- `--reset` is a LAST-RESORT recovery tool.
+- Claude MUST NOT use `--reset` unless:
+  1) the server fails `--ping`, or
+  2) Metamath is clearly stuck in a dialog state that cannot be exited, or
+  3) the human explicitly requests a reset.
+- After every `--reset`, Claude MUST immediately:
+  - READ set.mm
+  - VERIFY PROOF *
+
+
+## Command Quick Reference (Client/Server Metamath)
+
+### Reset & reload (SAFE RECOVERY SEQUENCE)
+
+Use this whenever something times out, hangs, or looks confused.
+
+```bash
+./metamath_repl_client.py --reset
+./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+```
+
+
+### Check / “compile” the database
+
+./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+./metamath_repl_client.py "VERIFY PROOF *" --timeout 60
+
+
+
+### Inspect existing material (dialog-free)
+
+./metamath_repl_client.py "SHOW STATEMENT th1"
+./metamath_repl_client.py "SHOW PROOF th1" --timeout 60
+./metamath_repl_client.py "SHOW USAGE th1"
+./metamath_repl_client.py "SHOW LABELS *" --timeout 60
+
+
+### Start / work on a proof
+
+./metamath_repl_client.py "PROVE FOO" --timeout 60
+./metamath_repl_client.py "SHOW NEW_PROOF"
+./metamath_repl_client.py "SHOW NEW_PROOF / UNKNOWN"
+
+### Modify a proof
+
+./metamath_repl_client.py "ASSIGN FIRST BAR" --timeout 60
+./metamath_repl_client.py "ASSIGN LAST BAR" --timeout 60
+./metamath_repl_client.py "UNDO"
+
+### Save proof back to set.mm
+
+./metamath_repl_client.py "SAVE NEW" --timeout 60
+./metamath_repl_client.py "WRITE SOURCE $PWD/set.mm" --timeout 60
+./metamath_repl_client.py "EXIT"
+
+### Help (safe; pager handled automatically)
+
+./metamath_repl_client.py "HELP ASSIGN" --timeout 60
+
+### ABSOLUTE DO-NOTS (Quick)
+
+* ❌ Do NOT run `metamath "read set.mm" ...` directly for normal work
+* ❌ Do NOT run interactive commands without arguments (e.g. `SHOW LABELS`)
+* ❌ Do NOT exceed `--timeout 60`
+* ❌ Do NOT edit `set.mm` before line 502024
