@@ -1387,7 +1387,18 @@ $)
     reglfpcmplem2k $p |- ( ( B e. ( LocFin ` J ) /\ B C_ ( Clsd ` J )
         /\ A. b e. B b C_ ( f ` b ) )
       -> X C_ U. D ) $=
-      ? $.
+      ( vp cfv wcel wss cv wral cuni syl cdif clocfin ccld wceq simp1 locfinbas
+      w3a eqid wa crab cin simp2 adantr simpr sseldd cldss reglfpcmplem2b simp3
+      weq id fveq2 sseq12d rspcva syl2anc ssind cmpt crn cvv fvex inex2 difeq2d
+      a1i sseq2d rabbidv unieqd fveq2d ineq12d eqcomd elrnmptdv eleqtrd elssuni
+      eqcomi sstrd ralrimiva unissb sylibr eqsstrd ) BFUAMNZBFUBMZOZHPZWJEPZMZO
+      ZHBQZUFZGBRZDRZWOWGGWPUCWGWIWNUDBFGWPJWPUGUESWOLPZWQOZLBQWPWQOWOWSLBWOWRB
+      NZUHZWRGIPZGWRTZOZICUIZRZTZWRWKMZUJZWQXAWRXGXHXAWRGOZWRXGOXAWRWHNXJXABWHW
+      RWOWIWTWGWIWNUKULWOWTUMZUNWRFGJUOSCGLIUPSXAWTWNWRXHOZXKWOWNWTWGWIWNUQULWM
+      XLHWRBHLURZWJWRWLXHXMUSWJWRWKUTVAVBVCVDXAXIDNXIWQOXAXIABGXBGAPZTZOZICUIZR
+      ZTZXNWKMZUJZVEZVFZDXAABYAWRXIYBVGYBUGXKXIVGNXAXHXGWRWKVHVIVKXAALURZUHZYAX
+      IYEXSXGXTXHYEXRXFGYEXQXEYEXPXDICYEXOXCXBYEXNWRGXAYDUMZVJVLVMVNVJYEXNWRWKY
+      FVOVPVQVRYCDUCXADYCKWAVKVSXIDVTSWBWCLBWQWDWEWF $.
   $}
 
   ${
