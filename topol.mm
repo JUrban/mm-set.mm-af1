@@ -1344,21 +1344,71 @@ $)
   $}
 
   ${
-    $d b c d f n p s t u w z B C J X y $.
+    $d b d f n s t w z P C D X $.
+    reglfpcmplem2j.1 $e |- D = ran ( t e. P |->
+      ( ( X \ U. { d e. C | d C_ ( X \ t ) } ) i^i ( f ` t ) ) ) $.
+    $( Finiteness transfer for the locally finite bound: if the set of
+       ` b e. P ` whose expansion set meets ` n ` is finite, then the set of
+       elements of ` D ` that meet ` n ` is also finite.  This holds because
+       each element of ` D ` is ` ( E ( t ) i^i ( f `` t ) ) C_ E ( t ) ` for
+       some ` t e. P ` , so meeting ` n ` forces ` E ( t ) ` to also meet
+       ` n ` .  (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2j $p |- (
+      { b e. P | ( ( X \ U. { d e. C | d C_ ( X \ b ) } ) i^i n )
+        =/= (/) } e. Fin
+      -> { s e. D | ( s i^i n ) =/= (/) } e. Fin ) $=
+      ( vw vz cv cdif wss crab cin c0 wcel cuni wne cfn cfv wceq cab abrexfi wa
+      wrex weq ineq1 neeq1d elrab cmpt crn eleq2i cvv wb vex eqid elrnmpt ax-mp
+      biimpi sylbi adantr simprl simprr ineq1d inss1 a1i eqsstrd simplr syl2anc
+      ssrin id difeq2d sseq2d rabbidv unieqd sylanbrc jca ex reximdv2 mpd eqeq1
+      ssn0 rexbidv elab2 biimpri syl ssriv ssfi mpan2 ) GJNZGINZOZPZJBQZUAZOZFN
+      ZRZSUBZIDQZUCTLNZGWNGANZOZPZJBQZUAZOZXFENUDZRZUEZAXDUIZLUFZUCTZHNZXARZSUB
+      ZHCQZUCTZALXDXMUGXQYAXPPYBMYAXPMNZYATYCCTZYCXARZSUBZUHZYCXPTZXTYFHYCCHMUJ
+      XSYESXRYCXAUKULUMYGYCXMUEZAXDUIZYHYGYIADUIZYJYDYKYFYDYCADXMUNZUOZTZYKCYMY
+      CKUPYNYKYCUQTYNYKURMUSZADXMYCYLUQYLUTVAVBVCVDVEYGYIYIADXDYGXFDTZYIUHZXFXD
+      TZYIUHYGYQUHZYRYIYSYPXKXARZSUBZYRYGYPYIVFYSYEYTPYFUUAYSYEXMXARZYTYSYCXMXA
+      YGYPYIVGZVHUUBYTPZYSXMXKPUUDXKXLVIXMXKXAVNVBVJVKYDYFYQVLYEYTWFVMXCUUAIXFD
+      IAUJZXBYTSUUEWTXKXAUUEWSXJGUUEWRXIUUEWQXHJBUUEWPXGWNUUEWOXFGUUEVOVPVQVRVS
+      VPVHULUMVTUUCWAWBWCWDYHYJXOYJLYCXPYOLMUJXNYIAXDXEYCXMWEWGXPUTWHWIWJVDWKXP
+      YAWLWMWJ $.
+  $}
+
+  ${
+    $d b d p t B C D J X f $.
+    reglfpcmplem2k.1 $e |- X = U. J $.
+    reglfpcmplem2k.2 $e |- D = ran ( t e. B |->
+      ( ( X \ U. { d e. C | d C_ ( X \ t ) } ) i^i ( f ` t ) ) ) $.
+    $( The collection ` D ` covers ` X ` : every point of ` X ` belongs to
+       some element of ` D ` .  For ` p e. X ` , ~ locfinbas gives
+       ` p e. U. B ` , so there is ` t e. B ` with ` p e. t ` .  Then
+       ` p e. E ( t ) ` by ~ reglfpcmplem2b and ` p e. ( f `` t ) ` by
+       ` t C_ ( f `` t ) ` , so ` p e. ( E ( t ) i^i ( f `` t ) ) e. D ` .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2k $p |- ( ( B e. ( LocFin ` J ) /\ B C_ ( Clsd ` J )
+        /\ A. b e. B b C_ ( f ` b ) )
+      -> X C_ U. D ) $=
+      ? $.
+  $}
+
+  ${
+    $d b c d f n p s t u w z B C D J X y $.
     reglfpcmplem2i.1 $e |- X = U. J $.
-    $( Given a locally finite closed refinement ` B ` of an open cover ` y ` ,
-       an auxiliary locally finite closed refinement ` C ` of the finite-meeting
-       open cover, and a choice function ` f : B --> y ` with ` b C_ ( f `` b ) `
-       for each ` b e. B ` , the collection of sets
-       ` ( E ( b ) i^i ( f `` b ) ) ` is a locally finite open refinement of
-       ` y ` .  This is the core construction for ~ reglfpcmplem2 .
+    reglfpcmplem2i.2 $e |- D = ran ( t e. B |->
+      ( ( X \ U. { d e. C | d C_ ( X \ t ) } ) i^i ( f ` t ) ) ) $.
+    $( The collection ` D ` of open sets ` ( E ( b ) i^i ( f `` b ) ) ` is a
+       locally finite open refinement of ` y ` .  Here ` B ` is a locally
+       finite closed refinement of ` y ` , ` C ` is an auxiliary locally finite
+       closed refinement of the finite-meeting open cover, ` f : B --> y `
+       chooses a cover element for each ` b e. B ` , and ` D ` collects the
+       intersections of expansion sets with the chosen cover elements.  This is
+       the core construction for ~ reglfpcmplem2 .
        (Contributed by Claude, 10-Feb-2026.) $)
     reglfpcmplem2i $p |- ( ( ( ( J e. Top /\ y C_ J /\ X = U. y )
         /\ ( B e. ( LocFin ` J ) /\ B C_ ( Clsd ` J ) /\ B Ref y ) )
       /\ ( ( C e. ( LocFin ` J ) /\ C C_ ( Clsd ` J )
         /\ C Ref { u e. J | { b e. B | ( b i^i u ) =/= (/) } e. Fin } )
       /\ ( f : B --> y /\ A. b e. B b C_ ( f ` b ) ) ) )
-      -> E. z e. ( ( LocFin ` J ) i^i ~P J ) z Ref y ) $=
+      -> ( D e. ( ( LocFin ` J ) i^i ~P J ) /\ D Ref y ) ) $=
       ? $.
   $}
 
