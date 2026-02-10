@@ -1062,7 +1062,15 @@ $)
         E. t e. ( LocFin ` J ) t Ref y ) ) ->
       A. y e. ~P J ( U. J = U. y ->
         E. t e. ( ( LocFin ` J ) i^i ~P ( Clsd ` J ) ) t Ref y ) ) $=
-      ? $.
+      ( vz wcel cuni cv wceq cref wbr cfv wrex wi cpw wa simpl simpr syl adantr
+      wral creg clocfin ccld cin weq unieq eqeq2d breq2 rexbidv cbvralvw biimpi
+      imbi12d jca wss w3a elpwi 3jca reglfpcmplem1b breq1 cbvrexvw ex ralrimiva
+      ) CUAEZCFZAGZFZHZBGZVEIJZBCUBKZLZMZACNZTZOZVCVDDGZFZHZVHVPIJZBVJLZMZDVMTZ
+      OZVGVIBVJCUCKNUDZLZMZAVMTVOVCWBVCVNPVOVNWBVCVNQVNWBVLWAADVMADUEZVGVRVKVTW
+      GVFVQVDVEVPUFUGWGVIVSBVJVEVPVHIUHUIULUJUKRUMWCWFAVMWCVEVMEZOZVGWEWIVGOZVC
+      VECUNZVGUOZWBOZWEWJWLWBWJVCWKVGWIVCVGWCVCWHVCWBPSSWJWHWKWIWHVGWCWHQSVECUP
+      RWIVGQUQWIWBVGWCWBWHVCWBQSSUMWMVPVEIJZDWDLZWEADBCURWOWEWNVIDBWDVPVHVEIUSU
+      TUKRRVAVBR $.
   $}
 
   ${
