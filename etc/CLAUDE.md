@@ -5,7 +5,9 @@
 ### ⛔ **ONLY edit in the file set.mm after line 502024**
 - Everything after line 502024 in that file is by default in the Topology section and can be edited (even very high line numbers).
 - **NEVER edit any other files**
-
+- **NEVER run the checker (metamath) for more than 60 seconds** : The
+  proof search used by IMPROVE and IMPROVE ALL is very inefficient and
+  it's a huge waste of time. So always run with timeout 60 : `timeout 60 metamath ...` .
 
 ## Never throw away useful work
 1. You should almost never revert to previous backups (you can use temporary admits when something is hard).
@@ -19,7 +21,7 @@
   serious trouble. It also describes all the commands usable with the
   metamath binary we ask you to run.
 - You can/should learn from related proofs that you can display e.g. (for theorem iscmp) as follows:
-`metamath "read set.mm" "show proof iscmp " exit`
+`tiemout 60 metamath "read set.mm" "show proof iscmp " exit`
 
 ### Logic System
 - A lot of useful topology is in set.mm - grep it often for existing defs and theorems.
@@ -35,9 +37,9 @@
 - The checking is done by running `metamath "read set.mm" "ve pr *" exit`
 - This will typically show you the errors in the proof that you are writing.
 - To delete (completely reset) a partial proof of theorem FOO:
-`metamath "read set.mm" "pr FOO" "delete all" "save new" "write source set.mm" "exit" "exit"`
+`timeout 60 metamath "read set.mm" "pr FOO" "delete all" "save new" "write source set.mm" "exit" "exit"`
 - To progress in a new/partial proof by applying previous theorem/lemma/def BLA do this:
-`metamath "read set.mm" "pr FOO" "assign last BLA" "save new" "write source set.mm" "exit" "exit"`
+`timeout 60 metamath "read set.mm" "pr FOO" "assign last BLA" "save new" "write source set.mm" "exit" "exit"`
 - Note that the above two commands should often suffice but you can also "assign" other things - see "HELP ASSIGN" below - when needed.
 
 - In general you can do various commands instead of just delete and assign and you can look them up by useing "HELP" instead (follows e.g. by HELP ASSIGN). Read the help frequently, it's good.
