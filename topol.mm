@@ -1524,7 +1524,33 @@ $)
   $}
 
   ${
-    $d b p u B J X $.
+    $d b s u B $.
+    $( Bound variable change for the intersection-nonemptiness restricted
+       class abstraction: convert bound variable ` s ` to ` b ` .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2pa $p |- { s e. B | ( s i^i u ) =/= (/) } =
+      { b e. B | ( b i^i u ) =/= (/) } $=
+      ( cv cin c0 wne weq wceq wb ineq1 neeq1 syl cbvrabv ) CEZAEZFZGHZDEZQFZGH
+      ZCDBCDIRUAJSUBKPTQLRUAGMNO $.
+  $}
+
+  ${
+    $d b n u B J $.
+    $( Backward direction of ~ elrab for the locally finite cover set: if
+       ` n ` is in ` J ` and ` { b e. B | ( b i^i n ) =/= (/) } ` is finite,
+       then ` n ` is in the restricted abstraction.
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2pb $p |- ( ( n e. J /\ { b e. B | ( b i^i n ) =/= (/) }
+      e. Fin ) -> n e. { u e. J | { b e. B | ( b i^i u ) =/= (/) }
+      e. Fin } ) $=
+      ( cv wcel cin c0 wne crab cfn wa simpl simpr weq wceq wb ineq2 neeq1 syl
+      rabbidv eleq1d elrab sylanbrc ) CFZDGZEFZUFHZIJZEBKZLGZMUGULUFUHAFZHZIJZE
+      BKZLGZADKGUGULNUGULOUQULAUFDACPZUPUKLURUOUJEBURUNUIQUOUJRUMUFUHSUNUIITUAU
+      BUCUDUE $.
+  $}
+
+  ${
+    $d b n p s u B J X $.
     reglfpcmplem2p.1 $e |- X = U. J $.
     $( The locally finite cover
        ` { u e. J | { b e. B | ( b i^i u ) =/= (/) } e. Fin } ` has the
@@ -1532,7 +1558,40 @@ $)
        (Contributed by Claude, 10-Feb-2026.) $)
     reglfpcmplem2p $p |- ( B e. ( LocFin ` J ) ->
       X = U. { u e. J | { b e. B | ( b i^i u ) =/= (/) } e. Fin } ) $=
-      ? $.
+      cB cJ clocfin cfv wcel cX vb cv vu cv cin c0 wne vb cB crab cfn
+      wcel vu cJ crab cuni cB cJ clocfin cfv wcel vp cX vb cv vu cv cin
+      c0 wne vb cB crab cfn wcel vu cJ crab cuni cB cJ clocfin cfv wcel
+      vp cv cX wcel vp cv vb cv vu cv cin c0 wne vb cB crab cfn wcel vu
+      cJ crab cuni wcel cB cJ clocfin cfv wcel vp cv cX wcel wa vp cv
+      vn cv wcel vs cv vn cv cin c0 wne vs cB crab cfn wcel wa vp cv vb
+      cv vu cv cin c0 wne vb cB crab cfn wcel vu cJ crab cuni wcel vn
+      cJ cB vp cv vn cJ cX vs reglfpcmplem2p.1 locfinnei vn cv cJ wcel
+      vp cv vn cv wcel vs cv vn cv cin c0 wne vs cB crab cfn wcel wa wa
+      vp cv vb cv vu cv cin c0 wne vb cB crab cfn wcel vu cJ crab cuni
+      wcel cB cJ clocfin cfv wcel vp cv cX wcel wa vn cv cJ wcel vp cv
+      vn cv wcel vs cv vn cv cin c0 wne vs cB crab cfn wcel wa wa vp cv
+      vn cv wcel vn cv vb cv vu cv cin c0 wne vb cB crab cfn wcel vu cJ
+      crab wcel vp cv vb cv vu cv cin c0 wne vb cB crab cfn wcel vu cJ
+      crab cuni wcel vn cv cJ wcel vp cv vn cv wcel vs cv vn cv cin c0
+      wne vs cB crab cfn wcel simprl vn cv cJ wcel vp cv vn cv wcel vs
+      cv vn cv cin c0 wne vs cB crab cfn wcel wa wa vn cv cJ wcel vb cv
+      vn cv cin c0 wne vb cB crab cfn wcel vn cv vb cv vu cv cin c0 wne
+      vb cB crab cfn wcel vu cJ crab wcel vn cv cJ wcel vp cv vn cv
+      wcel vs cv vn cv cin c0 wne vs cB crab cfn wcel wa simpl vn cv cJ
+      wcel vp cv vn cv wcel vs cv vn cv cin c0 wne vs cB crab cfn wcel
+      wa wa vs cv vn cv cin c0 wne vs cB crab vb cv vn cv cin c0 wne vb
+      cB crab cfn vs cv vn cv cin c0 wne vs cB crab vb cv vn cv cin c0
+      wne vb cB crab wceq vn cv cJ wcel vp cv vn cv wcel vs cv vn cv
+      cin c0 wne vs cB crab cfn wcel wa wa vn cB vs vb reglfpcmplem2pa
+      a1i vn cv cJ wcel vp cv vn cv wcel vs cv vn cv cin c0 wne vs cB
+      crab cfn wcel simprr eqeltrrd vu cB vn cJ vb reglfpcmplem2pb
+      syl2anc vp cv vn cv vb cv vu cv cin c0 wne vb cB crab cfn wcel vu
+      cJ crab elunii syl2anc adantl rexlimddv ex ssrdv vb cv vu cv cin
+      c0 wne vb cB crab cfn wcel vu cJ crab cuni cX wss cB cJ clocfin
+      cfv wcel vb cv vu cv cin c0 wne vb cB crab cfn wcel vu cJ crab
+      cuni cJ cuni cX vb cv vu cv cin c0 wne vb cB crab cfn wcel vu cJ
+      crab cJ vb cv vu cv cin c0 wne vb cB crab cfn wcel vu cJ ssrab2
+      unissi reglfpcmplem2p.1 sseqtrri a1i eqssd $.
   $}
 
   ${
