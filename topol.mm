@@ -1344,7 +1344,7 @@ $)
   $}
 
   ${
-    $d b d f n s t w z P C D X $.
+    $d b d f n s t w z P C X $.  $d D b n s t w z $.
     reglfpcmplem2j.1 $e |- D = ran ( t e. P |->
       ( ( X \ U. { d e. C | d C_ ( X \ t ) } ) i^i ( f ` t ) ) ) $.
     $( Finiteness transfer for the locally finite bound: if the set of
@@ -1374,7 +1374,25 @@ $)
   $}
 
   ${
-    $d b d p t B C D J X f $.
+    $d b d f h n r s t w z P C X $.  $d D b n r s w z $.
+    reglfpcmplem2j3.1 $e |- D = ran ( t e. P |->
+      ( ( X \ U. { d e. C | d C_ ( X \ t ) } ) i^i ( f ` t ) ) ) $.
+    $( Wrapper for ~ reglfpcmplem2j avoiding the ` $d D t ` constraint
+       by renaming the map-to variable ` t ` to ` r ` via ~ cbvmptv .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2j3 $p |- (
+      { b e. P | ( ( X \ U. { d e. C | d C_ ( X \ b ) } ) i^i n )
+        =/= (/) } e. Fin
+      -> { s e. D | ( s i^i n ) =/= (/) } e. Fin ) $=
+      ( vr cv cdif wss crab cuni cfv cin cmpt crn weq id difeq2d sseq2d rabbidv
+      unieqd fveq2 ineq12d cbvmptv rneqi eqtri reglfpcmplem2j ) LBCDEFGHIJCADGJ
+      MZGAMZNZOZJBPZQZNZUOEMZRZSZTZUALDGUNGLMZNZOZJBPZQZNZVEVARZSZTZUAKVDVMALDV
+      CVLALUBZUTVJVBVKVNUSVIGVNURVHVNUQVGJBVNUPVFUNVNUOVEGVNUCUDUEUFUGUDUOVEVAU
+      HUIUJUKULUM $.
+  $}
+
+  ${
+    $d b d p t B C J X f $.  $d D b p $.
     reglfpcmplem2k.1 $e |- X = U. J $.
     reglfpcmplem2k.2 $e |- D = ran ( t e. B |->
       ( ( X \ U. { d e. C | d C_ ( X \ t ) } ) i^i ( f ` t ) ) ) $.
@@ -1402,7 +1420,7 @@ $)
   $}
 
   ${
-    $d d t B C D J X f y $.
+    $d d t B C J X f y $.
     reglfpcmplem2l.1 $e |- X = U. J $.
     reglfpcmplem2l.2 $e |- D = ran ( t e. B |->
       ( ( X \ U. { d e. C | d C_ ( X \ t ) } ) i^i ( f ` t ) ) ) $.
@@ -1425,7 +1443,7 @@ $)
   $}
 
   ${
-    $d b d n p s t u B C D J X f $.
+    $d b d n p s t u B C J X f $.  $d D b n p s u $.
     reglfpcmplem2m.1 $e |- X = U. J $.
     reglfpcmplem2m.2 $e |- D = ran ( t e. B |->
       ( ( X \ U. { d e. C | d C_ ( X \ t ) } ) i^i ( f ` t ) ) ) $.
@@ -1441,7 +1459,7 @@ $)
       -> A. p e. X E. n e. J ( p e. n
         /\ { s e. D | ( s i^i n ) =/= (/) } e. Fin ) ) $=
       ( wcel wss cv crab wa ctop clocfin cfv ccld w3a cin wne cfn cref wbr wrex
-      c0 wel cdif df-3an biimpri reglfpcmplem2h reglfpcmplem2j anim2i ralrimiva
+      c0 wel cdif df-3an biimpri reglfpcmplem2h reglfpcmplem2j3 anim2i ralrimiva
       cuni syl reximi ) HUAPCHUBUCZPCHUDUCZQUEZDVDPDVEQDLRZARUFULUGLCSUHPAHSUIU
       JUEZTZKGUMZJRGRZUFULUGJESUHPZTZGHUKZKIVIKRIPZTZVJIMRIVGUNQMDSVAUNVKUFULUG
       LCSUHPZTZGHUKZVNVPVFVHVOUEZVSVTVPVFVHVOUOUPACDGHIKLMNUQVBVRVMGHVQVLVJBDEC
@@ -1449,7 +1467,7 @@ $)
   $}
 
   ${
-    $d d t w z B C D X f y $.
+    $d d t w z B C X f y $.  $d D t w z $.
     reglfpcmplem2n.1 $e |- D = ran ( t e. B |->
       ( ( X \ U. { d e. C | d C_ ( X \ t ) } ) i^i ( f ` t ) ) ) $.
     $( Each element of ` D ` is a subset of some element of ` y ` .  Since
@@ -1469,7 +1487,23 @@ $)
   $}
 
   ${
-    $d b c d f n p s t u w z B C D J X y $.
+    $d d h r t w z B C X f y $.  $d D r w z $.
+    reglfpcmplem2n3.1 $e |- D = ran ( t e. B |->
+      ( ( X \ U. { d e. C | d C_ ( X \ t ) } ) i^i ( f ` t ) ) ) $.
+    $( Wrapper for ~ reglfpcmplem2n avoiding the ` $d D t ` constraint
+       by renaming the map-to variable ` t ` to ` r ` via ~ cbvmptv .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2n3 $p |- ( f : B --> y
+      -> A. z e. D E. w e. y z C_ w ) $=
+      ( vr cv cdif wss crab cuni cfv cin cmpt crn weq id difeq2d sseq2d rabbidv
+      unieqd fveq2 ineq12d cbvmptv rneqi eqtri reglfpcmplem2n ) ABCLEFGHIJGDEIJ
+      MZIDMZNZOZJFPZQZNZUOHMZRZSZTZUALEIUNILMZNZOZJFPZQZNZVEVARZSZTZUAKVDVMDLEV
+      CVLDLUBZUTVJVBVKVNUSVIIVNURVHVNUQVGJFVNUPVFUNVNUOVEIVNUCUDUEUFUGUDUOVEVAU
+      HUIUJUKULUM $.
+  $}
+
+  ${
+    $d b c d f n p s t u w z B C J X y $.  $d D b c n p s u w z $.
     reglfpcmplem2i.1 $e |- X = U. J $.
     reglfpcmplem2i.2 $e |- D = ran ( t e. B |->
       ( ( X \ U. { d e. C | d C_ ( X \ t ) } ) i^i ( f ` t ) ) ) $.
@@ -1491,7 +1525,7 @@ $)
       vw cin c0 wne crab cfn wf wral cpw simpll1 simplr1 simplr2 reglfpcmplem2k
       wel wrex simprrr syl3anc simprl1 simprl2 simprrl reglfpcmplem2l syl122anc
       simpll2 unissd sseqtrrdi eqssd 3jca simprl jca reglfpcmplem2m syl wb eqid
-      a1i mpbir3and sselpwd elind simpll3 eqtr3d reglfpcmplem2n isref mpbir2and
+      a1i mpbir3and sselpwd elind simpll3 eqtr3d reglfpcmplem2n3 isref mpbir2and
       islocfin ) HUCPZAQZHRZIWOUDZUEZSZDHUFUGZPZDHUHUGZRZDWOUIUJZSZTZEWTPZEXBRZ
       EJQZBQULUMUNJDUOUPPBHUOUIUJZSZDWOGQZUQZXIXIXLUGRJDURZTZTZTZFWTHUSZULPFWOU
       IUJZXQWTXRFXQFWTPZWNIFUDZUEZNOVDUAQOQULUMUNUAFUOUPPTOHVENIURZWNWPWRXEXPUT
@@ -1608,7 +1642,59 @@ $)
       /\ ( C e. ( LocFin ` J ) /\ C C_ ( Clsd ` J )
         /\ C Ref { u e. J | { b e. B | ( b i^i u ) =/= (/) } e. Fin } ) )
       -> E. z e. ( ( LocFin ` J ) i^i ~P J ) z Ref y ) $=
-      ? $.
+      cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq w3a cB cJ clocfin cfv wcel
+      cB cJ ccld cfv wss cB vy cv cref wbr w3a cC cJ clocfin cfv wcel cC cJ
+      ccld cfv wss cC vb cv vu cv cin c0 wne vb cB crab cfn wcel vu cJ crab
+      cref wbr w3a vz cv vy cv cref wbr vz cJ clocfin cfv cJ cpw cin wrex cJ
+      ctop wcel vy cv cJ wss cX vy cv cuni wceq w3a cB cJ clocfin cfv wcel cB
+      cJ ccld cfv wss cB vy cv cref wbr w3a wa cC cJ clocfin cfv wcel cC cJ
+      ccld cfv wss cC vb cv vu cv cin c0 wne vb cB crab cfn wcel vu cJ crab
+      cref wbr w3a wa cB vy cv vf cv wf vb cv vb cv vf cv cfv wss vb cB wral wa
+      vz cv vy cv cref wbr vz cJ clocfin cfv cJ cpw cin wrex vf cJ ctop wcel vy
+      cv cJ wss cX vy cv cuni wceq w3a cB cJ clocfin cfv wcel cB cJ ccld cfv
+      wss cB vy cv cref wbr w3a wa cC cJ clocfin cfv wcel cC cJ ccld cfv wss cC
+      vb cv vu cv cin c0 wne vb cB crab cfn wcel vu cJ crab cref wbr w3a wa cB
+      cJ clocfin cfv wcel cB vy cv cref wbr cB vy cv vf cv wf vb cv vb cv vf cv
+      cfv wss vb cB wral wa vf wex cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq
+      w3a cB cJ clocfin cfv wcel cB cJ ccld cfv wss cB vy cv cref wbr w3a wa cC
+      cJ clocfin cfv wcel cC cJ ccld cfv wss cC vb cv vu cv cin c0 wne vb cB
+      crab cfn wcel vu cJ crab cref wbr w3a wa cB cJ clocfin cfv wcel cB cJ
+      ccld cfv wss cB vy cv cref wbr w3a cB cJ clocfin cfv wcel cJ ctop wcel vy
+      cv cJ wss cX vy cv cuni wceq w3a cB cJ clocfin cfv wcel cB cJ ccld cfv
+      wss cB vy cv cref wbr w3a cC cJ clocfin cfv wcel cC cJ ccld cfv wss cC vb
+      cv vu cv cin c0 wne vb cB crab cfn wcel vu cJ crab cref wbr w3a simplr cB
+      cJ clocfin cfv wcel cB cJ ccld cfv wss cB vy cv cref wbr simp1 syl cJ
+      ctop wcel vy cv cJ wss cX vy cv cuni wceq w3a cB cJ clocfin cfv wcel cB
+      cJ ccld cfv wss cB vy cv cref wbr w3a wa cC cJ clocfin cfv wcel cC cJ
+      ccld cfv wss cC vb cv vu cv cin c0 wne vb cB crab cfn wcel vu cJ crab
+      cref wbr w3a wa cB cJ clocfin cfv wcel cB cJ ccld cfv wss cB vy cv cref
+      wbr w3a cB vy cv cref wbr cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq
+      w3a cB cJ clocfin cfv wcel cB cJ ccld cfv wss cB vy cv cref wbr w3a cC cJ
+      clocfin cfv wcel cC cJ ccld cfv wss cC vb cv vu cv cin c0 wne vb cB crab
+      cfn wcel vu cJ crab cref wbr w3a simplr cB cJ clocfin cfv wcel cB cJ ccld
+      cfv wss cB vy cv cref wbr simp3 syl vy cB vf cJ clocfin cfv vb
+      reglfpcmplem2o syl2anc cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq w3a
+      cB cJ clocfin cfv wcel cB cJ ccld cfv wss cB vy cv cref wbr w3a wa cC cJ
+      clocfin cfv wcel cC cJ ccld cfv wss cC vb cv vu cv cin c0 wne vb cB crab
+      cfn wcel vu cJ crab cref wbr w3a cB vy cv vf cv wf vb cv vb cv vf cv cfv
+      wss vb cB wral wa vz cv vy cv cref wbr vz cJ clocfin cfv cJ cpw cin wrex
+      cJ ctop wcel vy cv cJ wss cX vy cv cuni wceq w3a cB cJ clocfin cfv wcel
+      cB cJ ccld cfv wss cB vy cv cref wbr w3a wa cC cJ clocfin cfv wcel cC cJ
+      ccld cfv wss cC vb cv vu cv cin c0 wne vb cB crab cfn wcel vu cJ crab
+      cref wbr w3a cB vy cv vf cv wf vb cv vb cv vf cv cfv wss vb cB wral wa wa
+      wa vt cB cX vd cv cX vt cv cdif wss vd cC crab cuni cdif vt cv vf cv cfv
+      cin cmpt crn cJ clocfin cfv cJ cpw cin wcel vt cB cX vd cv cX vt cv cdif
+      wss vd cC crab cuni cdif vt cv vf cv cfv cin cmpt crn vy cv cref wbr wa
+      vz cv vy cv cref wbr vz cJ clocfin cfv cJ cpw cin wrex vy vu vt cB cC vt
+      cB cX vd cv cX vt cv cdif wss vd cC crab cuni cdif vt cv vf cv cfv cin
+      cmpt crn vf cJ cX vb vd reglfpcmplem2q.1 vt cB cX vd cv cX vt cv cdif wss
+      vd cC crab cuni cdif vt cv vf cv cfv cin cmpt crn eqid reglfpcmplem2i vz
+      cv vy cv cref wbr vt cB cX vd cv cX vt cv cdif wss vd cC crab cuni cdif
+      vt cv vf cv cfv cin cmpt crn vy cv cref wbr vz vt cB cX vd cv cX vt cv
+      cdif wss vd cC crab cuni cdif vt cv vf cv cfv cin cmpt crn cJ clocfin cfv
+      cJ cpw cin vz cv vt cB cX vd cv cX vt cv cdif wss vd cC crab cuni cdif vt
+      cv vf cv cfv cin cmpt crn vy cv cref breq1 rspcev syl anassrs exlimddv
+      3impa $.
   $}
 
   ${
