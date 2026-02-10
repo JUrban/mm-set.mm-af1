@@ -202,6 +202,85 @@ Then use the Proof Assistant commands above to gradually replace `?` with a real
 * Avoid rebuilding standard machinery.
 * Structure long proofs into many smaller toplevel lemmas with shorter proofs.
 
+## $d (Distinct Variable) Violations HANDLING RULES
+
+If Metamath reports `$d` (distinct variable) violations:
+- **DO NOT delete the proof**
+- **DO NOT restart the proof from scratch**
+- **DO NOT throw away existing proof structure**
+- `$d` violations are almost always *local variable-hygiene errors*, not structural failures
+
+Deleting and restarting usually violates the “never throw away useful work” rule.
+
+### What a `$d` violation really means
+
+A `$d` violation almost always indicates **incorrect handling of dummy or bound variables**.
+
+Typical causes:
+- Using a variable as a “dummy” that already occurs (free or bound) in:
+  - the theorem statement,
+  - hypotheses,
+  - surrounding expressions,
+  - or earlier proof steps
+- Applying lemmas that:
+  - introduce bound variables,
+  - perform substitution under binders,
+  - eliminate or introduce quantifiers,
+  - rely on variable renaming,
+  - or otherwise require variables to be distinct,
+  without satisfying their distinct-variable conditions
+
+This is a **local hygiene problem**, not a proof-design problem.
+
+### Correct repair strategy
+
+When `$d` violations occur, do the following:
+
+1. **Introduce fresh dummy variables**
+   - Choose variables that do **not occur anywhere** in:
+     - the theorem statement,
+     - hypotheses (`$e` statements),
+     - the current proof context,
+     - the expressions being manipulated
+   - Prefer a dedicated pool of rarely-used variables:
+     ```
+     s, t, u, v, w
+     ```
+   - Avoid common variables (`a`, `b`, `c`, `x`, `y`, `z`) if they appear anywhere nearby
+
+2. **Patch only the affected proof steps**
+   - Replace the offending dummy variables with the fresh ones
+   - Modify *only* the steps that introduced or propagated the violation
+   - Do NOT rewrite unrelated parts of the proof
+
+3. **Preserve proof structure**
+   - Keep the overall strategy, lemma usage, and ordering intact
+   - The fix should look like a small local edit, not a rewrite
+
+4. **Re-check immediately**
+   ./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+   ./metamath_repl_client.py "VERIFY PROOF *" --timeout 60
+
+### If working inside Proof Assistant mode
+
+* Use:
+
+  ```bash
+  SHOW NEW_PROOF
+  SHOW NEW_PROOF / UNKNOWN
+  ```
+
+  to locate the failing branches
+* Repair only the affected branch by reassigning steps with fresh variables
+* Do NOT reset the session unless it is completely wedged and unrecoverable
+
+### Summary rule (remember this)
+
+> `$d` violations mean “wrong dummy variables”,
+> **not** “wrong proof”.
+
+The correct response is **renaming and local repair**, rarely deletion.
+
 
 ## Important Word of Advice
 
