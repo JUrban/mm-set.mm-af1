@@ -1402,6 +1402,73 @@ $)
   $}
 
   ${
+    $d d t B C D J X f y $.
+    reglfpcmplem2l.1 $e |- X = U. J $.
+    reglfpcmplem2l.2 $e |- D = ran ( t e. B |->
+      ( ( X \ U. { d e. C | d C_ ( X \ t ) } ) i^i ( f ` t ) ) ) $.
+    $( Every element of ` D ` is open in ` J ` .  Each
+       ` ( E ( t ) i^i ( f `` t ) ) ` is the intersection of ` E ( t ) ` (open
+       by ~ reglfpcmplem2a ) and ` ( f `` t ) e. y C_ J ` (open because ` f `
+       maps into ` y ` ), so it is in ` J ` by ~ inopn .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2l $p |- ( ( J e. Top
+        /\ ( C e. ( LocFin ` J ) /\ C C_ ( Clsd ` J ) )
+        /\ ( f : B --> y /\ y C_ J ) )
+      -> D C_ J ) $=
+      ( wcel cfv wss wa cv cdif adantr syl simpr ctop clocfin ccld wf crab cuni
+      w3a cin cmpt crn wceq a1i simp1 simp2 reglfpcmplem2a simp3 simpl ffvelcdm
+      wral syl2anc sseldd inopn syl3anc ralrimiva eqid rnmptss eqsstrd ) GUALZD
+      GUBMLDGUCMNOZCAPZFPZUDZVJGNZOZUGZEBCHIPHBPZQNIDUEUFQZVPVKMZUHZUIZUJZGEWAU
+      KVOKULVOVSGLZBCUSWAGNVOWBBCVOVPCLZOZVHVQGLZVRGLWBVOVHWCVHVIVNUMRWDVIWEVOV
+      IWCVHVIVNUNRDGHBIJUOSWDVJGVRVOVMWCVOVNVMVHVIVNUPZVLVMTSRWDVLWCVRVJLVOVLWC
+      VOVNVLWFVLVMUQSRVOWCTCVJVPVKURUTVAVQVRGVBVCVDBCVSGVTVTVEVFSVG $.
+  $}
+
+  ${
+    $d b d n p s t u B C D J X f $.
+    reglfpcmplem2m.1 $e |- X = U. J $.
+    reglfpcmplem2m.2 $e |- D = ran ( t e. B |->
+      ( ( X \ U. { d e. C | d C_ ( X \ t ) } ) i^i ( f ` t ) ) ) $.
+    $( The collection ` D ` is locally finite: each point has a neighborhood
+       meeting only finitely many elements of ` D ` .  This combines the
+       locally finite neighborhood property ~ reglfpcmplem2h of the expansion
+       sets with the finiteness transfer ~ reglfpcmplem2j .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2m $p |- ( ( ( J e. Top /\ B e. ( LocFin ` J )
+        /\ B C_ ( Clsd ` J ) )
+      /\ ( C e. ( LocFin ` J ) /\ C C_ ( Clsd ` J )
+        /\ C Ref { u e. J | { b e. B | ( b i^i u ) =/= (/) } e. Fin } ) )
+      -> A. p e. X E. n e. J ( p e. n
+        /\ { s e. D | ( s i^i n ) =/= (/) } e. Fin ) ) $=
+      ( wcel wss cv crab wa ctop clocfin cfv ccld w3a cin wne cfn cref wbr wrex
+      c0 wel cdif df-3an biimpri reglfpcmplem2h reglfpcmplem2j anim2i ralrimiva
+      cuni syl reximi ) HUAPCHUBUCZPCHUDUCZQUEZDVDPDVEQDLRZARUFULUGLCSUHPAHSUIU
+      JUEZTZKGUMZJRGRZUFULUGJESUHPZTZGHUKZKIVIKRIPZTZVJIMRIVGUNQMDSVAUNVKUFULUG
+      LCSUHPZTZGHUKZVNVPVFVHVOUEZVSVTVPVFVHVOUOUPACDGHIKLMNUQVBVRVMGHVQVLVJBDEC
+      FGIJLMOURUSVCVBUT $.
+  $}
+
+  ${
+    $d d t w z B C D X f y $.
+    reglfpcmplem2n.1 $e |- D = ran ( t e. B |->
+      ( ( X \ U. { d e. C | d C_ ( X \ t ) } ) i^i ( f ` t ) ) ) $.
+    $( Each element of ` D ` is a subset of some element of ` y ` .  Since
+       each ` D ` -element has the form ` ( E ( t ) i^i ( f `` t ) ) ` and
+       ` ( f `` t ) e. y ` , the inclusion ` ( E ( t ) i^i ( f `` t ) ) C_
+       ( f `` t ) ` by ~ inss2 provides the witness.
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2n $p |- ( f : B --> y
+      -> A. z e. D E. w e. y z C_ w ) $=
+      ( cv wf wss wrex wcel wa cdif cvv syl2anc crab cuni cfv cin wceq cmpt crn
+      simpr eleq2i wb vex elrnmpt ax-mp biimpi sylbi syl simpll simprl ffvelcdm
+      eqid simprr inss2 a1i eqsstrd sseq2 rspcev rexlimddv ralrimiva ) EALZHLZM
+      ZBLZCLZNZCVIOZBGVKVLGPZQZVLIJLIDLZRNJFUAUBRZVRVJUCZUDZUEZVODEVQVPWBDEOZVK
+      VPUHVPVLDEWAUFZUGZPZWCGWEVLKUIWFWCVLSPWFWCUJBUKDEWAVLWDSWDUTULUMUNUOUPVQV
+      REPZWBQZQZVTVIPZVLVTNZVOWIVKWGWJVKVPWHUQVQWGWBUREVIVRVJUSTWIVLWAVTVQWGWBV
+      AWAVTNWIVSVTVBVCVDVNWKCVTVIVMVTVLVEVFTVGVH $.
+  $}
+
+  ${
     $d b c d f n p s t u w z B C D J X y $.
     reglfpcmplem2i.1 $e |- X = U. J $.
     reglfpcmplem2i.2 $e |- D = ran ( t e. B |->
@@ -1420,7 +1487,20 @@ $)
         /\ C Ref { u e. J | { b e. B | ( b i^i u ) =/= (/) } e. Fin } )
       /\ ( f : B --> y /\ A. b e. B b C_ ( f ` b ) ) ) )
       -> ( D e. ( ( LocFin ` J ) i^i ~P J ) /\ D Ref y ) ) $=
-      ? $.
+      ( vp vn wcel cv wss w3a wa vs vz ctop cuni wceq clocfin cfv ccld cref wbr
+      vw cin c0 wne crab cfn wf wral cpw simpll1 simplr1 simplr2 reglfpcmplem2k
+      wel wrex simprrr syl3anc simprl1 simprl2 simprrl reglfpcmplem2l syl122anc
+      simpll2 unissd sseqtrrdi eqssd 3jca simprl jca reglfpcmplem2m syl wb eqid
+      a1i mpbir3and sselpwd elind simpll3 eqtr3d reglfpcmplem2n isref mpbir2and
+      islocfin ) HUCPZAQZHRZIWOUDZUEZSZDHUFUGZPZDHUHUGZRZDWOUIUJZSZTZEWTPZEXBRZ
+      EJQZBQULUMUNJDUOUPPBHUOUIUJZSZDWOGQZUQZXIXIXLUGRJDURZTZTZTZFWTHUSZULPFWOU
+      IUJZXQWTXRFXQFWTPZWNIFUDZUEZNOVDUAQOQULUMUNUAFUOUPPTOHVENIURZWNWPWRXEXPUT
+      ZXQIYAXQXAXCXNIYARXAXCXDWSXPVAZXAXCXDWSXPVBZXFXKXMXNVFCDEFGHIJKLMVCVGXQYA
+      HUDIXQFHXQWNXGXHXMWPFHRYDXGXHXJXOXFVHXGXHXJXOXFVIXFXKXMXNVJZWNWPWRXEXPVMA
+      CDEFGHIKLMVKVLZVNLVOVPZXQWNXAXCSZXKTYCXQYJXKXQWNXAXCYDYEYFVQXFXKXOVRVSBCD
+      EFGOHIUANJKLMVTWAXTWNYBYCSWBXQNFOHIYAUALYAWCZWMWDWEXQFHUCYDYHWFZWGXQXSWQY
+      AUEZUBQUKQRUKWOVEUBFURZXQIWQYAWNWPWRXEXPWHYIWIXQXMYNYGAUBUKCDEFGIKMWJWAXQ
+      FXRPXSYMYNTWBYLUBUKFWOXRYAWQYKWQWCWKWAWLVS $.
   $}
 
   ${
