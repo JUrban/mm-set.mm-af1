@@ -1698,7 +1698,123 @@ $)
   $}
 
   ${
-    $d t y z J $.
+    $d u b z s w J y $.
+    $( Innermost step for ~ reglfpcmplem2 : apply ~ reglfpcmplem2q with
+       ` B = s ` , ` C = w ` , ` X = U. J ` .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2r $p |- ( ( ( J e. Top /\ y C_ J /\ U. J = U. y )
+      /\ ( s e. ( LocFin ` J ) /\ s C_ ( Clsd ` J ) /\ s Ref y )
+      /\ ( w e. ( LocFin ` J ) /\ w C_ ( Clsd ` J )
+        /\ w Ref { u e. J | { b e. s | ( b i^i u ) =/= (/) }
+          e. Fin } ) )
+      -> E. z e. ( ( LocFin ` J ) i^i ~P J ) z Ref y ) $=
+      ( eqid reglfpcmplem2q ) ?????????HI $.
+  $}
+
+  ${
+    $d u b n p s B J $.
+    $( Corollary of ~ reglfpcmplem2p without the ` X ` parameter:
+       ` B e. ( LocFin `` J ) ` implies
+       ` U. J = U. { u e. J | { b e. B | ( b i^i u ) =/= (/) } e. Fin } ` .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2pc $p |- ( B e. ( LocFin ` J ) ->
+      U. J = U. { u e. J | { b e. B | ( b i^i u ) =/= (/) } e. Fin } ) $=
+      ( vp vn vs clocfin cfv wcel cuni cv cin c0 wne crab cfn wa a1i syl2anc ex
+      eqid locfinnei simprl simpl wceq reglfpcmplem2pa eqeltrrd reglfpcmplem2pb
+      wel simprr elunii adantl rexlimddv ssrdv wss ssrab2 unissi eqssd ) BCHIJZ
+      CKZDLZALMNODBPQJZACPZKZUTEVAVEUTELZVAJZVFVEJZUTVGRZEFUJZGLFLZMNOGBPZQJZRZ
+      VHFCBVFFCVAGVAUBUCVKCJZVNRZVHVIVPVJVKVDJZVHVOVJVMUDVPVOVBVKMNODBPZQJVQVOV
+      NUEVPVLVRQVLVRUFVPFBGDUGSVOVJVMUKUHABFCDUITVFVKVDULTUMUNUAUOVEVAUPUTVDCVC
+      ACUQURSUS $.
+  $}
+
+  ${
+    $d s t u b y J $.
+    $( Helper for ~ reglfpcmplem2s : instantiate the refinement hypothesis
+       ` H_A ` at the restricted cover
+       ` R = { u e. J | { b e. s | ( b i^i u ) =/= (/) } e. Fin } ` to
+       obtain ` E. t e. A t Ref R ` .  Uses ~ rspcv with ~ reglfpcmplem2pc
+       for the ` U. J = U. R ` premise.
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2t $p |- ( ( ( ( J e. Top /\ A. y e. ~P J ( U. J = U. y
+        -> E. t e. ( ( LocFin ` J ) i^i ~P ( Clsd ` J ) ) t Ref y ) )
+      /\ ( y C_ J /\ U. J = U. y ) )
+      /\ ( s e. ( ( LocFin ` J ) i^i ~P ( Clsd ` J ) ) /\ s Ref y ) )
+      -> E. t e. ( ( LocFin ` J ) i^i ~P ( Clsd ` J ) ) t Ref
+        { u e. J | { b e. s | ( b i^i u ) =/= (/) } e. Fin } ) $=
+      ( ctop wcel cuni cv wceq cref wbr cfv cpw cin wrex wi wa syl clocfin ccld
+      wral wss c0 wne crab cfn simprl elinel1 reglfpcmplem2pc simpll ssrab2 a1i
+      simpl sselpwd simplr unieq eqeq2d breq2 rexbidv imbi12d rspcv imp syl2anc
+      mpd ) DGHZDIZAJZIZKZCJZVILMZCDUANZDUBNOZPZQZRZADOZUCZSVIDUDVKSZSZEJZVPHZW
+      CVILMZSZSZVHFJBJPUEUFFWCUGUHHZBDUGZIZKZVLWILMZCVPQZWGWCVNHZWKWGWDWNWBWDWE
+      UIWCVNVOUJTBWCDFUKTWGWIVSHZVTWKWMRZWGWIDGWGWBVGWBWFUOZVGVTWAULTWIDUDWGWHB
+      DUMUNUPWGWBVTWQVGVTWAUQTWOVTWPVRWPAWIVSVIWIKZVKWKVQWMWRVJWJVHVIWIURUSWRVM
+      WLCVPVIWIVLLUTVAVBVCVDVEVF $.
+  $}
+
+  ${
+    $d s t w u b y z J $.
+    $( Second existential elimination for ~ reglfpcmplem2 : given a locally
+       finite closed refinement ` s ` of an open cover ` y ` , use the
+       hypothesis to obtain a second locally finite closed refinement and
+       apply ~ reglfpcmplem2r .  (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2s $p |- ( ( ( ( J e. Top /\ A. y e. ~P J ( U. J = U. y
+        -> E. t e. ( ( LocFin ` J ) i^i ~P ( Clsd ` J ) ) t Ref y ) )
+      /\ ( y C_ J /\ U. J = U. y ) )
+      /\ ( s e. ( ( LocFin ` J ) i^i ~P ( Clsd ` J ) ) /\ s Ref y ) )
+      -> E. z e. ( ( LocFin ` J ) i^i ~P J ) z Ref y ) $=
+      ( vw vb vu wcel cuni cv cref wbr cin wrex wa wss w3a syl 3jca clocfin cfv
+      ctop wceq ccld cpw wi wral c0 wne crab cfn reglfpcmplem2t wb cbvrexvw a1i
+      breq1 simp-4l simpll simprl simprr simplrl elinel1 elinel2 reglfpcmplem2r
+      mpbid elpwi simplrr rexlimddv ) DUCIZDJAKZJUDZCKZVKLMCDUAUBZDUEUBZUFZNZOU
+      GADUFZUHZPZVKDQZVLPZPZEKZVQIZWDVKLMZPZPZFKZGKHKNUIUJGWDUKULIHDUKZLMZBKVKL
+      MBVNVRNOZFVQWHVMWJLMZCVQOZWKFVQOZAHCDEGUMWNWOUNWHWMWKCFVQVMWIWJLUQUOUPVFW
+      HWIVQIZWKPZPZVJWAVLRZWDVNIZWDVOQZWFRZWIVNIZWIVOQZWKRZRWLWRWSXBXEWRVJWAVLV
+      JVSWBWGWQURWRWCWAWCWGWQUSZVTWAVLUTSWRWCVLXFVTWAVLVASTWRWTXAWFWRWEWTWCWEWF
+      WQVBZWDVNVPVCSWRWDVPIZXAWRWEXHXGWDVNVPVDSWDVOVGSWCWEWFWQVHTWRXCXDWKWRWPXC
+      WHWPWKUTZWIVNVPVCSWRWIVPIZXDWRWPXJXIWIVNVPVDSWIVOVGSWHWPWKVATTABFHDEGVESV
+      I $.
+  $}
+
+  ${
+    $d s t u b y z J $.
+    $( First existential elimination for ~ reglfpcmplem2 : given the covering
+       refinement hypothesis and an open cover ` y ` with ` y C_ J ` and
+       ` U. J = U. y ` , produce a locally finite open refinement.
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2u $p |- ( ( ( J e. Top /\ A. y e. ~P J ( U. J = U. y
+        -> E. t e. ( ( LocFin ` J ) i^i ~P ( Clsd ` J ) ) t Ref y ) )
+      /\ ( y C_ J /\ U. J = U. y ) )
+      -> E. z e. ( ( LocFin ` J ) i^i ~P J ) z Ref y ) $=
+      ( vs ctop wcel cuni cv wceq cref wbr clocfin cfv cpw cin wrex wi wa mpd
+      ccld wral wss simprr simpll simprl sselpwd simplr rsp syl wb cbvrexvw a1i
+      breq1 mpbid reglfpcmplem2s rexlimddv ) DFGZDHAIZHJZCIZUSKLZCDMNZDUANOPZQZ
+      RZADOZUBZSZUSDUCZUTSZSZEIZUSKLZBIUSKLBVCVGPQEVDVLVEVNEVDQZVLUTVEVIVJUTUDV
+      LUSVGGZVFVLUSDFURVHVKUEVIVJUTUFUGVLVHVPVFRURVHVKUHVFAVGUIUJTTVEVOUKVLVBVN
+      CEVDVAVMUSKUNULUMUOABCDEUPUQ $.
+  $}
+
+  ${
+    $d w y t z J $.
+    $( Helper for ~ reglfpcmplem2 using ` w ` instead of ` y ` as the bound
+       variable in the hypothesis to avoid ` $d ` issues with
+       ~ ralrimiva .  (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2a2 $p |- ( ( J e. Top /\
+      A. w e. ~P J ( U. J = U. w ->
+        E. t e. ( ( LocFin ` J ) i^i ~P ( Clsd ` J ) ) t Ref w ) ) ->
+      J e. ParaCmp ) $=
+      ( vy vz wcel cuni cv wceq cref wbr cfv cpw cin wrex wi wral wa syl simpr
+      ctop clocfin ccld cpacmp simpl wss simpll weq unieq breq2 rexbidv imbi12d
+      eqeq2d cbvralvw biimpi simplr elpwi reglfpcmplem2u syl2anc ralrimiva eqid
+      jca ex ispcmp sylanbrc ) CUAFZCGZAHZGZIZBHZVHJKZBCUBLZCUCLMNZOZPZACMZQZRZ
+      VFVGDHZGZIZEHVTJKEVMVQNOZPZDVQQCUDFVFVRUEZVSWDDVQVSVTVQFZRZWBWCWGWBRZVFWB
+      VKVTJKZBVNOZPZDVQQZRVTCUFZWBRWCWHVFWLWHVSVFVSWFWBUGZWESWHVRWLWHVSVRWNVFVR
+      TSVRWLVPWKADVQADUHZVJWBVOWJWOVIWAVGVHVTUIUMWOVLWIBVNVHVTVKJUJUKULUNUOSVBW
+      HWMWBWHWFWMVSWFWBUPVTCUQSWGWBTVBDEBCURUSVCUTDECVGVGVAVDVE $.
+  $}
+
+  ${
+    $d s t w y z J $.
     $( Lemma 41.3 step (3) implies (4): If ` J ` is a topology and every
        open covering has a locally finite closed covering refinement, then
        ` J ` is paracompact.  The proof expands each closed set in a locally
@@ -1709,7 +1825,11 @@ $)
       A. y e. ~P J ( U. J = U. y ->
         E. t e. ( ( LocFin ` J ) i^i ~P ( Clsd ` J ) ) t Ref y ) ) ->
       J e. ParaCmp ) $=
-      ? $.
+      ( vw ctop wcel cuni cv wceq cref wbr clocfin cfv ccld cpw wrex wi wral wa
+      cin cpacmp weq unieq eqeq2d breq2 rexbidv cbvralvw biimpi reglfpcmplem2a2
+      imbi12d anim2i syl ) CEFZCGZAHZGZIZBHZUOJKZBCLMCNMOTZPZQZACOZRZSUMUNDHZGZ
+      IZURVEJKZBUTPZQZDVCRZSCUAFVDVKUMVDVKVBVJADVCADUBZUQVGVAVIVLUPVFUNUOVEUCUD
+      VLUSVHBUTUOVEURJUEUFUJUGUHUKDBCUIUL $.
   $}
 
   ${
