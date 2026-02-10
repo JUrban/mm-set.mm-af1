@@ -1259,6 +1259,30 @@ $)
   $}
 
   ${
+    $d b c d n t C X $.
+    $( If the expansion set ` ( X \ U. { d e. C | d C_ ( X \ b ) } ) ` meets
+       ` n ` , then there exists ` c e. C ` that meets both ` n ` and ` b ` .
+       The argument: take an element of the intersection; it lies in
+       ` X = U. C ` , giving ` c e. C ` ; then ` c ` meets ` n ` (sharing the
+       element) and ` c ` meets ` b ` (by ~ reglfpcmplem2e ).
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2f $p |- ( ( U. C = X /\ C C_ ~P X /\
+      ( ( X \ U. { d e. C | d C_ ( X \ b ) } ) i^i n ) =/= (/) ) ->
+      E. c e. C ( ( c i^i n ) =/= (/) /\ ( c i^i b ) =/= (/) ) ) $=
+      ( vt cuni wss cv cdif cin c0 wne wa wcel simpr syl adantr jca wceq cpw n0
+      crab wrex wex biimpi adantl elinel1 eldifi eleqtrrd eluni2 elinel2 inelcm
+      wel simpl simplr sseldd elpwi id syl3anc reglfpcmplem2e reximdva exlimddv
+      w3a ex mpd 3impia ) AHZCUAZACUBZIZCFJCDJZKIFAUDHZKZBJZLZMNZEJZVPLMNZVSVML
+      MNZOZEAUEZVJVLOZVRWCWDVROZGJZVQPZWCGVRWGGUFZWDVRWHGVQUCUGUHWEWGOZGEUOZEAU
+      EZWCWIWFVIPZWKWIWFCVIWIWFVOPZWFCPWIWGWMWEWGQZWFVOVPUIRZWFCVNUJRWEVJWGWDVJ
+      VRVJVLUPSSUKWLWKEWFAULUGRWIWJWBEAWIVSAPZOZWJWBWQWJOZVTWAWRWJGBUOZOVTWRWJW
+      SWQWJQZWQWSWJWIWSWPWIWGWSWNWFVOVPUMRSSTWFVSVPUNRWRWPVSCIZVSVOLMNZVEZWAWRW
+      PXAXBXCWIWPWJUQZWRVSVKPXAWRAVKVSWQVLWJWIVLWPWEVLWGWDVLVRVJVLQSSSSXDURVSCU
+      SRWRWJWMOXBWRWJWMWTWQWMWJWIWMWPWOSSTWFVSVOUNRXCUTVAACDEFVBRTVFVCVGVDVFVH
+      $.
+  $}
+
+  ${
     $d t y z J $.
     $( Lemma 41.3 step (3) implies (4): If ` J ` is a topology and every
        open covering has a locally finite closed covering refinement, then
