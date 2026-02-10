@@ -202,6 +202,94 @@ Then use the Proof Assistant commands above to gradually replace `?` with a real
 * Avoid rebuilding standard machinery.
 * Structure long proofs into many smaller toplevel lemmas with shorter proofs.
 
+
+## Metamath REPL Scrolling and Paging — MANDATORY SETUP
+
+### ⛔ ABSOLUTE RULE: Disable paging immediately
+
+Metamath has built-in scrolling/paging prompts that can interrupt output and block automation.
+
+**Paging MUST be disabled as the first action after starting a fresh Metamath session.**
+
+This is done by issuing:
+
+./metamath_repl_client.py "SET SCROLL CONTINUOUS"
+
+This command disables *all* scrolling prompts permanently for the session.
+
+
+### REQUIRED startup sequence (conceptual)
+
+After any fresh Metamath startup (including after `--reset` or server restart), the session MUST be initialized in this order:
+
+1. Disable paging:
+
+   ```bash
+   SET SCROLL CONTINUOUS
+   ```
+2. Load the database:
+
+   ```bash
+   READ set.mm
+   ```
+3. Proceed with checking or proof work.
+
+In practice (via client/server):
+
+```bash
+./metamath_repl_client.py "SET SCROLL CONTINUOUS"
+./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+```
+
+---
+
+### Consequences of not doing this (DO NOT IGNORE)
+
+If `SET SCROLL CONTINUOUS` is not set:
+
+* Metamath may emit paging prompts (e.g. “Press <return> for more…”)
+* Output may be interrupted mid-command
+* The REPL may wait for input unexpectedly
+* Automation may appear to “hang” or time out
+* Subsequent input may be misinterpreted
+
+These are **tooling failures**, not proof failures.
+
+---
+
+### Strict prohibition
+
+* **DO NOT rely on automatic pager handling**
+* **DO NOT attempt to answer paging prompts manually**
+* **DO NOT proceed with proof work unless scrolling is disabled**
+
+Paging should simply never occur in normal operation.
+
+---
+
+### Recovery rule
+
+If you suspect paging was enabled accidentally or the REPL state is unclear:
+
+1. Reset the session:
+
+   ./metamath_repl_client.py --reset
+
+2. Immediately reinitialize:
+
+   ./metamath_repl_client.py "SET SCROLL CONTINUOUS"
+   ./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+
+Then continue.
+
+### Summary (remember this)
+
+**Scrolling prompts are a REPL configuration issue, not a Metamath issue.**
+ Disable them once, immediately, and never think about them again.
+
+
+
+
 ## $d (Distinct Variable) Violations HANDLING RULES
 
 If Metamath reports `$d` (distinct variable) violations:
