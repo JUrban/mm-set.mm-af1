@@ -639,6 +639,42 @@ $)
   $}
 
   ${
+    $d p t $.  $d s t N $.  $d s t S $.
+    $( A point in ` ( N \ U. { s e. S | ( s i^i N ) =/= (/) } ) ` is not
+       an element of ` U. S ` .  If ` p ` were in ` U. S ` then ` p ` would
+       be in some ` c e. S ` , and since ` p e. N ` this ` c ` would satisfy
+       ` ( c i^i N ) =/= (/) ` , putting ` p ` into the subtracted set.
+       (Contributed by Claude, 10-Feb-2026.) $)
+    lfcldunicldlem $p |- ( p e. ( N \ U. { s e. S |
+        ( s i^i N ) =/= (/) } ) -> -. p e. U. S ) $=
+      ( vt cv cin c0 wne crab cuni cdif wcel eldifn wi eldifi wel wrex syl2anc
+      wa eluni2 biimpi simplr simpll simpr inelcm weq ineq1 neeq1d elrab elunii
+      sylanbrc exp31 rexlimiv com12 syl5 syl mtod ) DFZBCFZBGZHIZCAJZKZLMZUSAKM
+      ZUSVDMZUSBVDNVEUSBMZVFVGOUSBVDPVFDEQZEARZVHVGVFVJEUSAUAUBVJVHVGVIVHVGOEAE
+      FZAMZVIVHVGVLVITZVHTZVIVKVCMZVGVLVIVHUCZVNVLVKBGZHIZVOVLVIVHUDVNVIVHVRVPV
+      MVHUEUSVKBUFSVBVRCVKACEUGVAVQHUTVKBUHUIUJULUSVKVCUKSUMUNUOUPUQUR $.
+  $}
+
+  ${
+    $d n p s C $.  $d n p s J $.  $d n p s S $.  $d n p s X $.
+    lfcldunicld.1 $e |- X = U. J $.
+    $( The union of a subcollection of a locally finite collection of closed
+       sets is closed.  If ` P ` is in the closure of ` U. S ` , then by
+       ~ locfinnei there is a neighborhood ` N ` of ` P ` meeting only
+       finitely many elements of ` C ` .  The finite subcollection
+       ` { s e. S | ( s i^i N ) =/= (/) } ` is closed, so its union is
+       closed by ~ unicld .  The open set ` ( N \ U. { ... } ) ` is
+       disjoint from ` U. S ` , so by ~ lfimclslem , ` P ` must already
+       lie in ` U. S ` .  Consequence of Lemma 39.1 of Munkres p. 245.
+       (Contributed by Claude, 10-Feb-2026.) $)
+    lfcldunicld $p |- ( ( C e. ( LocFin ` J ) /\ C C_ ( Clsd ` J )
+        /\ S C_ C ) -> U. S e. ( Clsd ` J ) ) $=
+      ? ? ? ? ? ? ? ? ? ? ? ? ? ? simp1 ? ? locfintop syl ? ? ? ? ? ? ? ? ? ?
+      simp3 ? ? ? ? ? ? ? simp2 ? ? ? ? lfcldunicld.1 cldss2 a1i sstrd sstrd ?
+      ? ? ? sspwuni biimpi syl ? ? ? lfcldunicld.1 iscld4 syl2anc mpbird $.
+  $}
+
+  ${
     $d a w y z J $.
     $( Helper for ~ regsepcover : apply regularity separation to get
        an open set whose closure is contained in a covering element.
