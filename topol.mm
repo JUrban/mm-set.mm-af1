@@ -1283,6 +1283,42 @@ $)
   $}
 
   ${
+    $d b c d n s t B C X $.
+    $( Helper for local finiteness of the expansion collection.  If ` C `
+       covers ` X ` , ` C C_ ~P X ` , each element of ` C ` meets finitely
+       many elements of ` B ` , and only finitely many elements of ` C ` meet
+       ` n ` , then only finitely many expansion sets
+       ` ( X \ U. { d e. C | d C_ ( X \ b ) } ) ` meet ` n ` .
+       Uses ~ reglfpcmplem2f , ~ iunfi , and ~ ssfi .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2g $p |- ( ( ( U. C = X /\ C C_ ~P X ) /\
+      ( A. c e. C { b e. B | ( b i^i c ) =/= (/) } e. Fin /\
+        { c e. C | ( c i^i n ) =/= (/) } e. Fin ) ) ->
+      { b e. B |
+        ( ( X \ U. { d e. C | d C_ ( X \ b ) } ) i^i n ) =/= (/) }
+        e. Fin ) $=
+      ( vs vt wss wa cv cin c0 wne crab cfn wcel neeq1d syl cuni wceq wral ciun
+      cpw cdif simprr simprl id ineq2d rabbidv eleq1d cbvralvw biimpi wi ssrab2
+      ssralv ax-mp iunfi syl2anc wrex simpl simpll simplr difeq2d sseq2d unieqd
+      simpr ineq1d elrab reglfpcmplem2f syl3anc anbi12d cbvrexvw sylib sylanbrc
+      weq simprd a1i incom eqnetrrid idd sselid biimpri syl6 syl5 a1d impd jcad
+      jctild reximdv2 mpd eliun sylibr ex ssrdv ssfi ) BUADUBZBDUEJZKZELZFLZMZN
+      OZEAPZQRZFBUCZXBCLZMZNOZFBPZQRZKZKZHXKXAHLZMZNOZEAPZUDZQRZDGLZDXAUFZJZGBP
+      ZUAZUFZXHMZNOZEAPZXSJYIQRXNXLXRQRZHXKUCZXTWTXGXLUGXNYJHBUCZYKXNXGYLWTXGXL
+      UHXGYLXFYJFHBFHVQZXEXRQYMXDXQEAYMXCXPNYMXBXOXAYMUIZUJSUKULUMUNTXKBJYLYKUO
+      XJFBUPYJHXKBUQURTHXKXRUSUTXNIYIXSXNILZYIRZYOXSRZXNYPKZYOXRRZHXKVAZYQYRXOX
+      HMZNOZXOYOMZNOZKZHBVAZYTYRXJXBYOMZNOZKZFBVAZUUFYRWRWSDYADYOUFZJZGBPZUAZUF
+      ZXHMZNOZUUJYRXNWRXNYPVBZWRWSXMVCTYRXNWSUURWRWSXMVDTYRYPUUQXNYPVHZYPYOARZU
+      UQYPUUTUUQKYHUUQEYOAEIVQZYGUUPNUVAYFUUOXHUVAYEUUNDUVAYDUUMUVAYCUULGBUVAYB
+      UUKYAUVAXAYODUVAUIZVEVFUKVGVEVISVJUNVRTBCDIFGVKVLUUIUUEFHBYMXJUUBUUHUUDYM
+      XIUUANYMXBXOXHYNVISZYMUUGUUCNYMXBXOYOYNVISVMVNVOYRUUEYSHBXKYRXOBRZUUEKZXO
+      XKRZYSUVEUVFUOYRUVEUVDUUBUVFUVDUUEVBUVDUUBUUDUHXJUUBFXOBUVCVJVPVSYRUVDUUE
+      YSYRUUEYSUOUVDUUEYOXOMZNOZYRYSUUEUVGUUCNXOYOVTUUBUUDVHWAYRUVHUUTUVHKZYSYR
+      UVHUVHUUTYRUVHWBYRYIAYOYHEAUPUUSWCWJYSUVIXQUVHEYOAUVAXPUVGNUVAXAYOXOUVBVI
+      SVJWDWEWFWGWHWIWKWLHYOXKXRWMWNWOWPXSYIWQUT $.
+  $}
+
+  ${
     $d t y z J $.
     $( Lemma 41.3 step (3) implies (4): If ` J ` is a topology and every
        open covering has a locally finite closed covering refinement, then
