@@ -1,13 +1,8 @@
 # Rules for Working on set.mm (Metamath via client/server)
 
-These rules replace the old “compilation mode” that ran `timeout 60 metamath ...` directly.
-From now on, **all Metamath interaction MUST go through the persistent server + client**:
-- `./metamath_repl_server.py` (runs once, keeps state)
-- `./metamath_repl_client.py` (one-shot command runner)
-
-The style and intent of the original rules remain the same; only the execution mechanism changes.
-
----
+**All Metamath interaction MUST go through the persistent client (which talks to the persistent server)**:
+- `metamath_repl_client.py` (one-shot command runner)
+- behind the scene is a server (runs once, keeps state)
 
 ## STRICT PROHIBITIONS
 
@@ -18,10 +13,8 @@ The style and intent of the original rules remain the same; only the execution m
   - Proof search (especially `IMPROVE` / `IMPROVE ALL`) can be extremely inefficient.
   - Therefore **every client call that could be slow MUST include `--timeout 60`**.
 
-### ⛔ Discontinue “compilation mode”
-- **DO NOT run** `metamath "read set.mm" ...` directly as the primary workflow.
-- **DO NOT rely on shell-quoted metamath invocations** except for emergency debugging.
-- **DO use** `./metamath_repl_client.py` exclusively for Metamath commands.
+### ⛔ No “compilation mode”
+- **DO use** `metamath_repl_client.py` exclusively for Metamath commands.
 
 
 ### Always use absolute paths for READ/WRITE
@@ -33,7 +26,7 @@ The style and intent of the original rules remain the same; only the execution m
 
 * For checking / proof operations:
 
-  ./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+  metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
 
 ### Recovery after timeouts or dialog confusion
 
@@ -41,12 +34,18 @@ Metamath can enter interactive dialogs; if a command times out or you see errors
 
 **Recovery procedure:**
 
-1. `./metamath_repl_client.py --reset`
-2. `./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60`
+1. `metamath_repl_client.py --reset`
+2. `metamath_repl_client.py "READ $PWD/set.mm" --timeout 60`
 3. Re-issue the intended command in a dialog-free form.
-
+4. This is dangerous and loses current state! Should be avoided as much as possible.
 
 ## Never throw away useful work
+
+0. Save you work **very often** when working interactively! Long interactive sessions are very dangerous and you may lose all of your work if you don't save often as follows:
+
+metamath_repl_client.py "SAVE NEW" --timeout 60
+metamath_repl_client.py "WRITE SOURCE $PWD/set.mm" --timeout 60
+metamath_repl_client.py "EXIT"
 
 1. You should almost never revert to previous backups (you can use temporary admits when something is hard).
 2. If there is a really major reason for reverting, you have to salvage all the useful work done in between.
@@ -61,8 +60,8 @@ Metamath can enter interactive dialogs; if a command times out or you see errors
 * Learn from related proofs that you can display. Example (now via client/server):
 
   ```bash
-  ./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
-  ./metamath_repl_client.py "SHOW PROOF iscmp" --timeout 60
+  metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+  metamath_repl_client.py "SHOW PROOF iscmp" --timeout 60
   ```
 
 ### Logic System
@@ -75,49 +74,49 @@ Metamath can enter interactive dialogs; if a command times out or you see errors
 
 * **Only use `$( … $)` for comments** - no other comment syntax; no `$` inside comments.
 
-## Checking / “Compilation” (NOW via client/server)
+## Checking / “Compilation” 
 
-### Primary check command (replacement for compilation mode)
+### Primary check command 
 
-./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
-./metamath_repl_client.py "VERIFY PROOF *" --timeout 60
+metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+metamath_repl_client.py "VERIFY PROOF *" --timeout 60
 
 **Run checking frequently** to catch errors early.
 
 
-## Proof Assistant Operations (NOW via client/server)
+## Proof Assistant Operations (always via client/server)
 
 ### Start proof of theorem FOO
 
 ```bash
-./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
-./metamath_repl_client.py "PROVE FOO" --timeout 60
+metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+metamath_repl_client.py "PROVE FOO" --timeout 60
 ```
 
 ### Delete (completely reset) a partial proof of theorem FOO
 
-./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
-./metamath_repl_client.py "PROVE FOO" --timeout 60
-./metamath_repl_client.py "DELETE ALL" --timeout 60
-./metamath_repl_client.py "SAVE NEW" --timeout 60
-./metamath_repl_client.py "WRITE SOURCE $PWD/set.mm" --timeout 60
-./metamath_repl_client.py "EXIT" --timeout 60
+metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+metamath_repl_client.py "PROVE FOO" --timeout 60
+metamath_repl_client.py "DELETE ALL" --timeout 60
+metamath_repl_client.py "SAVE NEW" --timeout 60
+metamath_repl_client.py "WRITE SOURCE $PWD/set.mm" --timeout 60
+metamath_repl_client.py "EXIT" --timeout 60
 
 ### Progress in a new/partial proof by applying previous lemma/def BLA
 
-./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
-./metamath_repl_client.py "PROVE FOO" --timeout 60
-./metamath_repl_client.py "ASSIGN LAST BLA" --timeout 60
-./metamath_repl_client.py "SAVE NEW" --timeout 60
-./metamath_repl_client.py "WRITE SOURCE $PWD/set.mm" --timeout 60
-./metamath_repl_client.py "EXIT" --timeout 60
+metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+metamath_repl_client.py "PROVE FOO" --timeout 60
+metamath_repl_client.py "ASSIGN LAST BLA" --timeout 60
+metamath_repl_client.py "SAVE NEW" --timeout 60
+metamath_repl_client.py "WRITE SOURCE $PWD/set.mm" --timeout 60
+metamath_repl_client.py "EXIT" --timeout 60
 
 ### Help
 
 Prefer targeted help:
 
 ```bash
-./metamath_repl_client.py "HELP ASSIGN" --timeout 60
+metamath_repl_client.py "HELP ASSIGN" --timeout 60
 ```
 
 The server handles the Metamath pager automatically (it will send `S<return>` when prompted).
@@ -144,10 +143,16 @@ Examples:
 
 If you must answer a dialog, send all answers in one call using multi-line input:
 
-./metamath_repl_client.py $'SHOW LABELS\n*\n\n' --timeout 60
+metamath_repl_client.py $'SHOW LABELS\n*\n\n' --timeout 60
 
 But again: **prefer the dialog-free forms**.
 
+
+* Unification dialogs are not paging. Do not assume the server will handle them.
+
+* If a command may prompt for unification choices, either:
+-- prefer / NO_UNIFY, or
+-- rerun with --answers $'A\n' (or R\n, Q\n) as needed.
 
 ## Adding new lemma/definition/theorem stubs in set.mm
 
@@ -208,11 +213,11 @@ Then use the Proof Assistant commands above to gradually replace `?` with a real
 - The Metamath server is managed externally and is assumed to be running.
 - **NEVER try to start the server** 
 - **NEVER try to stop/kill/restart the server** 
-- Interact with Metamath **ONLY** via `./metamath_repl_client.py ...`.
+- Interact with Metamath **ONLY** via `metamath_repl_client.py ...`.
 
 ### Server health check (allowed)
 If Metamath seems unresponsive, you may only do:
-./metamath_repl_client.py --ping
+metamath_repl_client.py --ping
 
 - `--reset` is a LAST-RESORT recovery tool.
 - Claude MUST NOT use `--reset` unless:
@@ -231,47 +236,47 @@ If Metamath seems unresponsive, you may only do:
 Use this whenever something times out, hangs, or looks confused.
 
 ```bash
-./metamath_repl_client.py --reset
-./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+metamath_repl_client.py --reset
+metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
 ```
 
 
 ### Check / “compile” the database
 
-./metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
-./metamath_repl_client.py "VERIFY PROOF *" --timeout 60
+metamath_repl_client.py "READ $PWD/set.mm" --timeout 60
+metamath_repl_client.py "VERIFY PROOF *" --timeout 60
 
 
 
 ### Inspect existing material (dialog-free)
 
-./metamath_repl_client.py "SHOW STATEMENT th1"
-./metamath_repl_client.py "SHOW PROOF th1" --timeout 60
-./metamath_repl_client.py "SHOW USAGE th1"
-./metamath_repl_client.py "SHOW LABELS *" --timeout 60
+metamath_repl_client.py "SHOW STATEMENT th1"
+metamath_repl_client.py "SHOW PROOF th1" --timeout 60
+metamath_repl_client.py "SHOW USAGE th1"
+metamath_repl_client.py "SHOW LABELS *" --timeout 60
 
 
 ### Start / work on a proof
 
-./metamath_repl_client.py "PROVE FOO" --timeout 60
-./metamath_repl_client.py "SHOW NEW_PROOF"
-./metamath_repl_client.py "SHOW NEW_PROOF / UNKNOWN"
+metamath_repl_client.py "PROVE FOO" --timeout 60
+metamath_repl_client.py "SHOW NEW_PROOF"
+metamath_repl_client.py "SHOW NEW_PROOF / UNKNOWN"
 
 ### Modify a proof
 
-./metamath_repl_client.py "ASSIGN FIRST BAR" --timeout 60
-./metamath_repl_client.py "ASSIGN LAST BAR" --timeout 60
-./metamath_repl_client.py "UNDO"
+metamath_repl_client.py "ASSIGN FIRST BAR" --timeout 60
+metamath_repl_client.py "ASSIGN LAST BAR" --timeout 60
+metamath_repl_client.py "UNDO"
 
 ### Save proof back to set.mm
 
-./metamath_repl_client.py "SAVE NEW" --timeout 60
-./metamath_repl_client.py "WRITE SOURCE $PWD/set.mm" --timeout 60
-./metamath_repl_client.py "EXIT"
+metamath_repl_client.py "SAVE NEW" --timeout 60
+metamath_repl_client.py "WRITE SOURCE $PWD/set.mm" --timeout 60
+metamath_repl_client.py "EXIT"
 
 ### Help (safe; pager handled automatically)
 
-./metamath_repl_client.py "HELP ASSIGN" --timeout 60
+metamath_repl_client.py "HELP ASSIGN" --timeout 60
 
 ### ABSOLUTE DO-NOTS (Quick)
 
