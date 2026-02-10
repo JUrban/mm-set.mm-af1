@@ -1241,6 +1241,24 @@ $)
   $}
 
   ${
+    $d b c d C X $.
+    $( If ` c e. C ` , ` c C_ X ` , and ` c ` meets the expansion set
+       ` ( X \ U. { d e. C | d C_ ( X \ b ) } ) ` , then ` c ` meets ` b ` .
+       The contrapositive: if ` c C_ ( X \ b ) ` then ` c ` is absorbed
+       by the union, making intersection with the expansion empty.
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2e $p |- ( ( c e. C /\ c C_ X /\
+      ( c i^i ( X \ U. { d e. C | d C_ ( X \ b ) } ) ) =/= (/) ) ->
+      ( c i^i b ) =/= (/) ) $=
+      ( cv wcel wss cdif crab cuni cin c0 wne wa wceq simpll simpr wb syl mpbid
+      reldisj sseq1 elrab sylanbrc elssuni ssrin disjdif sseq0 mpan2 ex necon3d
+      simplr 3impia ) DFZAGZUOBHZUOBEFZBCFZIZHZEAJZKZIZLZMNUOUSLZMNUPUQOZVFMVEM
+      VGVFMPZVEMPZVGVHOZUOVBGZVIVJUPUOUTHZVKUPUQVHQVJVHVLVGVHRVJUQVHVLSUPUQVHUM
+      UOUSBUBTUAVAVLEUOAURUOUTUCUDUEVKUOVCHZVIUOVBUFVMVEVCVDLZHZVIUOVCVDUGVOVNM
+      PVIVCBUHVEVNUIUJTTTUKULUN $.
+  $}
+
+  ${
     $d t y z J $.
     $( Lemma 41.3 step (3) implies (4): If ` J ` is a topology and every
        open covering has a locally finite closed covering refinement, then
