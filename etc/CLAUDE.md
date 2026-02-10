@@ -2,9 +2,9 @@
 
 ## STRICT PROHIBITIONS
 
-### ⛔ **ONLY edit in the file set.mm**
-- Everything in that file is by default in the Topology section and can be edited (even very high line numbers).
-- **NEVER edit any other files** (but you should look useful stuff in the file set.mm)
+### ⛔ **ONLY edit in the file set.mm after line 502024**
+- Everything after line 502024 in that file is by default in the Topology section and can be edited (even very high line numbers).
+- **NEVER edit any other files**
 
 
 ## Never throw away useful work
@@ -18,12 +18,13 @@
 - Btw, you can read the whole metamath.tex manual if you get into
   serious trouble. It also describes all the commands usable with the
   metamath binary we ask you to run.
+- You can/should learn from related proofs that you can display e.g. (for theorem iscmp) as follows:
+`metamath "read set.mm" "show proof iscmp " exit`
 
 ### Logic System
 - A lot of useful topology is in set.mm - grep it often for existing defs and theorems.
-- You can save an unfinished proof by 
 - You can/should also search for useful lemmas in set.mm.
-- You should **AVOID** duplicating lemmas that are readily available in the library unless it's reasonably useful/justified. "Building up infrastructure" is typically not a good justification.
+- You should **AVOID** duplicating lemmas that are readily available unless it's reasonably useful/justified. "Building up infrastructure" is typically not a good justification.
 
 
 ### Syntax Rules
@@ -37,6 +38,7 @@
 `metamath "read set.mm" "pr FOO" "delete all" "save new" "write source set.mm" "exit" "exit"`
 - To progress in a new/partial proof by applying previous theorem/lemma/def BLA do this:
 `metamath "read set.mm" "pr FOO" "assign last BLA" "save new" "write source set.mm" "exit" "exit"`
+- Note that the above two commands should often suffice but you can also "assign" other things - see "HELP ASSIGN" below - when needed.
 
 - In general you can do various commands instead of just delete and assign and you can look them up by useing "HELP" instead (follows e.g. by HELP ASSIGN). Read the help frequently, it's good.
 
