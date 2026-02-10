@@ -656,6 +656,47 @@ $)
   $}
 
   ${
+    $d p s n S $.
+    $( The set ` U. S ` is disjoint from
+       ` ( n \ U. { s e. S | ( s i^i n ) =/= (/) } ) ` .  Follows from
+       ~ lfcldunicldlem by contraposition and generalization.
+       (Contributed by Claude, 10-Feb-2026.) $)
+    lfcldunicldlem3 $p |- ( U. S i^i ( n \ U. { s e. S |
+        ( s i^i n ) =/= (/) } ) ) = (/) $=
+      ( vp cuni cv cin c0 crab cdif wceq wcel wn wi lfcldunicldlem con2i ax-gen
+      wne wal disj1 mpbir ) AEZBFZCFUCGHRCAIEJZGHKDFZUBLZUEUDLZMNZDSUHDUGUFAUCC
+      DOPQDUBUDTUA $.
+  $}
+
+  ${
+    $d n p s C $.  $d n p s J $.  $d n p s S $.  $d n p s X $.
+    lfcldunicldlem2.1 $e |- X = U. J $.
+    $( Helper for ~ lfcldunicld .  Given a neighborhood ` n ` of ` p ` meeting
+       only finitely many members of ` C ` , if ` p ` is in the closure of
+       ` U. S ` then ` p e. U. S ` .  We form the finite subcollection
+       ` { s e. S | ( s i^i n ) =/= (/) } ` , show its union is closed via
+       ~ unicld , form the open set ` ( n \ U. { ... } ) ` , use
+       ~ lfcldunicldlem to show it is disjoint from ` U. S ` , then
+       ~ lfimclslem to show it is disjoint from ` ( ( cls `` J ) `` U. S ) ` .
+       Since ` p e. n ` , it must lie in the finite union, which is contained
+       in ` U. S ` .  (Contributed by Claude, 10-Feb-2026.) $)
+    lfcldunicldlem2 $p |- ( ( ( J e. Top /\ C C_ ( Clsd ` J ) /\ S C_ C )
+        /\ ( n e. J /\ p e. n
+          /\ { s e. C | ( s i^i n ) =/= (/) } e. Fin )
+        /\ p e. ( ( cls ` J ) ` U. S ) ) -> p e. U. S ) $=
+      ( wcel cfv wss w3a cv cin c0 crab cfn a1i sstrd syl2anc ctop ccld wel wne
+      cuni ccl ssrab2 unissi cdif wn simp22 simp11 simp13 simp12 cldss2 sspwuni
+      cpw biimpi syl simp21 simp23 rabss2 unicld syl3anc difopn lfcldunicldlem3
+      wceq ssfi lfimclslem syl22anc simp3 disjel neldif sselid ) DUAIZADUBJZKZB
+      AKZLZCMZDIZGCUCZFMVTNOUDZFAPZQIZLZGMZBUEZDUFJJZIZLZWCFBPZUEZWHWGWLBWCFBUG
+      ZUHWKWBWGVTWMUIZIUJZWGWMIVSWAWBWEWJUKWKWIWONOVGZWJWPWKVOWHEKZWODIZWHWONOV
+      GZWQVOVQVRWFWJULZWKBEUQZKZWRWKBAXBVOVQVRWFWJUMZWKAVPXBVOVQVRWFWJUNZVPXBKW
+      KDEHUORSSXCWRBEUPURUSWKWAWMVPIZWSVSWAWBWEWJUTWKVOWLQIZWLVPKXFXAWKWEWLWDKZ
+      XGVSWAWBWEWJVAWKVRXHXDWCFBAVBUSWDWLVHTWKWLAVPWKWLBAWLBKWKWNRXDSXESWLDEHVC
+      VDVTWMDEHVETWTWKBCFVFRWHDWOEHVIVJVSWFWJVKWIWOWGVLTWGVTWMVMTVN $.
+  $}
+
+  ${
     $d n p s C $.  $d n p s J $.  $d n p s S $.  $d n p s X $.
     lfcldunicld.1 $e |- X = U. J $.
     $( The union of a subcollection of a locally finite collection of closed
