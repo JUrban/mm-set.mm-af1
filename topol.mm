@@ -698,6 +698,27 @@ $)
 
   ${
     $d n p s C $.  $d n p s J $.  $d n p s S $.  $d n p s X $.
+    lfcldunicldlem4.1 $e |- X = U. J $.
+    $( Helper for ~ lfcldunicld .  Reduce the closure-subset step to pointwise
+       membership via ~ ssrdv , existential elimination via ~ rexlimdva on
+       ~ locfinnei , and the core argument ~ lfcldunicldlem2 .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    lfcldunicldlem4 $p |- ( ( C e. ( LocFin ` J ) /\ C C_ ( Clsd ` J )
+        /\ S C_ C ) -> ( ( cls ` J ) ` U. S ) C_ U. S ) $=
+      ( vp vn vs clocfin cfv wcel ccld wss w3a cuni cv wa syl sstrd syl2anc ccl
+      wel cin wne crab cfn wrex simpl1 ctop locfintop cpw simpl3 simpl2 sspwuni
+      cldss2 a1i biimpi clsss3 simpr sseldd locfinnei simpll simp1 simp2 simprl
+      c0 simp3 simprrl simprrr simplr lfcldunicldlem2 syl331anc rexlimddv ssrdv
+      ex ) ACIJKZACLJZMZBAMZNZFBOZCUAJJZWAVTFPZWBKZWCWAKZVTWDQZFGUBZHPGPZUCVFUD
+      HAUEUFKZQZWEGCWFVPWCDKWJGCUGVPVRVSWDUHZWFWBDWCWFCUIKZWADMZWBDMWFVPWLWKACU
+      JZRWFBDUKZMZWMWFBVQWOWFBAVQVPVRVSWDULVPVRVSWDUMSVQWOMWFCDEUOUPSWPWMBDUNUQ
+      RWACDEURTVTWDUSUTAWCGCDHEVATWFWHCKZWJQZQZWLVRVSWQWGWIWDWEWSVTWLVTWDWRVBZV
+      TVPWLVPVRVSVCWNRRWSVTVRWTVPVRVSVDRWSVTVSWTVPVRVSVGRWFWQWJVEWFWQWGWIVHWFWQ
+      WGWIVIVTWDWRVJABGCDHFEVKVLVMVOVN $.
+  $}
+
+  ${
+    $d n p s C $.  $d n p s J $.  $d n p s S $.  $d n p s X $.
     lfcldunicld.1 $e |- X = U. J $.
     $( The union of a subcollection of a locally finite collection of closed
        sets is closed.  If ` P ` is in the closure of ` U. S ` , then by
@@ -710,9 +731,11 @@ $)
        (Contributed by Claude, 10-Feb-2026.) $)
     lfcldunicld $p |- ( ( C e. ( LocFin ` J ) /\ C C_ ( Clsd ` J )
         /\ S C_ C ) -> U. S e. ( Clsd ` J ) ) $=
-      ? ? ? ? ? ? ? ? ? ? ? ? ? ? simp1 ? ? locfintop syl ? ? ? ? ? ? ? ? ? ?
-      simp3 ? ? ? ? ? ? ? simp2 ? ? ? ? lfcldunicld.1 cldss2 a1i sstrd sstrd ?
-      ? ? ? sspwuni biimpi syl ? ? ? lfcldunicld.1 iscld4 syl2anc mpbird $.
+      ( clocfin cfv wcel ccld wss w3a cuni lfcldunicldlem4 ctop simp1 locfintop
+      ccl wb syl sstrd cpw simp3 simp2 cldss2 a1i sspwuni biimpi iscld4 syl2anc
+      mpbird ) ACFGHZACIGZJZBAJZKZBLZULHZUPCQGGUPJZABCDEMUOCNHZUPDJZUQURRUOUKUS
+      UKUMUNOACPSUOBDUAZJZUTUOBAVAUKUMUNUBUOAULVAUKUMUNUCULVAJUOCDEUDUETTVBUTBD
+      UFUGSUPCDEUHUIUJ $.
   $}
 
   ${
