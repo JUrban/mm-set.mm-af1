@@ -1319,6 +1319,50 @@ $)
   $}
 
   ${
+    $d b c d n p s t u B C J X $.
+    reglfpcmplem2h.1 $e |- X = U. J $.
+    $( For each point ` p ` of ` X ` , there is a neighborhood ` n ` in ` J `
+       meeting finitely many expansion sets.  This combines ~ locfinnei
+       (applied to the locally finite closed cover ` C ` ) with
+       ~ reglfpcmplem2g .  (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2h $p |- ( ( ( J e. Top /\ B e. ( LocFin ` J ) /\
+        B C_ ( Clsd ` J ) ) /\ ( C e. ( LocFin ` J ) /\ C C_ ( Clsd ` J ) /\
+        C Ref { u e. J | { b e. B | ( b i^i u ) =/= (/) } e. Fin } ) /\
+      p e. X ) -> E. n e. J ( p e. n /\
+        { b e. B | ( ( X \ U. { d e. C | d C_ ( X \ b ) } ) i^i n )
+          =/= (/) } e. Fin ) ) $=
+      ( vs wcel wss cv cin c0 wne crab cfn wa ctop clocfin cfv ccld w3a wbr wel
+      cref wrex cdif cuni simp21 locfinnei syl2anc wceq cpw wral eqid locfinbas
+      simp3 syl eqcomd simp22 cldss2 a1i sstrd jca adantr simp23 reglfpcmplem2d
+      simpl simpr ralrimiva reglfpcmplem2g ex anim2d reximdv mpd ) EUALBEUBUCZL
+      BEUDUCZMUEZCVSLZCVTMZCHNZANOPQHBRSLAERUHUFZUEZGNZFLZUEZGDUGZKNZDNZOPQKCRS
+      LZTZDEUIZWJFINFWDUJMICRUKUJWLOPQHBRSLZTZDEUIWIWBWHWOWAWBWCWEWHULZWAWFWHUT
+      CWGDEFKJUMUNWIWNWQDEWIWMWPWJWIWMWPWIWMTZCUKZFUOZCFUPZMZTZWDWKOPQHBRSLZKCU
+      QZWMTWPWIXDWMWIXAXCWIFWTWIWBFWTUOWRCEFWTJWTURUSVAVBWICVTXBWAWBWCWEWHVCVTX
+      BMWIEFJVDVEVFVGVHWSXFWMWIXFWMWIXEKCWIWKCLZTZWEXGXEXHWIWEWIXGVKWAWBWCWEWHV
+      IVAWIXGVLABCEHKVJUNVMVHWIWMVLVGBCDFHKIVNUNVOVPVQVR $.
+  $}
+
+  ${
+    $d b c d f n p s t u w z B C J X y $.
+    reglfpcmplem2i.1 $e |- X = U. J $.
+    $( Given a locally finite closed refinement ` B ` of an open cover ` y ` ,
+       an auxiliary locally finite closed refinement ` C ` of the finite-meeting
+       open cover, and a choice function ` f : B --> y ` with ` b C_ ( f `` b ) `
+       for each ` b e. B ` , the collection of sets
+       ` ( E ( b ) i^i ( f `` b ) ) ` is a locally finite open refinement of
+       ` y ` .  This is the core construction for ~ reglfpcmplem2 .
+       (Contributed by Claude, 10-Feb-2026.) $)
+    reglfpcmplem2i $p |- ( ( ( ( J e. Top /\ y C_ J /\ X = U. y )
+        /\ ( B e. ( LocFin ` J ) /\ B C_ ( Clsd ` J ) /\ B Ref y ) )
+      /\ ( ( C e. ( LocFin ` J ) /\ C C_ ( Clsd ` J )
+        /\ C Ref { u e. J | { b e. B | ( b i^i u ) =/= (/) } e. Fin } )
+      /\ ( f : B --> y /\ A. b e. B b C_ ( f ` b ) ) ) )
+      -> E. z e. ( ( LocFin ` J ) i^i ~P J ) z Ref y ) $=
+      ? $.
+  $}
+
+  ${
     $d t y z J $.
     $( Lemma 41.3 step (3) implies (4): If ` J ` is a topology and every
        open covering has a locally finite closed covering refinement, then
